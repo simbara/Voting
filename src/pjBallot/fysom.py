@@ -252,7 +252,7 @@ __version__ = '1.0'
 __maintainer__ = 'Mansour'
 __email__ = 'mansour@oxplot.com'
 
-import types
+#import types
 
 class FysomError(Exception):
   pass

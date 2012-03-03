@@ -4,7 +4,7 @@
 <script><!--
 var $wnd = parent;
 var $doc = $wnd.document;
-var $moduleName = "sampleBallot";
+var $moduleName = "fysom";
 var $pyjs = new Object();
 var $p = null;
 $pyjs.global_namespace = this;
@@ -30,15 +30,15 @@ $pyjs.in_try_except = 0;
 /*
  * prepare app system vars
  */
-$pyjs.platform = 'opera';
-$pyjs.appname = 'sampleBallot';
+$pyjs.platform = 'mozilla';
+$pyjs.appname = 'fysom';
 $pyjs.loadpath = './';
 
 --></script>
 
 </head>
 <body onload="if ($wnd && $wnd.__pygwt_modController) $wnd.__pygwt_modController.done($pyjs.appname);">
-<font face='arial' size='-1'>This script is part of module</font> <code>sampleBallot</code>
+<font face='arial' size='-1'>This script is part of module</font> <code>fysom</code>
 
 
 <!--
@@ -796,67 +796,83 @@ function $pyjs_default_args_handler($l, args, defaults_count,
 -->
 
 <script type="text/javascript"><!--
-/* start module: sampleBallot */
-$pyjs.loaded_modules['sampleBallot'] = function (__mod_name__) {
-	if($pyjs.loaded_modules['sampleBallot'].__was_initialized__) return $pyjs.loaded_modules['sampleBallot'];
-	var $m = $pyjs.loaded_modules["sampleBallot"];
-	$m.__repr__ = function() { return "<module: sampleBallot>"; };
+/* start module: pyjamas.ui.Event */
+$pyjs.loaded_modules['pyjamas.ui.Event'] = function (__mod_name__) {
+	if($pyjs.loaded_modules['pyjamas.ui.Event'].__was_initialized__) return $pyjs.loaded_modules['pyjamas.ui.Event'];
+	if(typeof $pyjs.loaded_modules['pyjamas.ui'] == 'undefined' || !$pyjs.loaded_modules['pyjamas.ui'].__was_initialized__) $p['___import___']('pyjamas.ui', null);
+	var $m = $pyjs.loaded_modules["pyjamas.ui.Event"];
+	$m.__repr__ = function() { return "<module: pyjamas.ui.Event>"; };
 	$m.__was_initialized__ = true;
-	if ((__mod_name__ === null) || (typeof __mod_name__ == 'undefined')) __mod_name__ = 'sampleBallot';
+	if ((__mod_name__ === null) || (typeof __mod_name__ == 'undefined')) __mod_name__ = 'pyjamas.ui.Event';
 	$m.__name__ = __mod_name__;
-	$m.__track_lines__ = new Array();
-	$m.__track_lines__[1] = 'sampleBallot.py, line 1:\n    from fysom import Fysom';
-	$m.__track_lines__[2] = 'sampleBallot.py, line 2:\n    from ballotTree import Race';
-	$m.__track_lines__[4] = "sampleBallot.py, line 4:\n    race = Race('',[],'')";
-	$m.__track_lines__[6] = 'sampleBallot.py, line 6:\n    def sendRace(srace):';
-	$m.__track_lines__[7] = 'sampleBallot.py, line 7:\n    global race';
-	$m.__track_lines__[8] = 'sampleBallot.py, line 8:\n    race = srace';
+	$pyjs.loaded_modules['pyjamas.ui']['Event'] = $pyjs.loaded_modules['pyjamas.ui.Event'];
 
 
-	$pyjs.track.module='sampleBallot';
-	$pyjs.track.lineno=1;
-	$pyjs.track.lineno=1;
-	$pyjs.track={module:$pyjs.track.module,lineno:$pyjs.track.lineno};$pyjs.trackstack.push($pyjs.track);
-	$m['Fysom'] = $p['___import___']('fysom.Fysom', null, null, false);
-	$pyjs.trackstack.pop();$pyjs.track=$pyjs.trackstack.pop();$pyjs.trackstack.push($pyjs.track);
-	$pyjs.track.lineno=2;
-	$pyjs.track={module:$pyjs.track.module,lineno:$pyjs.track.lineno};$pyjs.trackstack.push($pyjs.track);
-	$m['Race'] = $p['___import___']('ballotTree.Race', null, null, false);
-	$pyjs.trackstack.pop();$pyjs.track=$pyjs.trackstack.pop();$pyjs.trackstack.push($pyjs.track);
-	$pyjs.track.lineno=4;
-	$m['race'] = (function(){try{try{$pyjs.in_try_except += 1;
-	return $m['Race']('', (function(){try{try{$pyjs.in_try_except += 1;
-	return $p['list']([]);
-}finally{$pyjs.in_try_except-=1;}}catch($pyjs_dbg_1_err){if (!$p['isinstance']($pyjs_dbg_1_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_1_err);}throw $pyjs_dbg_1_err;
-}})(), '');
-}finally{$pyjs.in_try_except-=1;}}catch($pyjs_dbg_2_err){if (!$p['isinstance']($pyjs_dbg_2_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_2_err);}throw $pyjs_dbg_2_err;
-}})();
-	$pyjs.track.lineno=6;
-	$m['sendRace'] = function(srace) {
-
-		$pyjs.track={module:'sampleBallot',lineno:6};$pyjs.trackstack.push($pyjs.track);
-		$pyjs.track.module='sampleBallot';
-		$pyjs.track.lineno=6;
-		$pyjs.track.lineno=7;
-		$pyjs.track.lineno=8;
-		$m['race'] = srace;
-		$pyjs.trackstack.pop();$pyjs.track=$pyjs.trackstack.pop();$pyjs.trackstack.push($pyjs.track);
+	$m['BUTTON_LEFT'] = 1;
+	$m['BUTTON_MIDDLE'] = 4;
+	$m['BUTTON_RIGHT'] = 2;
+	$m['ONBLUR'] = 4096;
+	$m['ONCHANGE'] = 1024;
+	$m['ONCLICK'] = 1;
+	$m['ONCONTEXTMENU'] = 131072;
+	$m['ONDBLCLICK'] = 2;
+	$m['ONERROR'] = 65536;
+	$m['ONFOCUS'] = 2048;
+	$m['ONKEYDOWN'] = 128;
+	$m['ONKEYPRESS'] = 256;
+	$m['ONKEYUP'] = 512;
+	$m['ONLOAD'] = 32768;
+	$m['ONLOSECAPTURE'] = 8192;
+	$m['ONMOUSEDOWN'] = 4;
+	$m['ONMOUSEMOVE'] = 64;
+	$m['ONMOUSEOUT'] = 32;
+	$m['ONMOUSEOVER'] = 16;
+	$m['ONMOUSEUP'] = 8;
+	$m['ONMOUSEWHEEL'] = 262144;
+	$m['ONSCROLL'] = 16384;
+	$m['ONINPUT'] = 524288;
+	$m['DRAGEVENTS'] = 1048576;
+	$m['DROPEVENTS'] = 2097152;
+	$m['FOCUSEVENTS'] = 6144;
+	$m['KEYEVENTS'] = 896;
+	$m['MOUSEEVENTS'] = 124;
+	$m['eventbits'] = $p['dict']([[1, $p['tuple'](['click', $p['list'](['click'])])], [2, $p['tuple'](['dblclick', $p['list'](['dblclick'])])], [4, $p['tuple'](['mousedown', $p['list'](['mousedown'])])], [8, $p['tuple'](['mouseup', $p['list'](['mouseup'])])], [16, $p['tuple'](['mouseover', $p['list'](['mouseover'])])], [32, $p['tuple'](['mouseout', $p['list'](['mouseout'])])], [64, $p['tuple'](['mousemove', $p['list'](['mousemove'])])], [128, $p['tuple'](['keydown', $p['list'](['keydown'])])], [256, $p['tuple'](['keypress', $p['list'](['keypress'])])], [512, $p['tuple'](['keyup', $p['list'](['keyup'])])], [1024, $p['tuple'](['change', $p['list'](['change'])])], [2048, $p['tuple'](['focus', $p['list'](['focus'])])], [4096, $p['tuple'](['blur', $p['list'](['blur'])])], [8192, $p['tuple'](['losecapture', $p['list'](['losecapture'])])], [16384, $p['tuple'](['scroll', $p['list'](['scroll'])])], [32768, $p['tuple'](['load', $p['list'](['load'])])], [65536, $p['tuple'](['error', $p['list'](['error'])])], [131072, $p['tuple'](['contextmenu', $p['list'](['contextmenu'])])], [262144, $p['tuple'](['mousewheel', $p['list'](['mousewheel'])])], [524288, $p['tuple'](['input', $p['list'](['input'])])], [1048576, $p['tuple'](['dragevents', $p['list'](['drag', 'dragstart', 'dragend'])])], [2097152, $p['tuple'](['dropevents', $p['list'](['drop', 'dragenter', 'dragover', 'dragleave'])])]]);
+	$m['eventmap'] = $p['dict']([['mousewheel', 262144], ['mousescroll', 262144], ['DOMMouseScroll', 262144], ['input', 524288], ['propertychange', 524288]]);
+	$m['_create_eventmap'] = function() {
+		var $iter1_nextval,$iter1_type,$iter1_iter,$iter1_array,bit,bitmap,$iter1_idx;
+		$iter1_iter = $m['eventbits']['iteritems']();
+		$iter1_nextval=$p['__iter_prepare']($iter1_iter,false);
+		while (typeof($p['__wrapped_next']($iter1_nextval).$nextval) != 'undefined') {
+			var $tupleassign1 = $p['__ass_unpack']($iter1_nextval.$nextval, 2, null);
+			bit = $tupleassign1[0];
+			bitmap = $tupleassign1[1];
+			$m['eventmap'].__setitem__(bitmap.__getitem__(0), bit);
+		}
 		return null;
 	};
-	$m['sendRace'].__name__ = 'sendRace';
+	$m['_create_eventmap'].__name__ = '_create_eventmap';
 
-	$m['sendRace'].__bind_type__ = 0;
-	$m['sendRace'].__args__ = [null,null,['srace']];
+	$m['_create_eventmap'].__bind_type__ = 0;
+	$m['_create_eventmap'].__args__ = [null,null];
+	$m['init'] = function() {
+
+		$m['eventbits'].__setitem__(262144, $p['tuple'](['DOMMouseScroll', $p['list']([])]));
+		$m['eventbits'].__setitem__(524288, $p['tuple'](['input', $p['list']([])]));
+		$m['_create_eventmap']();
+		return null;
+	};
+	$m['init'].__name__ = 'init';
+
+	$m['init'].__bind_type__ = 0;
+	$m['init'].__args__ = [null,null];
+	$m['init']();
 	return this;
-}; /* end sampleBallot */
+}; /* end pyjamas.ui.Event */
 
 
-/* end module: sampleBallot */
+/* end module: pyjamas.ui.Event */
 
 
-/*
-PYJS_DEPS: ['fysom.Fysom', 'fysom', 'ballotTree.Race', 'ballotTree']
-*/
 
 --></script>
 <script type="text/javascript"><!--
@@ -12972,439 +12988,389 @@ $pyjs.loaded_modules['pyjamas'] = function (__mod_name__) {
 
 --></script>
 <script type="text/javascript"><!--
-/* start module: dynamic */
-$pyjs.loaded_modules['dynamic'] = function (__mod_name__) {
-	if($pyjs.loaded_modules['dynamic'].__was_initialized__) return $pyjs.loaded_modules['dynamic'];
-	var $m = $pyjs.loaded_modules["dynamic"];
-	$m.__repr__ = function() { return "<module: dynamic>"; };
+/* start module: pyjamas.Window */
+$pyjs.loaded_modules['pyjamas.Window'] = function (__mod_name__) {
+	if($pyjs.loaded_modules['pyjamas.Window'].__was_initialized__) return $pyjs.loaded_modules['pyjamas.Window'];
+	if(typeof $pyjs.loaded_modules['pyjamas'] == 'undefined' || !$pyjs.loaded_modules['pyjamas'].__was_initialized__) $p['___import___']('pyjamas', null);
+	var $m = $pyjs.loaded_modules["pyjamas.Window"];
+	$m.__repr__ = function() { return "<module: pyjamas.Window>"; };
 	$m.__was_initialized__ = true;
-	if ((__mod_name__ === null) || (typeof __mod_name__ == 'undefined')) __mod_name__ = 'dynamic';
+	if ((__mod_name__ === null) || (typeof __mod_name__ == 'undefined')) __mod_name__ = 'pyjamas.Window';
 	$m.__name__ = __mod_name__;
+	$pyjs.loaded_modules['pyjamas']['Window'] = $pyjs.loaded_modules['pyjamas.Window'];
 
 
-	$m['DOM'] = $p['___import___']('pyjamas.DOM', null, null, false);
-	$m['sys'] = $p['___import___']('sys', null);
-	;
-	$m['AjaxError'] = (function(){
-		var $cls_definition = new Object();
-		var $method;
-		$cls_definition.__module__ = 'dynamic';
-		var $bases = new Array($p['RuntimeError']);
-		var $data = $p['dict']();
-		for (var $item in $cls_definition) { $data.__setitem__($item, $cls_definition[$item]); }
-		return $p['_create_class']('AjaxError', $p['tuple']($bases), $data);
-	})();
-	$m['createHttpRequest'] = function() {
-		var res,$pyjs_try_err;
-		if ($p['bool'](typeof $wnd.XMLHttpRequest != 'undefined')) {
-			return new XMLHttpRequest();
+	$m['closingListeners'] = $p['list']([]);
+	$m['resizeListeners'] = $p['list']([]);
+	$m['Location'] = $p['___import___']('pyjamas.Location', 'pyjamas', null, false);
+	$m['init_listeners'] = function() {
+
+		if ($p['bool'](!$p['bool']($m['closingListeners']))) {
+			$m['closingListeners'] = $p['list']([]);
 		}
-		try {
-			res = new ActiveXObject("Msxml2.XMLHTTP");
-			return res;
-		} catch($pyjs_try_err) {
-			var $pyjs_try_err_name = (typeof $pyjs_try_err.__name__ == 'undefined' ? $pyjs_try_err.name : $pyjs_try_err.__name__ );
-			$pyjs.__last_exception__ = {error: $pyjs_try_err, module: $m};
-			if (true) {
-			}
+		if ($p['bool'](!$p['bool']($m['resizeListeners']))) {
+			$m['resizeListeners'] = $p['list']([]);
 		}
 		return null;
 	};
-	$m['createHttpRequest'].__name__ = 'createHttpRequest';
+	$m['init_listeners'].__name__ = 'init_listeners';
 
-	$m['createHttpRequest'].__bind_type__ = 0;
-	$m['createHttpRequest'].__args__ = [null,null];
-	$m['load'] = function(url, onreadystatechange, on_load_fn, async) {
-		if (typeof onreadystatechange == 'undefined') onreadystatechange=arguments.callee.__args__[3][1];
-		if (typeof on_load_fn == 'undefined') on_load_fn=arguments.callee.__args__[4][1];
-		if (typeof async == 'undefined') async=arguments.callee.__args__[5][1];
-		var $or5,$or4,$and3,$or3,req,$and4,$pyjs_try_err,$add2,$add1,$or6;
-		;
-		$wnd.status = $p['__op_add']($add1='Loading ',$add2=url);
-		req = $m['createHttpRequest']();
-		if ($p['bool']((onreadystatechange === null))) {
-			onreadystatechange = function(evnt) {
-				var $or1,$add4,$or2,$and1,$and2,$add3,str;
-				if ($p['bool'](($p['bool']($and1=$p['op_eq']($p['getattr'](req, 'readyState'), 4))?($p['bool']($or1=$p['op_eq']($p['getattr'](req, 'status'), 200))?$or1:$p['op_eq']($p['getattr'](req, 'status'), 0)):$and1))) {
-					str = $p['getattr'](req, 'responseText');
-					$wnd.status = $p['__op_add']($add3='Loaded ',$add4=url);
-					if ($p['bool'](!$p['bool']((on_load_fn === null)))) {
-						on_load_fn(evnt, req);
-					}
-				}
-				return null;
-			};
-			onreadystatechange.__name__ = 'onreadystatechange';
+	$m['init_listeners'].__bind_type__ = 0;
+	$m['init_listeners'].__args__ = [null,null];
+	$m['addWindowCloseListener'] = function(listener) {
 
-			onreadystatechange.__bind_type__ = 0;
-			onreadystatechange.__args__ = [null,null,['evnt']];
-		}
-req.onreadystatechange = onreadystatechange;
-		req['open']('GET', url, async);
-		try {
-			req['send'](null);
-			if ($p['bool'](async)) {
-				return null;
-			}
-			while ($p['bool'](true)) {
-				if ($p['bool'](($p['bool']($or3=$p['op_eq']($p['getattr'](req, 'status'), 200))?$or3:($p['bool']($and3=$p['op_eq']($p['getattr'](req, 'status'), 0))?$p['getattr'](req, 'responseText'):$and3)))) {
-					if ($p['bool'](!$p['bool']((on_load_fn === null)))) {
-						on_load_fn(null, req);
-					}
-					return req;
-				}
-				if ($p['bool'](($p['bool']($or5=!$p['op_eq']($p['getattr'](req, 'status'), 0))?$or5:!$p['op_eq']($p['getattr'](req, 'responseText'), '')))) {
-					break;
-				}
-			}
-		} catch($pyjs_try_err) {
-			var $pyjs_try_err_name = (typeof $pyjs_try_err.__name__ == 'undefined' ? $pyjs_try_err.name : $pyjs_try_err.__name__ );
-			$pyjs.__last_exception__ = {error: $pyjs_try_err, module: $m};
-			if (true) {
-			}
-		}
-		throw ($m['AjaxError']('Synchronous error', $p['getattr'](req, 'status')));
+		$m['closingListeners']['append'](listener);
 		return null;
 	};
-	$m['load'].__name__ = 'load';
+	$m['addWindowCloseListener'].__name__ = 'addWindowCloseListener';
 
-	$m['load'].__bind_type__ = 0;
-	$m['load'].__args__ = [null,null,['url'],['onreadystatechange', null],['on_load_fn', null],['async', false]];
-	$m['inject'] = function(values, namespace, names) {
-		if (typeof namespace == 'undefined') namespace=arguments.callee.__args__[3][1];
-		if (typeof names == 'undefined') names=arguments.callee.__args__[4][1];
-		var $iter2_nextval,$iter1_nextval,$iter1_type,$iter2_iter,$iter1_idx,k,$iter1_iter,$iter2_idx,v,$iter2_type,$iter2_array,$iter1_array;
-		if ($p['bool']((namespace === null))) {
-			namespace = $pyjs.global_namespace;
-		}
-		values = $p['dict'](values);
-		if ($p['bool']((names === null))) {
-			$iter1_iter = values;
-			$iter1_nextval=$p['__iter_prepare']($iter1_iter,false);
-			while (typeof($p['__wrapped_next']($iter1_nextval).$nextval) != 'undefined') {
-				k = $iter1_nextval.$nextval;
-				v = values.__getitem__(k);
-namespace[k] = v;
-			}
-		}
-		else {
-			$iter2_iter = names;
-			$iter2_nextval=$p['__iter_prepare']($iter2_iter,false);
-			while (typeof($p['__wrapped_next']($iter2_nextval).$nextval) != 'undefined') {
-				k = $iter2_nextval.$nextval;
-				v = values.__getitem__(k);
-namespace[k] = v;
-			}
-		}
+	$m['addWindowCloseListener'].__bind_type__ = 0;
+	$m['addWindowCloseListener'].__args__ = [null,null,['listener']];
+	$m['addWindowResizeListener'] = function(listener) {
+
+		$m['resizeListeners']['append'](listener);
 		return null;
 	};
-	$m['inject'].__name__ = 'inject';
+	$m['addWindowResizeListener'].__name__ = 'addWindowResizeListener';
 
-	$m['inject'].__bind_type__ = 0;
-	$m['inject'].__args__ = [null,null,['values'],['namespace', null],['names', null]];
-	$m['activate_css'] = function(targetnode) {
-		var $iter3_idx,LC,$iter3_type,$iter3_nextval,scriptnodes,$iter3_iter,$iter3_array,fileref,sn;
-		scriptnodes = $p['list'](targetnode['getElementsByTagName']('link'));
-		$iter3_iter = $p['range']($p['len'](scriptnodes));
-		$iter3_nextval=$p['__iter_prepare']($iter3_iter,false);
-		while (typeof($p['__wrapped_next']($iter3_nextval).$nextval) != 'undefined') {
-			LC = $iter3_nextval.$nextval;
-			sn = scriptnodes.__getitem__(LC);
-			sn['parentNode']['removeChild'](sn);
-			fileref = $m['DOM']['createElement']('link');
-			if ($p['bool']((typeof hassattr == "undefined"?$m.hassattr:hassattr)(sn, 'href'))) {
-				fileref.href = $p['getattr'](sn, 'href');
-			}
-			else {
-				fileref.text = $p['getattr'](sn, 'text');
-			}
-			fileref.rel = 'stylesheet';
-			fileref.type = 'text/css';
-			$doc['getElementsByTagName']('head')['item'](0)['appendChild'](fileref);
+	$m['addWindowResizeListener'].__bind_type__ = 0;
+	$m['addWindowResizeListener'].__args__ = [null,null,['listener']];
+	$m['removeWindowCloseListener'] = function(listener) {
+
+		$m['closingListeners']['remove'](listener);
+		return null;
+	};
+	$m['removeWindowCloseListener'].__name__ = 'removeWindowCloseListener';
+
+	$m['removeWindowCloseListener'].__bind_type__ = 0;
+	$m['removeWindowCloseListener'].__args__ = [null,null,['listener']];
+	$m['removeWindowResizeListener'] = function(listener) {
+
+		$m['resizeListeners']['remove'](listener);
+		return null;
+	};
+	$m['removeWindowResizeListener'].__name__ = 'removeWindowResizeListener';
+
+	$m['removeWindowResizeListener'].__bind_type__ = 0;
+	$m['removeWindowResizeListener'].__args__ = [null,null,['listener']];
+	$m['alert'] = function(msg) {
+
+		$wnd['alert'](msg);
+		return null;
+	};
+	$m['alert'].__name__ = 'alert';
+
+	$m['alert'].__bind_type__ = 0;
+	$m['alert'].__args__ = [null,null,['msg']];
+	$m['confirm'] = function(msg) {
+
+		return $wnd['confirm'](msg);
+	};
+	$m['confirm'].__name__ = 'confirm';
+
+	$m['confirm'].__bind_type__ = 0;
+	$m['confirm'].__args__ = [null,null,['msg']];
+	$m['prompt'] = function(msg, defaultReply) {
+		if (typeof defaultReply == 'undefined') defaultReply=arguments.callee.__args__[3][1];
+
+		return $wnd['prompt'](msg, defaultReply);
+	};
+	$m['prompt'].__name__ = 'prompt';
+
+	$m['prompt'].__bind_type__ = 0;
+	$m['prompt'].__args__ = [null,null,['msg'],['defaultReply', '']];
+	$m['enableScrolling'] = function(enable) {
+		var $and1,$and2,$or1,$or2;
+		$p['getattr']($p['getattr']($doc, 'body'), 'style').overflow = ($p['bool']($or1=($p['bool']($and1=enable)?'auto':$and1))?$or1:'hidden');
+		return null;
+	};
+	$m['enableScrolling'].__name__ = 'enableScrolling';
+
+	$m['enableScrolling'].__bind_type__ = 0;
+	$m['enableScrolling'].__args__ = [null,null,['enable']];
+	$m['scrollBy'] = function(x, y) {
+
+		$wnd['scrollBy'](x, y);
+		return null;
+	};
+	$m['scrollBy'].__name__ = 'scrollBy';
+
+	$m['scrollBy'].__bind_type__ = 0;
+	$m['scrollBy'].__args__ = [null,null,['x'],['y']];
+	$m['scroll'] = function(x, y) {
+
+		$wnd['scroll'](x, y);
+		return null;
+	};
+	$m['scroll'].__name__ = 'scroll';
+
+	$m['scroll'].__bind_type__ = 0;
+	$m['scroll'].__args__ = [null,null,['x'],['y']];
+	$m['getClientHeight'] = function() {
+
+		return $wnd.innerHeight;
+	};
+	$m['getClientHeight'].__name__ = 'getClientHeight';
+
+	$m['getClientHeight'].__bind_type__ = 0;
+	$m['getClientHeight'].__args__ = [null,null];
+	$m['getClientWidth'] = function() {
+
+		return $wnd.innerWidth;
+	};
+	$m['getClientWidth'].__name__ = 'getClientWidth';
+
+	$m['getClientWidth'].__bind_type__ = 0;
+	$m['getClientWidth'].__args__ = [null,null];
+	$m['getScrollLeft'] = function() {
+
+		return $p['getattr']((typeof getDocumentRoot == "undefined"?$m.getDocumentRoot:getDocumentRoot)(), 'scrollLeft');
+		return null;
+	};
+	$m['getScrollLeft'].__name__ = 'getScrollLeft';
+
+	$m['getScrollLeft'].__bind_type__ = 0;
+	$m['getScrollLeft'].__args__ = [null,null];
+	$m['getScrollTop'] = function() {
+
+		return $p['getattr']((typeof getDocumentRoot == "undefined"?$m.getDocumentRoot:getDocumentRoot)(), 'scrollTop');
+		return null;
+	};
+	$m['getScrollTop'].__name__ = 'getScrollTop';
+
+	$m['getScrollTop'].__bind_type__ = 0;
+	$m['getScrollTop'].__args__ = [null,null];
+	$m['getDocumentRoot'] = function() {
+
+		if ($p['bool']($p['op_eq']($p['getattr']($doc, 'compatMode'), 'CSS1Compat'))) {
+			return $p['getattr']($doc, 'documentElement');
 		}
+		return $p['getattr']($doc, 'body');
+	};
+	$m['getDocumentRoot'].__name__ = 'getDocumentRoot';
+
+	$m['getDocumentRoot'].__bind_type__ = 0;
+	$m['getDocumentRoot'].__args__ = [null,null];
+	$m['setLocation'] = function(url) {
+		var w;
+		w = $wnd;
+		w.location = url;
 		return null;
 	};
-	$m['activate_css'].__name__ = 'activate_css';
+	$m['setLocation'].__name__ = 'setLocation';
 
-	$m['activate_css'].__bind_type__ = 0;
-	$m['activate_css'].__args__ = [null,null,['targetnode']];
-	$m['activate_javascript'] = function(txt) {
-		var fileref;
-		fileref = $m['DOM']['createElement']('script');
-		fileref.text = txt;
-		fileref.type = 'text/javascript';
-		fileref.language = 'javascript';
-		fileref = fileref['cloneNode'](true);
-		$doc['getElementsByTagName']('head')['item'](0)['appendChild'](fileref);
-		return null;
-	};
-	$m['activate_javascript'].__name__ = 'activate_javascript';
+	$m['setLocation'].__bind_type__ = 0;
+	$m['setLocation'].__args__ = [null,null,['url']];
+	$m['location'] = null;
+	$m['getLocation'] = function() {
 
-	$m['activate_javascript'].__bind_type__ = 0;
-	$m['activate_javascript'].__args__ = [null,null,['txt']];
-	$m['eval'] = function(str) {
-
-		return eval(str);
-	};
-	$m['eval'].__name__ = 'eval';
-
-	$m['eval'].__bind_type__ = 0;
-	$m['eval'].__args__ = [null,null,['str']];
-	$m['ajax_eval'] = function(url, on_load_fn, async) {
-		var onready;
-		;
-		onready = function(evnt, req) {
-			var str;
-			str = $p['getattr'](req, 'responseText');
-			$m['activate_javascript'](str);
-			if ($p['bool'](!$p['bool']((on_load_fn === null)))) {
-				on_load_fn();
-			}
-			return null;
-		};
-		onready.__name__ = 'onready';
-
-		onready.__bind_type__ = 0;
-		onready.__args__ = [null,null,['evnt'],['req']];
-		$m['load'](url, null, onready, async);
-		return null;
-	};
-	$m['ajax_eval'].__name__ = 'ajax_eval';
-
-	$m['ajax_eval'].__bind_type__ = 0;
-	$m['ajax_eval'].__args__ = [null,null,['url'],['on_load_fn'],['async']];
-	$m['__imported__'] = $p['dict']([]);
-	$m['ajax_import'] = function(url, namespace, names) {
-		if (typeof namespace == 'undefined') namespace=arguments.callee.__args__[3][1];
-		if (typeof names == 'undefined') names=arguments.callee.__args__[4][1];
-		var e,name,script,$iter4_nextval,req,module,$iter4_idx,name_getter,$pyjs_try_err,$iter4_type,$iter4_array,$iter4_iter;
-		;
-		if ($p['bool']($m['__imported__']['has_key'](url))) {
-			module = $m['__imported__'].__getitem__(url);
+		if ($p['bool'](!$p['bool']($m['location']))) {
+			$m['location'] = $m['Location']['Location']($p['getattr']($wnd, 'location'));
 		}
-		else {
-			req = $m['load'](url, null, null, false);
-			module = null;
-			name_getter = $p['list']([]);
-			if ($p['bool']((names === null))) {
-				names = $p['list']([]);
-			}
-			$iter4_iter = names;
-			$iter4_nextval=$p['__iter_prepare']($iter4_iter,false);
-			while (typeof($p['__wrapped_next']($iter4_nextval).$nextval) != 'undefined') {
-				name = $iter4_nextval.$nextval;
-				name_getter['append']($p['sprintf']("$pyjs$moduleObject['%s'] = %s;", $p['tuple']([name, name])));
-			}
-			script = $p['sprintf']('(function ( ) {\n$pyjs$moduleObject={};\n%s;\n%s\nreturn $pyjs$moduleObject;\n})();', $p['tuple']([$p['getattr'](req, 'responseText'), '\n'['join'](name_getter)]));
-			try {
-				module = $m['eval'](script);
-			} catch($pyjs_try_err) {
-				var $pyjs_try_err_name = (typeof $pyjs_try_err.__name__ == 'undefined' ? $pyjs_try_err.name : $pyjs_try_err.__name__ );
-				$pyjs.__last_exception__ = {error: $pyjs_try_err, module: $m};
-				if (true) {
-					e = $m['sys']['exc_info']();
-					throw ($m['AjaxError']($p['sprintf']('Error in %s: %s', $p['tuple']([url, $p['getattr'](e, 'message')]))));
-				}
-			}
-			$m['__imported__'].__setitem__(url, module);
-		}
-		$m['inject'](module, namespace, names);
+		return $m['location'];
+	};
+	$m['getLocation'].__name__ = 'getLocation';
+
+	$m['getLocation'].__bind_type__ = 0;
+	$m['getLocation'].__args__ = [null,null];
+	$m['getTitle'] = function() {
+
+		return $doc.title;
+	};
+	$m['getTitle'].__name__ = 'getTitle';
+
+	$m['getTitle'].__bind_type__ = 0;
+	$m['getTitle'].__args__ = [null,null];
+	$m['open'] = function(url, name, features) {
+
+		return $wnd['open'](url, name, features);
+	};
+	$m['open'].__name__ = 'open';
+
+	$m['open'].__bind_type__ = 0;
+	$m['open'].__args__ = [null,null,['url'],['name'],['features']];
+	$m['setMargin'] = function(size) {
+
+		$p['getattr']($p['getattr']($doc, 'body'), 'style').margin = size;
 		return null;
 	};
-	$m['ajax_import'].__name__ = 'ajax_import';
+	$m['setMargin'].__name__ = 'setMargin';
 
-	$m['ajax_import'].__bind_type__ = 0;
-	$m['ajax_import'].__args__ = [null,null,['url'],['namespace', null],['names', null]];
-	$m['load_script'] = function(url, onload, async) {
-		var e,onload_fn,$add6,$add5;
-		$wnd.status = $p['__op_add']($add5='Loading ',$add6=url);
-		onload_fn = function() {
-			var $add8,$add7;
-			$wnd.status = $p['__op_add']($add7='Loaded ',$add8=url);
-			if ($p['bool'](!$p['bool']((onload === null)))) {
-				$m['eval'](onload);
-			}
-			return true;
-		};
-		onload_fn.__name__ = 'onload_fn';
-
-		onload_fn.__bind_type__ = 0;
-		onload_fn.__args__ = [null,null];
-		e = $m['DOM']['createElement']('script');
-		e.src = url;
-		e.type = 'text/javascript';
-		e.language = 'javascript';
-		e.defer = async;
-		e.onload = onload_fn;
-		$doc['getElementsByTagName']('head').__getitem__(0)['appendChild'](e);
+	$m['setMargin'].__bind_type__ = 0;
+	$m['setMargin'].__args__ = [null,null,['size']];
+	$m['setTitle'] = function(title) {
+		var d;
+		d = $doc;
+		d.title = title;
 		return null;
 	};
-	$m['load_script'].__name__ = 'load_script';
+	$m['setTitle'].__name__ = 'setTitle';
 
-	$m['load_script'].__bind_type__ = 0;
-	$m['load_script'].__args__ = [null,null,['url'],['onload'],['async']];
-	$m['running_timeout'] = 0;
-	$m['timeout_idname'] = null;
-	$m['timeout_url'] = null;
-	$m['timeout_on_load_fn'] = null;
-	$m['redo_timeout'] = null;
-	$m['timeout_id'] = null;
-	$m['ajax_dlink_refresh'] = function(idname, url, on_load_fn, timeout) {
+	$m['setTitle'].__bind_type__ = 0;
+	$m['setTitle'].__args__ = [null,null,['title']];
+	$m['setOnError'] = function(onError) {
 
-		$m['timeout_idname'] = idname;
-		$m['timeout_url'] = url;
-		$m['timeout_on_load_fn'] = on_load_fn;
-		$m['redo_timeout'] = timeout;
-		if ($p['bool'](($p['cmp']($m['running_timeout'], 0) == 1))) {
-			return null;
+		if ($p['bool'](!$p['bool']($p['callable'](onError)))) {
+			throw ($p['TypeError']('object is not callable'));
 		}
-		$m['timeout_id'] = setTimeout((typeof do_ajax_dlink_refresh == "undefined"?$m.do_ajax_dlink_refresh:do_ajax_dlink_refresh), timeout);
-		$m['running_timeout'] = 1;
+    $wnd.onerror=function(msg, url, linenumber){
+        return onError(msg, url, linenumber);
+    }
+    
+	};
+	$m['setOnError'].__name__ = 'setOnError';
+
+	$m['setOnError'].__bind_type__ = 0;
+	$m['setOnError'].__args__ = [null,null,['onError']];
+	$m['onError'] = function(msg, url, linenumber) {
+		var tracestr,dialog;
+		dialog = $doc['createElement']('div');
+		dialog.className = 'errordialog';
+		tracestr = $m.sys['trackstackstr']($pyjs.trackstack.slice(0,-1));
+		tracestr = tracestr['$$replace']('\n', '<br />\n&nbsp;&nbsp;&nbsp;');
+		dialog.innerHTML = $p['sprintf']('&nbsp;<b style="color:red">JavaScript Error: </b>\n%s at line number %d. Please inform webmaster.\n<br />&nbsp;&nbsp;&nbsp;%s\n', $p['tuple']([msg, linenumber, tracestr]));
+		$doc['body']['appendChild'](dialog);
+		return true;
+	};
+	$m['onError'].__name__ = 'onError';
+
+	$m['onError'].__bind_type__ = 0;
+	$m['onError'].__args__ = [null,null,['msg'],['url'],['linenumber']];
+	$m['onClosed'] = function() {
+
+		(typeof fireClosedImpl == "undefined"?$m.fireClosedImpl:fireClosedImpl)();
 		return null;
 	};
-	$m['ajax_dlink_refresh'].__name__ = 'ajax_dlink_refresh';
+	$m['onClosed'].__name__ = 'onClosed';
 
-	$m['ajax_dlink_refresh'].__bind_type__ = 0;
-	$m['ajax_dlink_refresh'].__args__ = [null,null,['idname'],['url'],['on_load_fn'],['timeout']];
-	$m['do_ajax_dlink_refresh'] = function() {
+	$m['onClosed'].__bind_type__ = 0;
+	$m['onClosed'].__args__ = [null,null];
+	$m['onClosing'] = function() {
 
-		if ($p['bool']($p['op_eq']((typeof ajax_dlink == "undefined"?$m.ajax_dlink:ajax_dlink)($m['timeout_idname'], $m['timeout_url'], $m['timeout_on_load_fn']), 0))) {
-			$m['timeout_id'] = null;
-			$m['running_timeout'] = 0;
-			return null;
-		}
-		$m['timeout_id'] = null;
-		$m['running_timeout'] = 0;
-		$m['ajax_dlink_refresh']($m['timeout_idname'], $m['timeout_url'], $m['timeout_on_load_fn'], $m['redo_timeout']);
+		return (typeof fireClosingImpl == "undefined"?$m.fireClosingImpl:fireClosingImpl)();
+	};
+	$m['onClosing'].__name__ = 'onClosing';
+
+	$m['onClosing'].__bind_type__ = 0;
+	$m['onClosing'].__args__ = [null,null];
+	$m['onResize'] = function() {
+
+		(typeof fireResizedImpl == "undefined"?$m.fireResizedImpl:fireResizedImpl)();
 		return null;
 	};
-	$m['do_ajax_dlink_refresh'].__name__ = 'do_ajax_dlink_refresh';
+	$m['onResize'].__name__ = 'onResize';
 
-	$m['do_ajax_dlink_refresh'].__bind_type__ = 0;
-	$m['do_ajax_dlink_refresh'].__args__ = [null,null];
-	$m['ajax_dlink'] = function(idname, url, on_load_fn) {
-		var body,xhtoj,onreadystatechange;
-		body = $p['getattr']($doc, 'body');
-		if ($p['bool']($m['timeout_id'])) {
-			clearTimeout($m['timeout_id']);
-		}
-		onreadystatechange = function() {
-			var txt,jsnode;
-			if ($p['bool']($p['op_eq']($p['getattr']((typeof xhtoj == "undefined"?$m.xhtoj:xhtoj), 'readyState'), 4))) {
-				jsnode = 0;
-				if ($p['bool']($p['op_eq']($p['getattr']((typeof xhtoj == "undefined"?$m.xhtoj:xhtoj), 'status'), 200))) {
-					txt = $p['getattr']((typeof xhtoj == "undefined"?$m.xhtoj:xhtoj), 'responseText');
-					jsnode = null;
-					if ($p['bool'](idname)) {
-						jsnode = $m['DOM']['getElementById'](idname);
-					}
-					if ($p['bool']((jsnode === null))) {
-						jsnode = $m['DOM']['createElement']('script');
-					}
-					$m['activate_javascript'](txt);
-					if ($p['bool'](!$p['bool']((on_load_fn === null)))) {
-						$wnd['alert'](on_load_fn);
-						(typeof test_fn == "undefined"?$m.test_fn:test_fn)();
-					}
-					return 1;
-				}
-				else {
-					jsnode = $m['DOM']['getElementById'](idname);
-					if ($p['bool'](!$p['bool']((jsnode === null)))) {
-						jsnode.innerHTML = $p['getattr']((typeof xhtoj == "undefined"?$m.xhtoj:xhtoj), 'status');
-					}
-				}
-			}
-			return null;
-		};
-		onreadystatechange.__name__ = 'onreadystatechange';
+	$m['onResize'].__bind_type__ = 0;
+	$m['onResize'].__args__ = [null,null];
+	$m['fireClosedAndCatch'] = function(handler) {
 
-		onreadystatechange.__bind_type__ = 0;
-		onreadystatechange.__args__ = [null,null];
-		xhtoj = $m['createHttpRequest']();
-		xhtoj.onreadystatechange = onreadystatechange;
-		xhtoj['open']('GET', url, true);
-		xhtoj['send']('');
-		return 0;
+ 		return null;
 	};
-	$m['ajax_dlink'].__name__ = 'ajax_dlink';
+	$m['fireClosedAndCatch'].__name__ = 'fireClosedAndCatch';
 
-	$m['ajax_dlink'].__bind_type__ = 0;
-	$m['ajax_dlink'].__args__ = [null,null,['idname'],['url'],['on_load_fn']];
-	return this;
-}; /* end dynamic */
-
-
-/* end module: dynamic */
-
-
-/*
-PYJS_DEPS: ['pyjamas.DOM', 'pyjamas', 'sys']
-*/
-
---></script>
-<script type="text/javascript"><!--
-/* start module: pyjamas.ui.Event */
-$pyjs.loaded_modules['pyjamas.ui.Event'] = function (__mod_name__) {
-	if($pyjs.loaded_modules['pyjamas.ui.Event'].__was_initialized__) return $pyjs.loaded_modules['pyjamas.ui.Event'];
-	if(typeof $pyjs.loaded_modules['pyjamas.ui'] == 'undefined' || !$pyjs.loaded_modules['pyjamas.ui'].__was_initialized__) $p['___import___']('pyjamas.ui', null);
-	var $m = $pyjs.loaded_modules["pyjamas.ui.Event"];
-	$m.__repr__ = function() { return "<module: pyjamas.ui.Event>"; };
-	$m.__was_initialized__ = true;
-	if ((__mod_name__ === null) || (typeof __mod_name__ == 'undefined')) __mod_name__ = 'pyjamas.ui.Event';
-	$m.__name__ = __mod_name__;
-	$pyjs.loaded_modules['pyjamas.ui']['Event'] = $pyjs.loaded_modules['pyjamas.ui.Event'];
-
-
-	$m['BUTTON_LEFT'] = 1;
-	$m['BUTTON_MIDDLE'] = 4;
-	$m['BUTTON_RIGHT'] = 2;
-	$m['ONBLUR'] = 4096;
-	$m['ONCHANGE'] = 1024;
-	$m['ONCLICK'] = 1;
-	$m['ONCONTEXTMENU'] = 131072;
-	$m['ONDBLCLICK'] = 2;
-	$m['ONERROR'] = 65536;
-	$m['ONFOCUS'] = 2048;
-	$m['ONKEYDOWN'] = 128;
-	$m['ONKEYPRESS'] = 256;
-	$m['ONKEYUP'] = 512;
-	$m['ONLOAD'] = 32768;
-	$m['ONLOSECAPTURE'] = 8192;
-	$m['ONMOUSEDOWN'] = 4;
-	$m['ONMOUSEMOVE'] = 64;
-	$m['ONMOUSEOUT'] = 32;
-	$m['ONMOUSEOVER'] = 16;
-	$m['ONMOUSEUP'] = 8;
-	$m['ONMOUSEWHEEL'] = 262144;
-	$m['ONSCROLL'] = 16384;
-	$m['ONINPUT'] = 524288;
-	$m['DRAGEVENTS'] = 1048576;
-	$m['DROPEVENTS'] = 2097152;
-	$m['FOCUSEVENTS'] = 6144;
-	$m['KEYEVENTS'] = 896;
-	$m['MOUSEEVENTS'] = 124;
-	$m['eventbits'] = $p['dict']([[1, $p['tuple'](['click', $p['list'](['click'])])], [2, $p['tuple'](['dblclick', $p['list'](['dblclick'])])], [4, $p['tuple'](['mousedown', $p['list'](['mousedown'])])], [8, $p['tuple'](['mouseup', $p['list'](['mouseup'])])], [16, $p['tuple'](['mouseover', $p['list'](['mouseover'])])], [32, $p['tuple'](['mouseout', $p['list'](['mouseout'])])], [64, $p['tuple'](['mousemove', $p['list'](['mousemove'])])], [128, $p['tuple'](['keydown', $p['list'](['keydown'])])], [256, $p['tuple'](['keypress', $p['list'](['keypress'])])], [512, $p['tuple'](['keyup', $p['list'](['keyup'])])], [1024, $p['tuple'](['change', $p['list'](['change'])])], [2048, $p['tuple'](['focus', $p['list'](['focus'])])], [4096, $p['tuple'](['blur', $p['list'](['blur'])])], [8192, $p['tuple'](['losecapture', $p['list'](['losecapture'])])], [16384, $p['tuple'](['scroll', $p['list'](['scroll'])])], [32768, $p['tuple'](['load', $p['list'](['load'])])], [65536, $p['tuple'](['error', $p['list'](['error'])])], [131072, $p['tuple'](['contextmenu', $p['list'](['contextmenu'])])], [262144, $p['tuple'](['mousewheel', $p['list'](['mousewheel'])])], [524288, $p['tuple'](['input', $p['list'](['input'])])], [1048576, $p['tuple'](['dragevents', $p['list'](['drag', 'dragstart', 'dragend'])])], [2097152, $p['tuple'](['dropevents', $p['list'](['drop', 'dragenter', 'dragover', 'dragleave'])])]]);
-	$m['eventmap'] = $p['dict']([['mousewheel', 262144], ['mousescroll', 262144], ['DOMMouseScroll', 262144], ['input', 524288], ['propertychange', 524288]]);
-	$m['_create_eventmap'] = function() {
-		var $iter1_nextval,$iter1_type,$iter1_iter,$iter1_array,bit,bitmap,$iter1_idx;
-		$iter1_iter = $m['eventbits']['iteritems']();
+	$m['fireClosedAndCatch'].__bind_type__ = 0;
+	$m['fireClosedAndCatch'].__args__ = [null,null,['handler']];
+	$m['fireClosedImpl'] = function() {
+		var $iter1_nextval,$iter1_type,$iter1_iter,listener,$iter1_array,$iter1_idx;
+		$iter1_iter = $m['closingListeners'];
 		$iter1_nextval=$p['__iter_prepare']($iter1_iter,false);
 		while (typeof($p['__wrapped_next']($iter1_nextval).$nextval) != 'undefined') {
-			var $tupleassign1 = $p['__ass_unpack']($iter1_nextval.$nextval, 2, null);
-			bit = $tupleassign1[0];
-			bitmap = $tupleassign1[1];
-			$m['eventmap'].__setitem__(bitmap.__getitem__(0), bit);
+			listener = $iter1_nextval.$nextval;
+			listener['onWindowClosed']();
 		}
 		return null;
 	};
-	$m['_create_eventmap'].__name__ = '_create_eventmap';
+	$m['fireClosedImpl'].__name__ = 'fireClosedImpl';
 
-	$m['_create_eventmap'].__bind_type__ = 0;
-	$m['_create_eventmap'].__args__ = [null,null];
+	$m['fireClosedImpl'].__bind_type__ = 0;
+	$m['fireClosedImpl'].__args__ = [null,null];
+	$m['fireClosingAndCatch'] = function(handler) {
+
+ 		return null;
+	};
+	$m['fireClosingAndCatch'].__name__ = 'fireClosingAndCatch';
+
+	$m['fireClosingAndCatch'].__bind_type__ = 0;
+	$m['fireClosingAndCatch'].__args__ = [null,null,['handler']];
+	$m['resize'] = function(width, height) {
+
+		$wnd['resizeTo'](width, height);
+		return null;
+	};
+	$m['resize'].__name__ = 'resize';
+
+	$m['resize'].__bind_type__ = 0;
+	$m['resize'].__args__ = [null,null,['width'],['height']];
+	$m['resizeBy'] = function(width, height) {
+
+		$wnd['resizeBy'](width, height);
+		return null;
+	};
+	$m['resizeBy'].__name__ = 'resizeBy';
+
+	$m['resizeBy'].__bind_type__ = 0;
+	$m['resizeBy'].__args__ = [null,null,['width'],['height']];
+	$m['fireClosingImpl'] = function() {
+		var $iter2_nextval,$iter2_type,$iter2_iter,ret,listener,$iter2_idx,msg,$iter2_array;
+		ret = null;
+		$iter2_iter = $m['closingListeners'];
+		$iter2_nextval=$p['__iter_prepare']($iter2_iter,false);
+		while (typeof($p['__wrapped_next']($iter2_nextval).$nextval) != 'undefined') {
+			listener = $iter2_nextval.$nextval;
+			msg = listener['onWindowClosing']();
+			if ($p['bool']((ret === null))) {
+				ret = msg;
+			}
+		}
+		return ret;
+	};
+	$m['fireClosingImpl'].__name__ = 'fireClosingImpl';
+
+	$m['fireClosingImpl'].__bind_type__ = 0;
+	$m['fireClosingImpl'].__args__ = [null,null];
+	$m['fireResizedAndCatch'] = function(handler) {
+
+ 		return null;
+	};
+	$m['fireResizedAndCatch'].__name__ = 'fireResizedAndCatch';
+
+	$m['fireResizedAndCatch'].__bind_type__ = 0;
+	$m['fireResizedAndCatch'].__args__ = [null,null,['handler']];
+	$m['fireResizedImpl'] = function() {
+		var $iter3_idx,$iter3_nextval,$iter3_type,listener,$iter3_iter,$iter3_array;
+		$iter3_iter = $m['resizeListeners'];
+		$iter3_nextval=$p['__iter_prepare']($iter3_iter,false);
+		while (typeof($p['__wrapped_next']($iter3_nextval).$nextval) != 'undefined') {
+			listener = $iter3_nextval.$nextval;
+			listener['onWindowResized']($m['getClientWidth'](), $m['getClientHeight']());
+		}
+		return null;
+	};
+	$m['fireResizedImpl'].__name__ = 'fireResizedImpl';
+
+	$m['fireResizedImpl'].__bind_type__ = 0;
+	$m['fireResizedImpl'].__args__ = [null,null];
 	$m['init'] = function() {
 
-		$m['eventbits'].__setitem__(262144, $p['tuple'](['mousescroll', $p['list'](['mousewheel'])]));
+		$m['sys'] = $p['___import___']('sys', 'pyjamas');
+		$m['init_listeners']();
+
+    $wnd.__pygwt_initHandlers(
+        function() {
+            $m['onResize']();
+        },
+        function() {
+            return $m['onClosing']();
+        },
+        function() {
+            $m['onClosed']();
+            /*$wnd.onresize = null;
+            $wnd.onbeforeclose = null;
+            $wnd.onclose = null;*/
+        }
+    );
+    
+		$m['setOnError']($m['onError']);
 		return null;
 	};
 	$m['init'].__name__ = 'init';
@@ -13413,12 +13379,15 @@ $pyjs.loaded_modules['pyjamas.ui.Event'] = function (__mod_name__) {
 	$m['init'].__args__ = [null,null];
 	$m['init']();
 	return this;
-}; /* end pyjamas.ui.Event */
+}; /* end pyjamas.Window */
 
 
-/* end module: pyjamas.ui.Event */
+/* end module: pyjamas.Window */
 
 
+/*
+PYJS_DEPS: ['pyjamas.Location', 'pyjamas', 'sys']
+*/
 
 --></script>
 <script type="text/javascript"><!--
@@ -13496,7 +13465,7 @@ $pyjs.loaded_modules['pyjamas.Location'] = function (__mod_name__) {
 				var self = arguments[0];
 			}
 
-			return unescape(self.location.hash);
+			return $p['getattr']($p['getattr'](self, 'location'), 'hash');
 		}
 	, 1, [null,null,['self']]);
 		$cls_definition['getHash'] = $method;
@@ -13605,8 +13574,8 @@ $pyjs.loaded_modules['pyjamas.Location'] = function (__mod_name__) {
 			} else {
 				var self = arguments[0];
 			}
-
-			return unescape(self.location.search);
+			var $add6,$add5;
+			return $p['__op_add']($add5='',$add6=$p['getattr']($p['getattr'](self, 'location'), 'search'));
 		}
 	, 1, [null,null,['self']]);
 		$cls_definition['getSearch'] = $method;
@@ -13731,6 +13700,1912 @@ $pyjs.loaded_modules['pyjamas.Location'] = function (__mod_name__) {
 /* end module: pyjamas.Location */
 
 
+
+--></script>
+<script type="text/javascript"><!--
+/* start module: pyjamas.DOM */
+$pyjs.loaded_modules['pyjamas.DOM'] = function (__mod_name__) {
+	if($pyjs.loaded_modules['pyjamas.DOM'].__was_initialized__) return $pyjs.loaded_modules['pyjamas.DOM'];
+	if(typeof $pyjs.loaded_modules['pyjamas'] == 'undefined' || !$pyjs.loaded_modules['pyjamas'].__was_initialized__) $p['___import___']('pyjamas', null);
+	var $m = $pyjs.loaded_modules["pyjamas.DOM"];
+	$m.__repr__ = function() { return "<module: pyjamas.DOM>"; };
+	$m.__was_initialized__ = true;
+	if ((__mod_name__ === null) || (typeof __mod_name__ == 'undefined')) __mod_name__ = 'pyjamas.DOM';
+	$m.__name__ = __mod_name__;
+	$pyjs.loaded_modules['pyjamas']['DOM'] = $pyjs.loaded_modules['pyjamas.DOM'];
+
+
+	$m['pyjd'] = $p['___import___']('pyjd', 'pyjamas');
+	if ($p['bool']($p['getattr']($m['pyjd'], 'is_desktop'))) {
+		$m['onResize'] = $p['___import___']('pyjamas.Window.onResize', 'pyjamas', null, false);
+		$m['onClosing'] = $p['___import___']('pyjamas.Window.onClosing', 'pyjamas', null, false);
+		$m['onClosed'] = $p['___import___']('pyjamas.Window.onClosed', 'pyjamas', null, false);
+		$m['currentEvent'] = null;
+	}
+	$m['sCaptureElem'] = null;
+	$m['sEventPreviewStack'] = $p['list']([]);
+	$m['listeners'] = $p['dict']([]);
+	$m['Event'] = $p['___import___']('pyjamas.ui.Event', 'pyjamas', null, false);
+	$m['ONBLUR'] = $p['___import___']('pyjamas.ui.Event.ONBLUR', 'pyjamas', null, false);
+	$m['ONCHANGE'] = $p['___import___']('pyjamas.ui.Event.ONCHANGE', 'pyjamas', null, false);
+	$m['ONCLICK'] = $p['___import___']('pyjamas.ui.Event.ONCLICK', 'pyjamas', null, false);
+	$m['ONCONTEXTMENU'] = $p['___import___']('pyjamas.ui.Event.ONCONTEXTMENU', 'pyjamas', null, false);
+	$m['ONDBLCLICK'] = $p['___import___']('pyjamas.ui.Event.ONDBLCLICK', 'pyjamas', null, false);
+	$m['ONERROR'] = $p['___import___']('pyjamas.ui.Event.ONERROR', 'pyjamas', null, false);
+	$m['ONFOCUS'] = $p['___import___']('pyjamas.ui.Event.ONFOCUS', 'pyjamas', null, false);
+	$m['ONKEYDOWN'] = $p['___import___']('pyjamas.ui.Event.ONKEYDOWN', 'pyjamas', null, false);
+	$m['ONKEYPRESS'] = $p['___import___']('pyjamas.ui.Event.ONKEYPRESS', 'pyjamas', null, false);
+	$m['ONKEYUP'] = $p['___import___']('pyjamas.ui.Event.ONKEYUP', 'pyjamas', null, false);
+	$m['ONLOAD'] = $p['___import___']('pyjamas.ui.Event.ONLOAD', 'pyjamas', null, false);
+	$m['ONLOSECAPTURE'] = $p['___import___']('pyjamas.ui.Event.ONLOSECAPTURE', 'pyjamas', null, false);
+	$m['ONMOUSEDOWN'] = $p['___import___']('pyjamas.ui.Event.ONMOUSEDOWN', 'pyjamas', null, false);
+	$m['ONMOUSEMOVE'] = $p['___import___']('pyjamas.ui.Event.ONMOUSEMOVE', 'pyjamas', null, false);
+	$m['ONMOUSEOUT'] = $p['___import___']('pyjamas.ui.Event.ONMOUSEOUT', 'pyjamas', null, false);
+	$m['ONMOUSEOVER'] = $p['___import___']('pyjamas.ui.Event.ONMOUSEOVER', 'pyjamas', null, false);
+	$m['ONMOUSEUP'] = $p['___import___']('pyjamas.ui.Event.ONMOUSEUP', 'pyjamas', null, false);
+	$m['ONSCROLL'] = $p['___import___']('pyjamas.ui.Event.ONSCROLL', 'pyjamas', null, false);
+	$m['ONINPUT'] = $p['___import___']('pyjamas.ui.Event.ONINPUT', 'pyjamas', null, false);
+	$m['get_listener'] = function(item) {
+		var ret;
+		if ($p['bool']((item === null))) {
+			return null;
+		}
+		if ($p['bool']($p['hasattr'](item, '__instance__'))) {
+			ret = $m['listeners']['get']($p['getattr'](item, '__instance__'));
+		}
+		else {
+			ret = $m['listeners']['get']($p['hash'](item));
+		}
+		return ret;
+	};
+	$m['get_listener'].__name__ = 'get_listener';
+
+	$m['get_listener'].__bind_type__ = 0;
+	$m['get_listener'].__args__ = [null,null,['item']];
+	$m['set_listener'] = function(item, listener) {
+
+		if ($p['bool']($p['hasattr'](item, '__instance__'))) {
+			$m['listeners'].__setitem__($p['getattr'](item, '__instance__'), listener);
+		}
+		else if ($p['bool']((listener === null))) {
+			$m['listeners']['pop']($p['hash'](item));
+		}
+		else {
+			$m['listeners'].__setitem__($p['hash'](item), listener);
+		}
+		return null;
+	};
+	$m['set_listener'].__name__ = 'set_listener';
+
+	$m['set_listener'].__bind_type__ = 0;
+	$m['set_listener'].__args__ = [null,null,['item'],['listener']];
+	$m['hack_timer_workaround_bug_button'] = null;
+	$m['init'] = function() {
+		var mousewheel;
+		mousewheel = $p['getattr']($m['Event'], 'eventbits').__getitem__($p['getattr']($m['Event'], 'eventmap').__getitem__('mousewheel')).__getitem__(0);
+
+    // Set up capture event dispatchers.
+    $wnd.__dispatchCapturedMouseEvent = function(evt) {
+        if ($wnd.__dispatchCapturedEvent(evt)) {
+            var cap = $m.getCaptureElement();
+            if (cap && cap.__listener) {
+                $m.dispatchEvent(evt, cap, cap.__listener);
+                evt.stopPropagation();
+            }
+        }
+    };
+
+    $wnd.__dispatchCapturedEvent = function(evt) {
+        if (!$m.previewEvent(evt).valueOf()) {
+            evt.stopPropagation();
+            evt.preventDefault();
+            return false;
+        }
+
+        return true;
+        };
+
+    $wnd.addEventListener(
+        'mouseout',
+        function(evt){
+            var cap = $m.getCaptureElement();
+            if (cap) {
+                if (!evt.relatedTarget) {
+                    // When the mouse leaves the window during capture,
+                    // release capture and synthesize an 'onlosecapture' event.
+                    $m['sCaptureElem'] = null;
+                    if (cap.__listener) {
+                        var lcEvent = $doc.createEvent('UIEvent');
+                        lcEvent.initUIEvent('losecapture', false, false,
+                                             $wnd, 0);
+                        $m.dispatchEvent(lcEvent, cap, cap.__listener);
+                    }
+                }
+            }
+        },
+        true
+    );
+
+    var dcme = $wnd.__dispatchCapturedMouseEvent;
+    var dce = $wnd.__dispatchCapturedEvent;
+
+    $wnd.addEventListener('click', dcme, true);
+    $wnd.addEventListener('dblclick', dcme, true);
+    $wnd.addEventListener('mousedown', dcme, true);
+    $wnd.addEventListener('mouseup', dcme, true);
+    $wnd.addEventListener('mousemove', dcme, true);
+    $wnd.addEventListener('keydown', dce, true);
+    $wnd.addEventListener('keyup', dce, true);
+    $wnd.addEventListener('keypress', dce, true);
+    
+    $wnd.__dispatchEvent = function(evt) {
+    
+        var listener, curElem = this;
+        
+        while (curElem && !(listener = curElem.__listener)) {
+            curElem = curElem.parentNode;
+        }
+        if (curElem && curElem.nodeType != 1) {
+            curElem = null;
+        }
+    
+        if (listener) {
+            $m.dispatchEvent(evt, curElem, listener);
+        }
+    };
+    var dcme = $wnd.__dispatchCapturedMouseEvent;
+    $wnd.addEventListener(mousewheel, dcme, true);
+    
+	};
+	$m['init'].__name__ = 'init';
+
+	$m['init'].__bind_type__ = 0;
+	$m['init'].__args__ = [null,null];
+	$m['_init_testing'] = function() {
+		var body;
+		body = $doc['getElementsByTagName']('body').__getitem__(0);
+		$m.mf['_addEventListener'](body, 'click', (typeof cb == "undefined"?$m.cb:cb));
+		$m.mf['_addEventListener'](body, 'change', (typeof cb == "undefined"?$m.cb:cb));
+		$m.mf['_addEventListener'](body, 'mouseout', (typeof cb == "undefined"?$m.cb:cb));
+		$m.mf['_addEventListener'](body, 'mousedown', (typeof cb == "undefined"?$m.cb:cb));
+		$m.mf['_addEventListener'](body, 'mouseup', (typeof cb == "undefined"?$m.cb:cb));
+		$m.mf['_addEventListener'](body, 'mousemove', (typeof cb == "undefined"?$m.cb:cb));
+		$m.mf['_addEventListener'](body, 'resize', (typeof cb == "undefined"?$m.cb:cb));
+		$m.mf['_addEventListener'](body, 'keyup', (typeof cb == "undefined"?$m.cb:cb));
+		$m.mf['_addEventListener'](body, 'keydown', (typeof cb == "undefined"?$m.cb:cb));
+		$m.mf['_addEventListener'](body, 'keypress', (typeof cb == "undefined"?$m.cb:cb));
+		return null;
+	};
+	$m['_init_testing'].__name__ = '_init_testing';
+
+	$m['_init_testing'].__bind_type__ = 0;
+	$m['_init_testing'].__args__ = [null,null];
+	$m['_dispatchWindowEvent'] = function(sender, evt, useCap) {
+
+ 		return null;
+	};
+	$m['_dispatchWindowEvent'].__name__ = '_dispatchWindowEvent';
+
+	$m['_dispatchWindowEvent'].__bind_type__ = 0;
+	$m['_dispatchWindowEvent'].__args__ = [null,null,['sender'],['evt'],['useCap']];
+	$m['_dispatchEvent'] = function(sender, evt, useCap) {
+		var curElem,$and3,$and1,$and2,cap,$and4,$and5,$and6,listener,$pyjs_try_err;
+		if ($p['bool']((evt === null))) {
+			evt = $p['getattr']($wnd, 'event');
+		}
+		else {
+			try {
+				sender = $m.get_main_frame()['gobject_wrap'](sender);
+				evt = $m.get_main_frame()['gobject_wrap'](evt);
+			} catch($pyjs_try_err) {
+				var $pyjs_try_err_name = (typeof $pyjs_try_err.__name__ == 'undefined' ? $pyjs_try_err.name : $pyjs_try_err.__name__ );
+				$pyjs.__last_exception__ = {error: $pyjs_try_err, module: $m};
+				if (true) {
+				}
+			}
+		}
+		listener = null;
+		curElem = sender;
+		cap = (typeof getCaptureElement == "undefined"?$m.getCaptureElement:getCaptureElement)();
+		listener = $m['get_listener'](cap);
+		if ($p['bool'](($p['bool']($and1=cap)?(listener !== null):$and1))) {
+			(typeof dispatchEvent == "undefined"?$m.dispatchEvent:dispatchEvent)(evt, cap, listener);
+			evt['stopPropagation']();
+			return null;
+		}
+		while ($p['bool'](($p['bool']($and3=curElem)?($m['get_listener'](curElem) === null):$and3))) {
+			curElem = (typeof getParent == "undefined"?$m.getParent:getParent)(curElem);
+		}
+		if ($p['bool'](($p['bool']($and5=curElem)?!$p['op_eq']((typeof getNodeType == "undefined"?$m.getNodeType:getNodeType)(curElem), 1):$and5))) {
+			curElem = null;
+		}
+		listener = $m['get_listener'](curElem);
+		if ($p['bool']((listener !== null))) {
+			(typeof dispatchEvent == "undefined"?$m.dispatchEvent:dispatchEvent)(evt, curElem, listener);
+		}
+		return null;
+	};
+	$m['_dispatchEvent'].__name__ = '_dispatchEvent';
+
+	$m['_dispatchEvent'].__bind_type__ = 0;
+	$m['_dispatchEvent'].__args__ = [null,null,['sender'],['evt'],['useCap']];
+	$m['_dispatchCapturedMouseEvent'] = function(evt) {
+		var listener,$and8,cap,$and7;
+		if ($p['bool'](!$p['bool']((typeof _dispatchCapturedEvent == "undefined"?$m._dispatchCapturedEvent:_dispatchCapturedEvent)(evt)))) {
+			return null;
+		}
+		cap = (typeof getCaptureElement == "undefined"?$m.getCaptureElement:getCaptureElement)();
+		listener = $m['get_listener'](cap);
+		if ($p['bool'](($p['bool']($and7=cap)?(listener !== null):$and7))) {
+			(typeof dispatchEvent == "undefined"?$m.dispatchEvent:dispatchEvent)(evt, cap, listener);
+			evt['stopPropagation']();
+		}
+		return null;
+	};
+	$m['_dispatchCapturedMouseEvent'].__name__ = '_dispatchCapturedMouseEvent';
+
+	$m['_dispatchCapturedMouseEvent'].__bind_type__ = 0;
+	$m['_dispatchCapturedMouseEvent'].__args__ = [null,null,['evt']];
+	$m['_dispatchCapturedMouseoutEvent'] = function(evt) {
+		var listener,lcEvent,cap;
+		cap = (typeof getCaptureElement == "undefined"?$m.getCaptureElement:getCaptureElement)();
+		if ($p['bool']((cap === null))) {
+			return null;
+		}
+		if ($p['bool']((typeof eventGetToElement == "undefined"?$m.eventGetToElement:eventGetToElement)(evt))) {
+			return null;
+		}
+		(typeof setCapture == "undefined"?$m.setCapture:setCapture)(null);
+		listener = $m['get_listener'](cap);
+		if ($p['bool']((listener === null))) {
+			return null;
+		}
+		lcEvent = $doc['createEvent']('UIEvent');
+		lcEvent['initUIEvent']('losecapture', false, false, $wnd, 0);
+		(typeof dispatchEvent == "undefined"?$m.dispatchEvent:dispatchEvent)(lcEvent, cap, listener);
+		return null;
+	};
+	$m['_dispatchCapturedMouseoutEvent'].__name__ = '_dispatchCapturedMouseoutEvent';
+
+	$m['_dispatchCapturedMouseoutEvent'].__bind_type__ = 0;
+	$m['_dispatchCapturedMouseoutEvent'].__args__ = [null,null,['evt']];
+	$m['browser_event_cb'] = function(view, event, from_window) {
+		var $or4,$or1,$or3,$or2,$pyjs_try_err,et;
+		if ($p['bool']((event === null))) {
+			event = $p['getattr']($wnd, 'event');
+		}
+		else {
+			try {
+				event = $m.get_main_frame()['gobject_wrap'](event);
+			} catch($pyjs_try_err) {
+				var $pyjs_try_err_name = (typeof $pyjs_try_err.__name__ == 'undefined' ? $pyjs_try_err.name : $pyjs_try_err.__name__ );
+				$pyjs.__last_exception__ = {error: $pyjs_try_err, module: $m};
+				if (true) {
+				}
+			}
+		}
+		et = (typeof eventGetType == "undefined"?$m.eventGetType:eventGetType)(event);
+		if ($p['bool']($p['op_eq'](et, 'resize'))) {
+			$m['onResize']();
+			return null;
+		}
+		if ($p['bool']($p['op_eq'](et, 'mouseout'))) {
+			$m['_dispatchCapturedMouseoutEvent'](event);
+		}
+		if ($p['bool'](($p['bool']($or1=$p['op_eq'](et, 'keyup'))?$or1:($p['bool']($or2=$p['op_eq'](et, 'keydown'))?$or2:($p['bool']($or3=$p['op_eq'](et, 'keypress'))?$or3:$p['op_eq'](et, 'change')))))) {
+			return (typeof _dispatchCapturedEvent == "undefined"?$m._dispatchCapturedEvent:_dispatchCapturedEvent)(event);
+		}
+		else {
+			return $m['_dispatchCapturedMouseEvent'](event);
+		}
+		return null;
+	};
+	$m['browser_event_cb'].__name__ = 'browser_event_cb';
+
+	$m['browser_event_cb'].__bind_type__ = 0;
+	$m['browser_event_cb'].__args__ = [null,null,['view'],['event'],['from_window']];
+	$m['_dispatchCapturedEvent'] = function(event) {
+
+		if ($p['bool'](!$p['bool']((typeof previewEvent == "undefined"?$m.previewEvent:previewEvent)(event)))) {
+			event['stopPropagation']();
+			(typeof eventPreventDefault == "undefined"?$m.eventPreventDefault:eventPreventDefault)(event);
+			return false;
+		}
+		return true;
+	};
+	$m['_dispatchCapturedEvent'].__name__ = '_dispatchCapturedEvent';
+
+	$m['_dispatchCapturedEvent'].__bind_type__ = 0;
+	$m['_dispatchCapturedEvent'].__args__ = [null,null,['event']];
+	$m['addEventPreview'] = function(preview) {
+
+		$m['sEventPreviewStack']['append'](preview);
+		return null;
+	};
+	$m['addEventPreview'].__name__ = 'addEventPreview';
+
+	$m['addEventPreview'].__bind_type__ = 0;
+	$m['addEventPreview'].__args__ = [null,null,['preview']];
+	$m['appendChild'] = function(parent, child) {
+
+		parent['appendChild'](child);
+		return null;
+	};
+	$m['appendChild'].__name__ = 'appendChild';
+
+	$m['appendChild'].__bind_type__ = 0;
+	$m['appendChild'].__args__ = [null,null,['parent'],['child']];
+	$m['removeChild'] = function(parent, child) {
+
+		parent['removeChild'](child);
+		return null;
+	};
+	$m['removeChild'].__name__ = 'removeChild';
+
+	$m['removeChild'].__bind_type__ = 0;
+	$m['removeChild'].__args__ = [null,null,['parent'],['child']];
+	$m['replaceChild'] = function(parent, newChild, oldChild) {
+
+		parent['replaceChild'](newChild, oldChild);
+		return null;
+	};
+	$m['replaceChild'].__name__ = 'replaceChild';
+
+	$m['replaceChild'].__bind_type__ = 0;
+	$m['replaceChild'].__args__ = [null,null,['parent'],['newChild'],['oldChild']];
+	$m['buttonClick'] = function(button) {
+
+
+        var doc = button.ownerDocument;
+        if (doc != null) {
+            var evt = doc.createEvent('MouseEvents');
+            evt.initMouseEvent('click', true, true, null, 0, 0,
+                                0, 0, 0, false, false, false, false, 0, null);
+            button.dispatchEvent(evt);
+        }
+    
+	};
+	$m['buttonClick'].__name__ = 'buttonClick';
+
+	$m['buttonClick'].__bind_type__ = 0;
+	$m['buttonClick'].__args__ = [null,null,['button']];
+	$m['compare'] = function(elem1, elem2) {
+
+
+    if (!elem1 && !elem2) {
+        return true;
+    } else if (!elem1 || !elem2) {
+        return false;
+    }
+	if (!elem1.isSameNode) {
+		return (elem1 == elem2);
+	}
+    return (elem1.isSameNode(elem2));
+    
+	};
+	$m['compare'].__name__ = 'compare';
+
+	$m['compare'].__bind_type__ = 0;
+	$m['compare'].__args__ = [null,null,['elem1'],['elem2']];
+	$m['createAnchor'] = function() {
+
+		return (typeof createElement == "undefined"?$m.createElement:createElement)('A');
+	};
+	$m['createAnchor'].__name__ = 'createAnchor';
+
+	$m['createAnchor'].__bind_type__ = 0;
+	$m['createAnchor'].__args__ = [null,null];
+	$m['createButton'] = function() {
+
+		return (typeof createElement == "undefined"?$m.createElement:createElement)('button');
+	};
+	$m['createButton'].__name__ = 'createButton';
+
+	$m['createButton'].__bind_type__ = 0;
+	$m['createButton'].__args__ = [null,null];
+	$m['createCol'] = function() {
+
+		return (typeof createElement == "undefined"?$m.createElement:createElement)('col');
+	};
+	$m['createCol'].__name__ = 'createCol';
+
+	$m['createCol'].__bind_type__ = 0;
+	$m['createCol'].__args__ = [null,null];
+	$m['createDiv'] = function() {
+
+		return (typeof createElement == "undefined"?$m.createElement:createElement)('div');
+	};
+	$m['createDiv'].__name__ = 'createDiv';
+
+	$m['createDiv'].__bind_type__ = 0;
+	$m['createDiv'].__args__ = [null,null];
+	$m['createElement'] = function(tag) {
+
+
+    return $doc.createElement(tag);
+    
+	};
+	$m['createElement'].__name__ = 'createElement';
+
+	$m['createElement'].__bind_type__ = 0;
+	$m['createElement'].__args__ = [null,null,['tag']];
+	$m['createFieldSet'] = function() {
+
+		return $m['createElement']('fieldset');
+	};
+	$m['createFieldSet'].__name__ = 'createFieldSet';
+
+	$m['createFieldSet'].__bind_type__ = 0;
+	$m['createFieldSet'].__args__ = [null,null];
+	$m['createForm'] = function() {
+
+		return $m['createElement']('form');
+	};
+	$m['createForm'].__name__ = 'createForm';
+
+	$m['createForm'].__bind_type__ = 0;
+	$m['createForm'].__args__ = [null,null];
+	$m['createIFrame'] = function() {
+
+		return $m['createElement']('iframe');
+	};
+	$m['createIFrame'].__name__ = 'createIFrame';
+
+	$m['createIFrame'].__bind_type__ = 0;
+	$m['createIFrame'].__args__ = [null,null];
+	$m['createImg'] = function() {
+
+		return $m['createElement']('img');
+	};
+	$m['createImg'].__name__ = 'createImg';
+
+	$m['createImg'].__bind_type__ = 0;
+	$m['createImg'].__args__ = [null,null];
+	$m['createInputCheck'] = function() {
+
+		return (typeof createInputElement == "undefined"?$m.createInputElement:createInputElement)('checkbox');
+	};
+	$m['createInputCheck'].__name__ = 'createInputCheck';
+
+	$m['createInputCheck'].__bind_type__ = 0;
+	$m['createInputCheck'].__args__ = [null,null];
+	$m['createInputElement'] = function(elementType) {
+
+
+    var e = $doc.createElement("INPUT");
+    e.type = elementType;
+    return e;
+    
+	};
+	$m['createInputElement'].__name__ = 'createInputElement';
+
+	$m['createInputElement'].__bind_type__ = 0;
+	$m['createInputElement'].__args__ = [null,null,['elementType']];
+	$m['createInputPassword'] = function() {
+
+		return $m['createInputElement']('password');
+	};
+	$m['createInputPassword'].__name__ = 'createInputPassword';
+
+	$m['createInputPassword'].__bind_type__ = 0;
+	$m['createInputPassword'].__args__ = [null,null];
+	$m['createInputRadio'] = function(group) {
+
+
+    var elem = $doc.createElement("INPUT");
+    elem.type = 'radio';
+    elem.name = group;
+    return elem;
+    
+	};
+	$m['createInputRadio'].__name__ = 'createInputRadio';
+
+	$m['createInputRadio'].__bind_type__ = 0;
+	$m['createInputRadio'].__args__ = [null,null,['group']];
+	$m['createInputText'] = function() {
+
+		return $m['createInputElement']('text');
+	};
+	$m['createInputText'].__name__ = 'createInputText';
+
+	$m['createInputText'].__bind_type__ = 0;
+	$m['createInputText'].__args__ = [null,null];
+	$m['createLabel'] = function() {
+
+		return $m['createElement']('label');
+	};
+	$m['createLabel'].__name__ = 'createLabel';
+
+	$m['createLabel'].__bind_type__ = 0;
+	$m['createLabel'].__args__ = [null,null];
+	$m['createLegend'] = function() {
+
+		return $m['createElement']('legend');
+	};
+	$m['createLegend'].__name__ = 'createLegend';
+
+	$m['createLegend'].__bind_type__ = 0;
+	$m['createLegend'].__args__ = [null,null];
+	$m['createOptions'] = function() {
+
+		return $m['createElement']('options');
+	};
+	$m['createOptions'].__name__ = 'createOptions';
+
+	$m['createOptions'].__bind_type__ = 0;
+	$m['createOptions'].__args__ = [null,null];
+	$m['createSelect'] = function() {
+
+		return $m['createElement']('select');
+	};
+	$m['createSelect'].__name__ = 'createSelect';
+
+	$m['createSelect'].__bind_type__ = 0;
+	$m['createSelect'].__args__ = [null,null];
+	$m['createSpan'] = function() {
+
+		return $m['createElement']('span');
+	};
+	$m['createSpan'].__name__ = 'createSpan';
+
+	$m['createSpan'].__bind_type__ = 0;
+	$m['createSpan'].__args__ = [null,null];
+	$m['createTable'] = function() {
+
+		return $m['createElement']('table');
+	};
+	$m['createTable'].__name__ = 'createTable';
+
+	$m['createTable'].__bind_type__ = 0;
+	$m['createTable'].__args__ = [null,null];
+	$m['createTBody'] = function() {
+
+		return $m['createElement']('tbody');
+	};
+	$m['createTBody'].__name__ = 'createTBody';
+
+	$m['createTBody'].__bind_type__ = 0;
+	$m['createTBody'].__args__ = [null,null];
+	$m['createTD'] = function() {
+
+		return $m['createElement']('td');
+	};
+	$m['createTD'].__name__ = 'createTD';
+
+	$m['createTD'].__bind_type__ = 0;
+	$m['createTD'].__args__ = [null,null];
+	$m['createTextArea'] = function() {
+
+		return $m['createElement']('textarea');
+	};
+	$m['createTextArea'].__name__ = 'createTextArea';
+
+	$m['createTextArea'].__bind_type__ = 0;
+	$m['createTextArea'].__args__ = [null,null];
+	$m['createTH'] = function() {
+
+		return $m['createElement']('th');
+	};
+	$m['createTH'].__name__ = 'createTH';
+
+	$m['createTH'].__bind_type__ = 0;
+	$m['createTH'].__args__ = [null,null];
+	$m['createTR'] = function() {
+
+		return $m['createElement']('tr');
+	};
+	$m['createTR'].__name__ = 'createTR';
+
+	$m['createTR'].__bind_type__ = 0;
+	$m['createTR'].__args__ = [null,null];
+	$m['eventStopPropagation'] = function(evt) {
+
+		evt['stopPropagation']();
+		return null;
+	};
+	$m['eventStopPropagation'].__name__ = 'eventStopPropagation';
+
+	$m['eventStopPropagation'].__bind_type__ = 0;
+	$m['eventStopPropagation'].__args__ = [null,null,['evt']];
+	$m['eventCancelBubble'] = function(evt, cancel) {
+
+		evt.cancelBubble = cancel;
+		return null;
+	};
+	$m['eventCancelBubble'].__name__ = 'eventCancelBubble';
+
+	$m['eventCancelBubble'].__bind_type__ = 0;
+	$m['eventCancelBubble'].__args__ = [null,null,['evt'],['cancel']];
+	$m['eventGetAltKey'] = function(evt) {
+
+		return $p['getattr'](evt, 'altKey');
+	};
+	$m['eventGetAltKey'].__name__ = 'eventGetAltKey';
+
+	$m['eventGetAltKey'].__bind_type__ = 0;
+	$m['eventGetAltKey'].__args__ = [null,null,['evt']];
+	$m['eventGetButton'] = function(evt) {
+
+
+    var button = evt.which;
+    if(button == 2) {
+        return 4;
+    } else if (button == 3) {
+        return 2;
+    } else {
+        return button || 0;
+    }
+    
+	};
+	$m['eventGetButton'].__name__ = 'eventGetButton';
+
+	$m['eventGetButton'].__bind_type__ = 0;
+	$m['eventGetButton'].__args__ = [null,null,['evt']];
+	$m['eventGetClientX'] = function(evt) {
+
+		return $p['getattr'](evt, 'clientX');
+	};
+	$m['eventGetClientX'].__name__ = 'eventGetClientX';
+
+	$m['eventGetClientX'].__bind_type__ = 0;
+	$m['eventGetClientX'].__args__ = [null,null,['evt']];
+	$m['eventGetClientY'] = function(evt) {
+
+		return $p['getattr'](evt, 'clientY');
+	};
+	$m['eventGetClientY'].__name__ = 'eventGetClientY';
+
+	$m['eventGetClientY'].__bind_type__ = 0;
+	$m['eventGetClientY'].__args__ = [null,null,['evt']];
+	$m['eventGetCtrlKey'] = function(evt) {
+
+		return $p['getattr'](evt, 'ctrlKey');
+	};
+	$m['eventGetCtrlKey'].__name__ = 'eventGetCtrlKey';
+
+	$m['eventGetCtrlKey'].__bind_type__ = 0;
+	$m['eventGetCtrlKey'].__args__ = [null,null,['evt']];
+	$m['eventGetFromElement'] = function(evt) {
+
+
+    return evt.fromElement ? evt.fromElement : null;
+    
+	};
+	$m['eventGetFromElement'].__name__ = 'eventGetFromElement';
+
+	$m['eventGetFromElement'].__bind_type__ = 0;
+	$m['eventGetFromElement'].__args__ = [null,null,['evt']];
+	$m['eventGetKeyCode'] = function(evt) {
+
+
+    return evt.which ? evt.which :
+            (evt.keyCode ? evt.keyCode : 0);
+    
+	};
+	$m['eventGetKeyCode'].__name__ = 'eventGetKeyCode';
+
+	$m['eventGetKeyCode'].__bind_type__ = 0;
+	$m['eventGetKeyCode'].__args__ = [null,null,['evt']];
+	$m['eventGetRepeat'] = function(evt) {
+
+		return $p['getattr'](evt, 'repeat');
+	};
+	$m['eventGetRepeat'].__name__ = 'eventGetRepeat';
+
+	$m['eventGetRepeat'].__bind_type__ = 0;
+	$m['eventGetRepeat'].__args__ = [null,null,['evt']];
+	$m['eventGetScreenX'] = function(evt) {
+
+		return $p['getattr'](evt, 'screenX');
+	};
+	$m['eventGetScreenX'].__name__ = 'eventGetScreenX';
+
+	$m['eventGetScreenX'].__bind_type__ = 0;
+	$m['eventGetScreenX'].__args__ = [null,null,['evt']];
+	$m['eventGetScreenY'] = function(evt) {
+
+		return $p['getattr'](evt, 'screenY');
+	};
+	$m['eventGetScreenY'].__name__ = 'eventGetScreenY';
+
+	$m['eventGetScreenY'].__bind_type__ = 0;
+	$m['eventGetScreenY'].__args__ = [null,null,['evt']];
+	$m['eventGetShiftKey'] = function(evt) {
+
+		return $p['getattr'](evt, 'shiftKey');
+	};
+	$m['eventGetShiftKey'].__name__ = 'eventGetShiftKey';
+
+	$m['eventGetShiftKey'].__bind_type__ = 0;
+	$m['eventGetShiftKey'].__args__ = [null,null,['evt']];
+	$m['eventGetCurrentTarget'] = function(event) {
+
+		return $p['getattr'](event, 'currentTarget');
+	};
+	$m['eventGetCurrentTarget'].__name__ = 'eventGetCurrentTarget';
+
+	$m['eventGetCurrentTarget'].__bind_type__ = 0;
+	$m['eventGetCurrentTarget'].__args__ = [null,null,['event']];
+	$m['eventGetTarget'] = function(event) {
+
+
+    return event.target ? event.target : null;
+    
+	};
+	$m['eventGetTarget'].__name__ = 'eventGetTarget';
+
+	$m['eventGetTarget'].__bind_type__ = 0;
+	$m['eventGetTarget'].__args__ = [null,null,['event']];
+	$m['eventGetToElement'] = function(evt) {
+
+
+    return evt.relatedTarget ? evt.relatedTarget : null;
+    
+	};
+	$m['eventGetToElement'].__name__ = 'eventGetToElement';
+
+	$m['eventGetToElement'].__bind_type__ = 0;
+	$m['eventGetToElement'].__args__ = [null,null,['evt']];
+	$m['eventGetType'] = function(event) {
+		var etype;
+		etype = $p['getattr'](event, 'type');
+		if ($p['bool']($p['op_eq'](etype, 'DOMMouseScroll'))) {
+			return 'mousewheel';
+		}
+		return etype;
+	};
+	$m['eventGetType'].__name__ = 'eventGetType';
+
+	$m['eventGetType'].__bind_type__ = 0;
+	$m['eventGetType'].__args__ = [null,null,['event']];
+	$m['eventGetTypeInt'] = function(event) {
+
+		return $m['Event']['eventmap']['get']($p['str']($p['getattr'](event, 'type')), 0);
+	};
+	$m['eventGetTypeInt'].__name__ = 'eventGetTypeInt';
+
+	$m['eventGetTypeInt'].__bind_type__ = 0;
+	$m['eventGetTypeInt'].__args__ = [null,null,['event']];
+	$m['eventGetTypeString'] = function(event) {
+
+		return $m['eventGetType'](event);
+	};
+	$m['eventGetTypeString'].__name__ = 'eventGetTypeString';
+
+	$m['eventGetTypeString'].__bind_type__ = 0;
+	$m['eventGetTypeString'].__args__ = [null,null,['event']];
+	$m['eventPreventDefault'] = function(evt) {
+
+		evt['preventDefault']();
+		return null;
+	};
+	$m['eventPreventDefault'].__name__ = 'eventPreventDefault';
+
+	$m['eventPreventDefault'].__bind_type__ = 0;
+	$m['eventPreventDefault'].__args__ = [null,null,['evt']];
+	$m['eventSetKeyCode'] = function(evt, key) {
+
+		evt.keyCode = key;
+		return null;
+	};
+	$m['eventSetKeyCode'].__name__ = 'eventSetKeyCode';
+
+	$m['eventSetKeyCode'].__bind_type__ = 0;
+	$m['eventSetKeyCode'].__args__ = [null,null,['evt'],['key']];
+	$m['eventToString'] = function(evt) {
+
+
+    return evt.toString();
+    
+	};
+	$m['eventToString'].__name__ = 'eventToString';
+
+	$m['eventToString'].__bind_type__ = 0;
+	$m['eventToString'].__args__ = [null,null,['evt']];
+	$m['iframeGetSrc'] = function(elem) {
+
+		return $p['getattr'](elem, 'src');
+	};
+	$m['iframeGetSrc'].__name__ = 'iframeGetSrc';
+
+	$m['iframeGetSrc'].__bind_type__ = 0;
+	$m['iframeGetSrc'].__args__ = [null,null,['elem']];
+	$m['getAbsoluteLeft'] = function(elem) {
+
+
+    // Firefox 3 expects getBoundingClientRect
+    // getBoundingClientRect can be float: 73.1 instead of 74, see
+    // gwt's workaround at user/src/com/google/gwt/dom/client/DOMImplMozilla.java:47
+    // Please note, their implementation has 1px offset.
+    if (   typeof elem.getBoundingClientRect == 'function'  ) {
+        var left = Math.ceil(elem.getBoundingClientRect().left);
+        
+        return left  + $doc.body.scrollLeft + $doc.documentElement.scrollLeft;
+    }
+    // Older Firefox can use getBoxObjectFor
+    else {
+        var left = $doc.getBoxObjectFor(elem).x;
+        var parent = elem.parentNode;
+        while (parent) {
+            if (parent.scrollLeft > 0) {
+                left = left -  parent.scrollLeft;
+            }
+            parent = parent.parentNode;
+        }
+        
+        return left + $doc.body.scrollLeft + $doc.documentElement.scrollLeft;
+    }
+    
+	};
+	$m['getAbsoluteLeft'].__name__ = 'getAbsoluteLeft';
+
+	$m['getAbsoluteLeft'].__bind_type__ = 0;
+	$m['getAbsoluteLeft'].__args__ = [null,null,['elem']];
+	$m['getAbsoluteTop'] = function(elem) {
+
+
+    // Firefox 3 expects getBoundingClientRect
+    if (   typeof elem.getBoundingClientRect == 'function'  ) {
+        var top = Math.ceil(elem.getBoundingClientRect().top);
+        return top + $doc.body.scrollTop + $doc.documentElement.scrollTop;
+    }
+    // Older Firefox can use getBoxObjectFor
+    else {
+        var top = $doc.getBoxObjectFor(elem).y;
+        var parent = elem.parentNode;
+        while (parent) {
+            if (parent.scrollTop > 0) {
+                top -= parent.scrollTop;
+            }
+            parent = parent.parentNode;
+        }
+    
+        return top + $doc.body.scrollTop + $doc.documentElement.scrollTop;
+    }
+    
+	};
+	$m['getAbsoluteTop'].__name__ = 'getAbsoluteTop';
+
+	$m['getAbsoluteTop'].__bind_type__ = 0;
+	$m['getAbsoluteTop'].__args__ = [null,null,['elem']];
+	$m['getAttribute'] = function(elem, attr) {
+
+
+    var ret = elem[attr];
+    return (ret == null) ? null : String(ret);
+    
+	};
+	$m['getAttribute'].__name__ = 'getAttribute';
+
+	$m['getAttribute'].__bind_type__ = 0;
+	$m['getAttribute'].__args__ = [null,null,['elem'],['attr']];
+	$m['getElemAttribute'] = function(elem, attr) {
+
+		return elem['getAttribute'](attr);
+	};
+	$m['getElemAttribute'].__name__ = 'getElemAttribute';
+
+	$m['getElemAttribute'].__bind_type__ = 0;
+	$m['getElemAttribute'].__args__ = [null,null,['elem'],['attr']];
+	$m['getBooleanAttribute'] = function(elem, attr) {
+
+
+    return !!elem[attr];
+    
+	};
+	$m['getBooleanAttribute'].__name__ = 'getBooleanAttribute';
+
+	$m['getBooleanAttribute'].__bind_type__ = 0;
+	$m['getBooleanAttribute'].__args__ = [null,null,['elem'],['attr']];
+	$m['getBooleanElemAttribute'] = function(elem, attr) {
+
+		if ($p['bool'](!$p['bool'](elem['hasAttribute'](attr)))) {
+			return null;
+		}
+		return $p['bool'](elem['getAttribute'](attr));
+	};
+	$m['getBooleanElemAttribute'].__name__ = 'getBooleanElemAttribute';
+
+	$m['getBooleanElemAttribute'].__bind_type__ = 0;
+	$m['getBooleanElemAttribute'].__args__ = [null,null,['elem'],['attr']];
+	$m['getCaptureElement'] = function() {
+
+		return $m['sCaptureElem'];
+	};
+	$m['getCaptureElement'].__name__ = 'getCaptureElement';
+
+	$m['getCaptureElement'].__bind_type__ = 0;
+	$m['getCaptureElement'].__args__ = [null,null];
+	$m['getChild'] = function(elem, index) {
+
+
+    var count = 0, child = elem.firstChild;
+    while (child) {
+      var next = child.nextSibling;
+      if (child.nodeType == 1) {
+        if (index == count)
+          return child;
+        ++count;
+      }
+      child = next;
+    }
+
+    return null;
+    
+	};
+	$m['getChild'].__name__ = 'getChild';
+
+	$m['getChild'].__bind_type__ = 0;
+	$m['getChild'].__args__ = [null,null,['elem'],['index']];
+	$m['getChildCount'] = function(elem) {
+
+
+    var count = 0, child = elem.firstChild;
+    while (child) {
+      if (child.nodeType == 1)
+      ++count;
+      child = child.nextSibling;
+    }
+    return count;
+    
+	};
+	$m['getChildCount'].__name__ = 'getChildCount';
+
+	$m['getChildCount'].__bind_type__ = 0;
+	$m['getChildCount'].__args__ = [null,null,['elem']];
+	$m['getChildIndex'] = function(parent, child) {
+
+
+    var count = 0, current = parent.firstChild;
+    while (current) {
+		if (! current.isSameNode) {
+			if (current == child) {
+			return count;
+			}
+		}
+		else if (current.isSameNode(child)) {
+            return count;
+        }
+        if (current.nodeType == 1) {
+            ++count;
+        }
+        current = current.nextSibling;
+    }
+    return -1;
+    
+	};
+	$m['getChildIndex'].__name__ = 'getChildIndex';
+
+	$m['getChildIndex'].__bind_type__ = 0;
+	$m['getChildIndex'].__args__ = [null,null,['parent'],['child']];
+	$m['getElementById'] = function(id) {
+
+
+    var elem = $doc.getElementById(id);
+    return elem ? elem : null;
+    
+	};
+	$m['getElementById'].__name__ = 'getElementById';
+
+	$m['getElementById'].__bind_type__ = 0;
+	$m['getElementById'].__args__ = [null,null,['id']];
+	$m['getEventListener'] = function(element) {
+
+
+    return element.__listener;
+    
+	};
+	$m['getEventListener'].__name__ = 'getEventListener';
+
+	$m['getEventListener'].__bind_type__ = 0;
+	$m['getEventListener'].__args__ = [null,null,['element']];
+	$m['eventbitsmap'] = $p['dict']([]);
+	$m['getEventsSunk'] = function(element) {
+
+		return element.__eventBits ? element.__eventBits : 0;
+	};
+	$m['getEventsSunk'].__name__ = 'getEventsSunk';
+
+	$m['getEventsSunk'].__bind_type__ = 0;
+	$m['getEventsSunk'].__args__ = [null,null,['element']];
+	$m['getFirstChild'] = function(elem) {
+
+
+    var child = elem.firstChild;
+    while (child && child.nodeType != 1)
+      child = child.nextSibling;
+    return child ? child : null;
+    
+	};
+	$m['getFirstChild'].__name__ = 'getFirstChild';
+
+	$m['getFirstChild'].__bind_type__ = 0;
+	$m['getFirstChild'].__args__ = [null,null,['elem']];
+	$m['getInnerHTML'] = function(element) {
+
+
+    var ret = element.innerHTML;
+    return (ret == null) ? null : ret;
+    
+	};
+	$m['getInnerHTML'].__name__ = 'getInnerHTML';
+
+	$m['getInnerHTML'].__bind_type__ = 0;
+	$m['getInnerHTML'].__args__ = [null,null,['element']];
+	$m['getInnerText'] = function(element) {
+
+
+    // To mimic IE's 'innerText' property in the W3C DOM, we need to recursively
+    // concatenate all child text nodes (depth first).
+    var text = '', child = element.firstChild;
+    while (child) {
+      if (child.nodeType == 1){ // 1 == Element node
+        text += $m['getInnerText'](child);
+      } else if (child.nodeValue) {
+        text += child.nodeValue;
+      }
+      child = child.nextSibling;
+    }
+    return text;
+    
+	};
+	$m['getInnerText'].__name__ = 'getInnerText';
+
+	$m['getInnerText'].__bind_type__ = 0;
+	$m['getInnerText'].__args__ = [null,null,['element']];
+	$m['getIntAttribute'] = function(elem, attr) {
+
+
+    var i = parseInt(elem[attr]);
+    if (!i) {
+        return 0;
+    }
+    return i;
+    
+	};
+	$m['getIntAttribute'].__name__ = 'getIntAttribute';
+
+	$m['getIntAttribute'].__bind_type__ = 0;
+	$m['getIntAttribute'].__args__ = [null,null,['elem'],['attr']];
+	$m['getIntElemAttribute'] = function(elem, attr) {
+
+		if ($p['bool'](!$p['bool'](elem['hasAttribute'](attr)))) {
+			return null;
+		}
+		return $p['float_int'](elem['getAttribute'](attr));
+	};
+	$m['getIntElemAttribute'].__name__ = 'getIntElemAttribute';
+
+	$m['getIntElemAttribute'].__bind_type__ = 0;
+	$m['getIntElemAttribute'].__args__ = [null,null,['elem'],['attr']];
+	$m['getIntStyleAttribute'] = function(elem, attr) {
+
+
+    var i = parseInt(elem.style[attr]);
+    if (!i) {
+        return 0;
+    }
+    return i;
+    
+	};
+	$m['getIntStyleAttribute'].__name__ = 'getIntStyleAttribute';
+
+	$m['getIntStyleAttribute'].__bind_type__ = 0;
+	$m['getIntStyleAttribute'].__args__ = [null,null,['elem'],['attr']];
+	$m['getNextSibling'] = function(elem) {
+
+
+    var sib = elem.nextSibling;
+    while (sib && sib.nodeType != 1)
+      sib = sib.nextSibling;
+    return sib ? sib : null;
+    
+	};
+	$m['getNextSibling'].__name__ = 'getNextSibling';
+
+	$m['getNextSibling'].__bind_type__ = 0;
+	$m['getNextSibling'].__args__ = [null,null,['elem']];
+	$m['getNodeType'] = function(elem) {
+
+		return $p['getattr'](elem, 'nodeType');
+	};
+	$m['getNodeType'].__name__ = 'getNodeType';
+
+	$m['getNodeType'].__bind_type__ = 0;
+	$m['getNodeType'].__args__ = [null,null,['elem']];
+	$m['getParent'] = function(elem) {
+
+
+    var parent = elem.parentNode;
+    if(parent == null) {
+        return null;
+    }
+    if (parent.nodeType != 1)
+        parent = null;
+    return parent ? parent : null;
+    
+	};
+	$m['getParent'].__name__ = 'getParent';
+
+	$m['getParent'].__bind_type__ = 0;
+	$m['getParent'].__args__ = [null,null,['elem']];
+	$m['getStyleAttribute'] = function(elem, attr) {
+
+
+    var ret = elem.style[attr];
+    return (ret == null) ? null : ret;
+    
+	};
+	$m['getStyleAttribute'].__name__ = 'getStyleAttribute';
+
+	$m['getStyleAttribute'].__bind_type__ = 0;
+	$m['getStyleAttribute'].__args__ = [null,null,['elem'],['attr']];
+	$m['insertChild'] = function(parent, toAdd, index) {
+
+
+    var count = 0, child = parent.firstChild, before = null;
+    while (child) {
+      if (child.nodeType == 1) {
+        if (count == index) {
+          before = child;
+          break;
+        }
+        ++count;
+      }
+      child = child.nextSibling;
+    }
+
+    parent.insertBefore(toAdd, before);
+    
+	};
+	$m['insertChild'].__name__ = 'insertChild';
+
+	$m['insertChild'].__bind_type__ = 0;
+	$m['insertChild'].__args__ = [null,null,['parent'],['toAdd'],['index']];
+	$m['IterChildrenClass'] = (function(){
+		var $cls_definition = new Object();
+		var $method;
+		$cls_definition.__module__ = 'pyjamas.DOM';
+		$method = $pyjs__bind_method2('__init__', function(elem) {
+			if (this.__is_instance__ === true) {
+				var self = this;
+			} else {
+				var self = arguments[0];
+				elem = arguments[1];
+			}
+
+			self.parent = elem;
+			self.child = $p['getattr'](elem, 'firstChild');
+			self.lastChild = null;
+			return null;
+		}
+	, 1, [null,null,['self'],['elem']]);
+		$cls_definition['__init__'] = $method;
+		$method = $pyjs__bind_method2('next', function() {
+			if (this.__is_instance__ === true) {
+				var self = this;
+			} else {
+				var self = arguments[0];
+			}
+
+			if ($p['bool'](!$p['bool']($p['getattr'](self, 'child')))) {
+				throw ($p['StopIteration']);
+			}
+			self.lastChild = $p['getattr'](self, 'child');
+			self.child = $m['getNextSibling']($p['getattr'](self, 'child'));
+			return $p['getattr'](self, 'lastChild');
+		}
+	, 1, [null,null,['self']]);
+		$cls_definition['next'] = $method;
+		$method = $pyjs__bind_method2('remove', function() {
+			if (this.__is_instance__ === true) {
+				var self = this;
+			} else {
+				var self = arguments[0];
+			}
+
+			self['parent']['removeChild']($p['getattr'](self, 'lastChild'));
+			return null;
+		}
+	, 1, [null,null,['self']]);
+		$cls_definition['remove'] = $method;
+		$method = $pyjs__bind_method2('__iter__', function() {
+			if (this.__is_instance__ === true) {
+				var self = this;
+			} else {
+				var self = arguments[0];
+			}
+
+			return self;
+		}
+	, 1, [null,null,['self']]);
+		$cls_definition['__iter__'] = $method;
+		var $bases = new Array(pyjslib.object);
+		var $data = $p['dict']();
+		for (var $item in $cls_definition) { $data.__setitem__($item, $cls_definition[$item]); }
+		return $p['_create_class']('IterChildrenClass', $p['tuple']($bases), $data);
+	})();
+	$m['iterChildren'] = function(elem) {
+
+
+    var parent = elem;
+    var child = elem.firstChild;
+    var lastChild = null;
+    return {
+        'next': function() {
+            if (child == null) {
+                throw $p['StopIteration'];
+            }
+            lastChild = child;
+            child = $m['getNextSibling'](child);
+            return lastChild;
+        },
+        'remove': function() {        
+            parent.removeChild(lastChild);
+        },
+        __iter__: function() {
+            return this;
+        }
+    };
+    
+	};
+	$m['iterChildren'].__name__ = 'iterChildren';
+
+	$m['iterChildren'].__bind_type__ = 0;
+	$m['iterChildren'].__args__ = [null,null,['elem']];
+	$m['IterWalkChildren'] = (function(){
+		var $cls_definition = new Object();
+		var $method;
+		$cls_definition.__module__ = 'pyjamas.DOM';
+		$method = $pyjs__bind_method2('__init__', function(elem) {
+			if (this.__is_instance__ === true) {
+				var self = this;
+			} else {
+				var self = arguments[0];
+				elem = arguments[1];
+			}
+
+			self.parent = elem;
+			self.child = $m['getFirstChild'](elem);
+			self.lastChild = null;
+			self.stack = $p['list']([]);
+			return null;
+		}
+	, 1, [null,null,['self'],['elem']]);
+		$cls_definition['__init__'] = $method;
+		$method = $pyjs__bind_method2('next', function() {
+			if (this.__is_instance__ === true) {
+				var self = this;
+			} else {
+				var self = arguments[0];
+			}
+			var nextSibling,firstChild;
+			if ($p['bool'](!$p['bool']($p['getattr'](self, 'child')))) {
+				throw ($p['StopIteration']);
+			}
+			self.lastChild = $p['getattr'](self, 'child');
+			firstChild = $m['getFirstChild']($p['getattr'](self, 'child'));
+			nextSibling = $m['getNextSibling']($p['getattr'](self, 'child'));
+			if ($p['bool']((firstChild !== null))) {
+				if ($p['bool']((nextSibling !== null))) {
+					self['stack']['append']($p['tuple']([nextSibling, $p['getattr'](self, 'parent')]));
+				}
+				self.parent = $p['getattr'](self, 'child');
+				self.child = firstChild;
+			}
+			else if ($p['bool']((nextSibling !== null))) {
+				self.child = nextSibling;
+			}
+			else if ($p['bool'](($p['cmp']($p['len']($p['getattr'](self, 'stack')), 0) == 1))) {
+				var $tupleassign1 = $p['__ass_unpack'](self['stack']['pop'](), 2, null);
+				self.child = $tupleassign1[0];
+				self.parent = $tupleassign1[1];
+			}
+			else {
+				self.child = null;
+			}
+			return $p['getattr'](self, 'lastChild');
+		}
+	, 1, [null,null,['self']]);
+		$cls_definition['next'] = $method;
+		$method = $pyjs__bind_method2('remove', function() {
+			if (this.__is_instance__ === true) {
+				var self = this;
+			} else {
+				var self = arguments[0];
+			}
+
+			self['parent']['removeChild']($p['getattr'](self, 'lastChild'));
+			return null;
+		}
+	, 1, [null,null,['self']]);
+		$cls_definition['remove'] = $method;
+		$method = $pyjs__bind_method2('__iter__', function() {
+			if (this.__is_instance__ === true) {
+				var self = this;
+			} else {
+				var self = arguments[0];
+			}
+
+			return self;
+		}
+	, 1, [null,null,['self']]);
+		$cls_definition['__iter__'] = $method;
+		var $bases = new Array(pyjslib.object);
+		var $data = $p['dict']();
+		for (var $item in $cls_definition) { $data.__setitem__($item, $cls_definition[$item]); }
+		return $p['_create_class']('IterWalkChildren', $p['tuple']($bases), $data);
+	})();
+	$m['walkChildren'] = function(elem) {
+
+
+    var parent = elem;
+    var child = $m['getFirstChild'](elem);
+    var lastChild = null;
+    var stack = [];
+    var parentStack = [];
+    return {
+        'next': function() {
+            if (child == null) {
+                throw $p['StopIteration'];
+            }
+            lastChild = child;
+            var firstChild = $m['getFirstChild'](child);
+            var nextSibling = $m['getNextSibling'](child);
+            if(firstChild != null) {
+               if(nextSibling != null) {
+                   stack.push(nextSibling);
+                   parentStack.push(parent);
+                }
+                parent = child;
+                child = firstChild;
+            } else if(nextSibling != null) {
+                child = nextSibling;
+            } else if(stack.length > 0) {
+                child = stack.pop();
+                parent = parentStack.pop();
+            } else {
+                child = null;
+            }
+            return lastChild;
+        },
+        'remove': function() {        
+            parent.removeChild(lastChild);
+        },
+        __iter__: function() {
+            return this;
+        }
+    };
+    
+	};
+	$m['walkChildren'].__name__ = 'walkChildren';
+
+	$m['walkChildren'].__bind_type__ = 0;
+	$m['walkChildren'].__args__ = [null,null,['elem']];
+	$m['isOrHasChild'] = function(parent, _child) {
+
+
+    var child = _child;
+    while (child) {
+        if ((!parent.isSameNode)) {
+			if (parent == child) {
+				return true;
+			}
+		}
+		else if (parent.isSameNode(child)) {
+            return true;
+        }
+        try {
+            child = child.parentNode;
+        } catch(e) {
+          // Give up on 'Permission denied to get property
+          // HTMLDivElement.parentNode'
+          // See https://bugzilla.mozilla.org/show_bug.cgi?id=208427
+          return false;
+        }
+        if (child && (child.nodeType != 1)) {
+          child = null;
+        }
+      }
+    return false;
+    
+	};
+	$m['isOrHasChild'].__name__ = 'isOrHasChild';
+
+	$m['isOrHasChild'].__bind_type__ = 0;
+	$m['isOrHasChild'].__args__ = [null,null,['parent'],['_child']];
+	$m['releaseCapture'] = function(elem) {
+
+
+    if (($m['sCaptureElem'] != null) && $m['compare'](elem, $m['sCaptureElem']))
+        $m['sCaptureElem'] = null;
+    
+	if (!elem.isSameNode) {
+		if (elem == $wnd.__captureElem) {
+			$wnd.__captureElem = null;
+		}
+	}
+	else if (elem.isSameNode($wnd.__captureElem)) {
+        $wnd.__captureElem = null;
+    }
+    
+	};
+	$m['releaseCapture'].__name__ = 'releaseCapture';
+
+	$m['releaseCapture'].__bind_type__ = 0;
+	$m['releaseCapture'].__args__ = [null,null,['elem']];
+	$m['releaseCapture_impl'] = function(elem) {
+
+ 		return null;
+	};
+	$m['releaseCapture_impl'].__name__ = 'releaseCapture_impl';
+
+	$m['releaseCapture_impl'].__bind_type__ = 0;
+	$m['releaseCapture_impl'].__args__ = [null,null,['elem']];
+	$m['removeEventPreview'] = function(preview) {
+
+		$m['sEventPreviewStack']['remove'](preview);
+		return null;
+	};
+	$m['removeEventPreview'].__name__ = 'removeEventPreview';
+
+	$m['removeEventPreview'].__bind_type__ = 0;
+	$m['removeEventPreview'].__args__ = [null,null,['preview']];
+	$m['getOffsetHeight'] = function(elem) {
+
+		return $p['getattr'](elem, 'offsetHeight');
+	};
+	$m['getOffsetHeight'].__name__ = 'getOffsetHeight';
+
+	$m['getOffsetHeight'].__bind_type__ = 0;
+	$m['getOffsetHeight'].__args__ = [null,null,['elem']];
+	$m['getOffsetWidth'] = function(elem) {
+
+		return $p['getattr'](elem, 'offsetWidth');
+	};
+	$m['getOffsetWidth'].__name__ = 'getOffsetWidth';
+
+	$m['getOffsetWidth'].__bind_type__ = 0;
+	$m['getOffsetWidth'].__args__ = [null,null,['elem']];
+	$m['scrollIntoView'] = function(elem) {
+
+
+    var left = elem.offsetLeft, top = elem.offsetTop;
+    var width = elem.offsetWidth, height = elem.offsetHeight;
+    
+    if (elem.parentNode != elem.offsetParent) {
+        left -= elem.parentNode.offsetLeft;
+        top -= elem.parentNode.offsetTop;
+    }
+
+    var cur = elem.parentNode;
+    while (cur && (cur.nodeType == 1)) {
+        if ((cur.style.overflow == 'auto') || (cur.style.overflow == 'scroll')) {
+            if (left < cur.scrollLeft) {
+                cur.scrollLeft = left;
+            }
+            if (left + width > cur.scrollLeft + cur.clientWidth) {
+                cur.scrollLeft = (left + width) - cur.clientWidth;
+            }
+            if (top < cur.scrollTop) {
+                cur.scrollTop = top;
+            }
+            if (top + height > cur.scrollTop + cur.clientHeight) {
+                cur.scrollTop = (top + height) - cur.clientHeight;
+            }
+        }
+
+        var offsetLeft = cur.offsetLeft, offsetTop = cur.offsetTop;
+        if (cur.parentNode != cur.offsetParent) {
+            offsetLeft -= cur.parentNode.offsetLeft;
+            offsetTop -= cur.parentNode.offsetTop;
+        }
+
+        left += offsetLeft - cur.scrollLeft;
+        top += offsetTop - cur.scrollTop;
+        cur = cur.parentNode;
+    }
+    
+	};
+	$m['scrollIntoView'].__name__ = 'scrollIntoView';
+
+	$m['scrollIntoView'].__bind_type__ = 0;
+	$m['scrollIntoView'].__args__ = [null,null,['elem']];
+	$m['mash_name_for_glib'] = function(name, joiner) {
+		if (typeof joiner == 'undefined') joiner=arguments.callee.__args__[3][1];
+		var c,$iter1_nextval,$iter1_idx,res,$iter1_iter,$add2,$add3,$add1,$add6,$iter1_array,$add4,$add5,$iter1_type;
+		res = '';
+		$iter1_iter = name;
+		$iter1_nextval=$p['__iter_prepare']($iter1_iter,false);
+		while (typeof($p['__wrapped_next']($iter1_nextval).$nextval) != 'undefined') {
+			c = $iter1_nextval.$nextval;
+			if ($p['bool'](c['isupper']())) {
+				res = $p['__op_add']($add3=res,$add4=$p['__op_add']($add1=joiner,$add2=c['lower']()));
+			}
+			else {
+				res = $p['__op_add']($add5=res,$add6=c);
+			}
+		}
+		return res;
+	};
+	$m['mash_name_for_glib'].__name__ = 'mash_name_for_glib';
+
+	$m['mash_name_for_glib'].__bind_type__ = 0;
+	$m['mash_name_for_glib'].__args__ = [null,null,['name'],['joiner', '-']];
+	$m['removeAttribute'] = function(element, attribute) {
+
+
+    delete element[attribute];
+    
+	};
+	$m['removeAttribute'].__name__ = 'removeAttribute';
+
+	$m['removeAttribute'].__bind_type__ = 0;
+	$m['removeAttribute'].__args__ = [null,null,['element'],['attribute']];
+	$m['setAttribute'] = function(element, attribute, value) {
+
+
+    element[attribute] = value;
+    
+	};
+	$m['setAttribute'].__name__ = 'setAttribute';
+
+	$m['setAttribute'].__bind_type__ = 0;
+	$m['setAttribute'].__args__ = [null,null,['element'],['attribute'],['value']];
+	$m['setElemAttribute'] = function(element, attribute, value) {
+
+		element['setAttribute'](attribute, value);
+		return null;
+	};
+	$m['setElemAttribute'].__name__ = 'setElemAttribute';
+
+	$m['setElemAttribute'].__bind_type__ = 0;
+	$m['setElemAttribute'].__args__ = [null,null,['element'],['attribute'],['value']];
+	$m['setBooleanAttribute'] = function(elem, attr, value) {
+
+
+    elem[attr] = value;
+    
+	};
+	$m['setBooleanAttribute'].__name__ = 'setBooleanAttribute';
+
+	$m['setBooleanAttribute'].__bind_type__ = 0;
+	$m['setBooleanAttribute'].__args__ = [null,null,['elem'],['attr'],['value']];
+	$m['setCapture'] = function(elem) {
+
+		$m['sCaptureElem'] = elem;
+		(typeof setCapture_impl == "undefined"?$m.setCapture_impl:setCapture_impl)(elem);
+		return null;
+	};
+	$m['setCapture'].__name__ = 'setCapture';
+
+	$m['setCapture'].__bind_type__ = 0;
+	$m['setCapture'].__args__ = [null,null,['elem']];
+	$m['setCapture_impl'] = function(elem) {
+
+ 		return null;
+	};
+	$m['setCapture_impl'].__name__ = 'setCapture_impl';
+
+	$m['setCapture_impl'].__bind_type__ = 0;
+	$m['setCapture_impl'].__args__ = [null,null,['elem']];
+	$m['setEventListener'] = function(element, listener) {
+
+
+    element.__listener = listener;
+    
+	};
+	$m['setEventListener'].__name__ = 'setEventListener';
+
+	$m['setEventListener'].__bind_type__ = 0;
+	$m['setEventListener'].__args__ = [null,null,['element'],['listener']];
+	$m['createTextNode'] = function(txt) {
+
+		return $doc['createTextNode'](txt);
+	};
+	$m['createTextNode'].__name__ = 'createTextNode';
+
+	$m['createTextNode'].__bind_type__ = 0;
+	$m['createTextNode'].__args__ = [null,null,['txt']];
+	$m['setInnerHTML'] = function(element, html) {
+
+element.innerHTML = html || "";
+	};
+	$m['setInnerHTML'].__name__ = 'setInnerHTML';
+
+	$m['setInnerHTML'].__bind_type__ = 0;
+	$m['setInnerHTML'].__args__ = [null,null,['element'],['html']];
+	$m['setInnerText'] = function(elem, text) {
+
+
+    // Remove all children first.
+    while (elem.firstChild) {
+        elem.removeChild(elem.firstChild);
+    }
+    // Add a new text node.
+    elem.appendChild($doc.createTextNode(text));
+    
+	};
+	$m['setInnerText'].__name__ = 'setInnerText';
+
+	$m['setInnerText'].__bind_type__ = 0;
+	$m['setInnerText'].__args__ = [null,null,['elem'],['text']];
+	$m['setIntElemAttribute'] = function(elem, attr, value) {
+
+		elem['setAttribute'](attr, $p['str'](value));
+		return null;
+	};
+	$m['setIntElemAttribute'].__name__ = 'setIntElemAttribute';
+
+	$m['setIntElemAttribute'].__bind_type__ = 0;
+	$m['setIntElemAttribute'].__args__ = [null,null,['elem'],['attr'],['value']];
+	$m['setIntAttribute'] = function(elem, attr, value) {
+
+
+    elem[attr] = value.valueOf();
+    
+	};
+	$m['setIntAttribute'].__name__ = 'setIntAttribute';
+
+	$m['setIntAttribute'].__bind_type__ = 0;
+	$m['setIntAttribute'].__args__ = [null,null,['elem'],['attr'],['value']];
+	$m['setIntStyleAttribute'] = function(elem, attr, value) {
+
+
+    elem.style[attr] = value.valueOf();
+    
+	};
+	$m['setIntStyleAttribute'].__name__ = 'setIntStyleAttribute';
+
+	$m['setIntStyleAttribute'].__bind_type__ = 0;
+	$m['setIntStyleAttribute'].__args__ = [null,null,['elem'],['attr'],['value']];
+	$m['setOptionText'] = function(select, text, index) {
+		var option;
+		option = select['options']['item'](index);
+		option.text = text;
+		return null;
+	};
+	$m['setOptionText'].__name__ = 'setOptionText';
+
+	$m['setOptionText'].__bind_type__ = 0;
+	$m['setOptionText'].__args__ = [null,null,['select'],['text'],['index']];
+	$m['setStyleAttribute'] = function(element, attr, value) {
+
+
+    element.style[attr] = value;
+    
+	};
+	$m['setStyleAttribute'].__name__ = 'setStyleAttribute';
+
+	$m['setStyleAttribute'].__bind_type__ = 0;
+	$m['setStyleAttribute'].__args__ = [null,null,['element'],['attr'],['value']];
+	$m['setStyleAttributes'] = function(element) {
+		var kwargs = arguments.length >= 2 ? arguments[arguments.length-1] : arguments[arguments.length];
+		if (typeof kwargs != 'object' || kwargs.__name__ != 'dict' || typeof kwargs.$pyjs_is_kwarg == 'undefined') {
+			kwargs = arguments[arguments.length+1];
+		} else {
+			delete kwargs['$pyjs_is_kwarg'];
+		}
+		if (typeof kwargs == 'undefined') {
+			kwargs = $p['__empty_dict']();
+			if (typeof element != 'undefined') {
+				if (element !== null && typeof element['$pyjs_is_kwarg'] != 'undefined') {
+					kwargs = element;
+					element = arguments[1];
+				}
+			} else {
+			}
+		}
+		var $iter2_nextval,$iter2_type,attr,$iter2_iter,$iter2_idx,val,$iter2_array;
+		$iter2_iter = kwargs['items']();
+		$iter2_nextval=$p['__iter_prepare']($iter2_iter,false);
+		while (typeof($p['__wrapped_next']($iter2_nextval).$nextval) != 'undefined') {
+			var $tupleassign2 = $p['__ass_unpack']($iter2_nextval.$nextval, 2, null);
+			attr = $tupleassign2[0];
+			val = $tupleassign2[1];
+			if ($p['bool']($p['hasattr']($p['getattr'](element, 'style'), 'setProperty'))) {
+				element['style']['setProperty']($m['mash_name_for_glib'](attr), val, '');
+			}
+			else {
+				element['style']['setAttribute'](attr, val, '');
+			}
+		}
+		return null;
+	};
+	$m['setStyleAttributes'].__name__ = 'setStyleAttributes';
+
+	$m['setStyleAttributes'].__bind_type__ = 0;
+	$m['setStyleAttributes'].__args__ = [null,['kwargs'],['element']];
+	$m['sinkEvents'] = function(element, bits) {
+		var $iter5_nextval,$iter3_idx,$iter5_idx,dispEvnt,event_name,$iter4_iter,$iter3_nextval,$iter3_array,$iter5_array,$iter4_idx,$iter5_iter,$iter3_iter,$iter4_type,$iter3_type,$iter4_array,$iter5_type,bit,$iter4_nextval;
+element.__eventBits = bits;
+		(typeof sinkEventsMozilla == "undefined"?$m.sinkEventsMozilla:sinkEventsMozilla)(element, bits);
+		dispEvnt = $wnd.__dispatchEvent;
+		$iter3_iter = $p['getattr']($m['Event'], 'eventbits');
+		$iter3_nextval=$p['__iter_prepare']($iter3_iter,false);
+		while (typeof($p['__wrapped_next']($iter3_nextval).$nextval) != 'undefined') {
+			bit = $iter3_nextval.$nextval;
+			if ($p['bool']((bits)&(bit))) {
+				$iter4_iter = $p['getattr']($m['Event'], 'eventbits').__getitem__(bit).__getitem__(1);
+				$iter4_nextval=$p['__iter_prepare']($iter4_iter,false);
+				while (typeof($p['__wrapped_next']($iter4_nextval).$nextval) != 'undefined') {
+					event_name = $iter4_nextval.$nextval;
+element['on'+event_name] = dispEvnt
+				}
+			}
+			else {
+				$iter5_iter = $p['getattr']($m['Event'], 'eventbits').__getitem__(bit).__getitem__(1);
+				$iter5_nextval=$p['__iter_prepare']($iter5_iter,false);
+				while (typeof($p['__wrapped_next']($iter5_nextval).$nextval) != 'undefined') {
+					event_name = $iter5_nextval.$nextval;
+element['on'+event_name] = null
+				}
+			}
+		}
+		return null;
+	};
+	$m['sinkEvents'].__name__ = 'sinkEvents';
+
+	$m['sinkEvents'].__bind_type__ = 0;
+	$m['sinkEvents'].__args__ = [null,null,['element'],['bits']];
+	$m['sinkEventsMozilla'] = function(element, bits) {
+
+
+    if (bits & 0x40000) {
+        element.addEventListener("DOMMouseScroll", $wnd.__dispatchEvent,
+                                    false);
+    } else {
+        element.removeEventListener("DOMMouseScroll", $wnd.__dispatchEvent,
+                                    false);
+    }
+    if (bits & 0x80000) {
+        element.addEventListener("input", $wnd.__dispatchEvent,
+                                    false);
+    } else {
+        element.removeEventListener("input", $wnd.__dispatchEvent,
+                                    false);
+    }
+    
+	};
+	$m['sinkEventsMozilla'].__name__ = 'sinkEventsMozilla';
+
+	$m['sinkEventsMozilla'].__bind_type__ = 0;
+	$m['sinkEventsMozilla'].__args__ = [null,null,['element'],['bits']];
+	$m['toString'] = function(elem) {
+
+
+    var temp = elem.cloneNode(true);
+    var tempDiv = $doc.createElement("DIV");
+    tempDiv.appendChild(temp);
+    var outer = tempDiv.innerHTML;
+    temp.innerHTML = "";
+    return outer;
+    
+	};
+	$m['toString'].__name__ = 'toString';
+
+	$m['toString'].__bind_type__ = 0;
+	$m['toString'].__args__ = [null,null,['elem']];
+	$m['dispatchEvent'] = function(event, element, listener) {
+
+		(typeof dispatchEventImpl == "undefined"?$m.dispatchEventImpl:dispatchEventImpl)(event, element, listener);
+		return null;
+	};
+	$m['dispatchEvent'].__name__ = 'dispatchEvent';
+
+	$m['dispatchEvent'].__bind_type__ = 0;
+	$m['dispatchEvent'].__args__ = [null,null,['event'],['element'],['listener']];
+	$m['previewEvent'] = function(evt) {
+		var $sub2,$sub1,preview,ret;
+		ret = true;
+		if ($p['bool'](($p['cmp']($p['len']($m['sEventPreviewStack']), 0) == 1))) {
+			preview = $m['sEventPreviewStack'].__getitem__($p['__op_sub']($sub1=$p['len']($m['sEventPreviewStack']),$sub2=1));
+			ret = preview['onEventPreview'](evt);
+			if ($p['bool'](!$p['bool'](ret))) {
+				$m['eventCancelBubble'](evt, true);
+				$m['eventPreventDefault'](evt);
+			}
+		}
+		return ret;
+	};
+	$m['previewEvent'].__name__ = 'previewEvent';
+
+	$m['previewEvent'].__bind_type__ = 0;
+	$m['previewEvent'].__args__ = [null,null,['evt']];
+	$m['dispatchEventAndCatch'] = function(evt, elem, listener, handler) {
+
+ 		return null;
+	};
+	$m['dispatchEventAndCatch'].__name__ = 'dispatchEventAndCatch';
+
+	$m['dispatchEventAndCatch'].__bind_type__ = 0;
+	$m['dispatchEventAndCatch'].__args__ = [null,null,['evt'],['elem'],['listener'],['handler']];
+	$m['currentEvent'] = null;
+	$m['dispatchEventImpl'] = function(event, element, listener) {
+		var prevCurrentEvent;
+		if ($p['bool']($p['op_eq'](element, $m['sCaptureElem']))) {
+			if ($p['bool']($p['op_eq']($m['eventGetType'](event), 'losecapture'))) {
+				$m['sCaptureElem'] = null;
+			}
+		}
+		prevCurrentEvent = $m['currentEvent'];
+		$m['currentEvent'] = event;
+		listener['onBrowserEvent'](event);
+		$m['currentEvent'] = prevCurrentEvent;
+		return null;
+	};
+	$m['dispatchEventImpl'].__name__ = 'dispatchEventImpl';
+
+	$m['dispatchEventImpl'].__bind_type__ = 0;
+	$m['dispatchEventImpl'].__args__ = [null,null,['event'],['element'],['listener']];
+	$m['eventGetCurrentEvent'] = function() {
+
+		return $m['currentEvent'];
+	};
+	$m['eventGetCurrentEvent'].__name__ = 'eventGetCurrentEvent';
+
+	$m['eventGetCurrentEvent'].__bind_type__ = 0;
+	$m['eventGetCurrentEvent'].__args__ = [null,null];
+	$m['insertListItem'] = function(select, item, value, index) {
+		var option;
+		option = $m['createElement']('OPTION');
+		$m['setInnerText'](option, item);
+		if ($p['bool']((value !== null))) {
+			$m['setAttribute'](option, 'value', value);
+		}
+		if ($p['bool']($p['op_eq'](index, (typeof ($usub1=1)=='number'?
+			-$usub1:
+			$p['op_usub']($usub1))))) {
+			$m['appendChild'](select, option);
+		}
+		else {
+			$m['insertChild'](select, option, index);
+		}
+		return null;
+	};
+	$m['insertListItem'].__name__ = 'insertListItem';
+
+	$m['insertListItem'].__bind_type__ = 0;
+	$m['insertListItem'].__args__ = [null,null,['select'],['item'],['value'],['index']];
+	$m['getBodyOffsetTop'] = function() {
+
+		return 0;
+	};
+	$m['getBodyOffsetTop'].__name__ = 'getBodyOffsetTop';
+
+	$m['getBodyOffsetTop'].__bind_type__ = 0;
+	$m['getBodyOffsetTop'].__args__ = [null,null];
+	$m['getBodyOffsetLeft'] = function() {
+
+		return 0;
+	};
+	$m['getBodyOffsetLeft'].__name__ = 'getBodyOffsetLeft';
+
+	$m['getBodyOffsetLeft'].__bind_type__ = 0;
+	$m['getBodyOffsetLeft'].__args__ = [null,null];
+	$m['eventGetMouseWheelVelocityY'] = function(evt) {
+
+
+    return evt.detail || 0;
+    
+	};
+	$m['eventGetMouseWheelVelocityY'].__name__ = 'eventGetMouseWheelVelocityY';
+
+	$m['eventGetMouseWheelVelocityY'].__bind_type__ = 0;
+	$m['eventGetMouseWheelVelocityY'].__args__ = [null,null,['evt']];
+	if ($p['bool'](!$p['bool']($p['getattr']($m['pyjd'], 'is_desktop')))) {
+		$m['init']();
+	}
+	return this;
+}; /* end pyjamas.DOM */
+
+
+/* end module: pyjamas.DOM */
+
+
+/*
+PYJS_DEPS: ['pyjd', 'pyjamas.Window.onResize', 'pyjamas', 'pyjamas.Window', 'pyjamas.Window.onClosing', 'pyjamas.Window.onClosed', 'pyjamas.ui.Event', 'pyjamas.ui', 'pyjamas.ui.Event.ONBLUR', 'pyjamas.ui.Event.ONCHANGE', 'pyjamas.ui.Event.ONCLICK', 'pyjamas.ui.Event.ONCONTEXTMENU', 'pyjamas.ui.Event.ONDBLCLICK', 'pyjamas.ui.Event.ONERROR', 'pyjamas.ui.Event.ONFOCUS', 'pyjamas.ui.Event.ONKEYDOWN', 'pyjamas.ui.Event.ONKEYPRESS', 'pyjamas.ui.Event.ONKEYUP', 'pyjamas.ui.Event.ONLOAD', 'pyjamas.ui.Event.ONLOSECAPTURE', 'pyjamas.ui.Event.ONMOUSEDOWN', 'pyjamas.ui.Event.ONMOUSEMOVE', 'pyjamas.ui.Event.ONMOUSEOUT', 'pyjamas.ui.Event.ONMOUSEOVER', 'pyjamas.ui.Event.ONMOUSEUP', 'pyjamas.ui.Event.ONSCROLL', 'pyjamas.ui.Event.ONINPUT']
+*/
 
 --></script>
 <script type="text/javascript"><!--
@@ -14640,2443 +16515,375 @@ $pyjs.loaded_modules['fysom'] = function (__mod_name__) {
 
 --></script>
 <script type="text/javascript"><!--
-/* start module: pyjamas.DOM */
-$pyjs.loaded_modules['pyjamas.DOM'] = function (__mod_name__) {
-	if($pyjs.loaded_modules['pyjamas.DOM'].__was_initialized__) return $pyjs.loaded_modules['pyjamas.DOM'];
-	if(typeof $pyjs.loaded_modules['pyjamas'] == 'undefined' || !$pyjs.loaded_modules['pyjamas'].__was_initialized__) $p['___import___']('pyjamas', null);
-	var $m = $pyjs.loaded_modules["pyjamas.DOM"];
-	$m.__repr__ = function() { return "<module: pyjamas.DOM>"; };
+/* start module: dynamic */
+$pyjs.loaded_modules['dynamic'] = function (__mod_name__) {
+	if($pyjs.loaded_modules['dynamic'].__was_initialized__) return $pyjs.loaded_modules['dynamic'];
+	var $m = $pyjs.loaded_modules["dynamic"];
+	$m.__repr__ = function() { return "<module: dynamic>"; };
 	$m.__was_initialized__ = true;
-	if ((__mod_name__ === null) || (typeof __mod_name__ == 'undefined')) __mod_name__ = 'pyjamas.DOM';
+	if ((__mod_name__ === null) || (typeof __mod_name__ == 'undefined')) __mod_name__ = 'dynamic';
 	$m.__name__ = __mod_name__;
-	$pyjs.loaded_modules['pyjamas']['DOM'] = $pyjs.loaded_modules['pyjamas.DOM'];
 
 
-	$m['pyjd'] = $p['___import___']('pyjd', 'pyjamas');
-	if ($p['bool']($p['getattr']($m['pyjd'], 'is_desktop'))) {
-		$m['onResize'] = $p['___import___']('pyjamas.Window.onResize', 'pyjamas', null, false);
-		$m['onClosing'] = $p['___import___']('pyjamas.Window.onClosing', 'pyjamas', null, false);
-		$m['onClosed'] = $p['___import___']('pyjamas.Window.onClosed', 'pyjamas', null, false);
-		$m['currentEvent'] = null;
-	}
-	$m['sCaptureElem'] = null;
-	$m['sEventPreviewStack'] = $p['list']([]);
-	$m['listeners'] = $p['dict']([]);
-	$m['Event'] = $p['___import___']('pyjamas.ui.Event', 'pyjamas', null, false);
-	$m['ONBLUR'] = $p['___import___']('pyjamas.ui.Event.ONBLUR', 'pyjamas', null, false);
-	$m['ONCHANGE'] = $p['___import___']('pyjamas.ui.Event.ONCHANGE', 'pyjamas', null, false);
-	$m['ONCLICK'] = $p['___import___']('pyjamas.ui.Event.ONCLICK', 'pyjamas', null, false);
-	$m['ONCONTEXTMENU'] = $p['___import___']('pyjamas.ui.Event.ONCONTEXTMENU', 'pyjamas', null, false);
-	$m['ONDBLCLICK'] = $p['___import___']('pyjamas.ui.Event.ONDBLCLICK', 'pyjamas', null, false);
-	$m['ONERROR'] = $p['___import___']('pyjamas.ui.Event.ONERROR', 'pyjamas', null, false);
-	$m['ONFOCUS'] = $p['___import___']('pyjamas.ui.Event.ONFOCUS', 'pyjamas', null, false);
-	$m['ONKEYDOWN'] = $p['___import___']('pyjamas.ui.Event.ONKEYDOWN', 'pyjamas', null, false);
-	$m['ONKEYPRESS'] = $p['___import___']('pyjamas.ui.Event.ONKEYPRESS', 'pyjamas', null, false);
-	$m['ONKEYUP'] = $p['___import___']('pyjamas.ui.Event.ONKEYUP', 'pyjamas', null, false);
-	$m['ONLOAD'] = $p['___import___']('pyjamas.ui.Event.ONLOAD', 'pyjamas', null, false);
-	$m['ONLOSECAPTURE'] = $p['___import___']('pyjamas.ui.Event.ONLOSECAPTURE', 'pyjamas', null, false);
-	$m['ONMOUSEDOWN'] = $p['___import___']('pyjamas.ui.Event.ONMOUSEDOWN', 'pyjamas', null, false);
-	$m['ONMOUSEMOVE'] = $p['___import___']('pyjamas.ui.Event.ONMOUSEMOVE', 'pyjamas', null, false);
-	$m['ONMOUSEOUT'] = $p['___import___']('pyjamas.ui.Event.ONMOUSEOUT', 'pyjamas', null, false);
-	$m['ONMOUSEOVER'] = $p['___import___']('pyjamas.ui.Event.ONMOUSEOVER', 'pyjamas', null, false);
-	$m['ONMOUSEUP'] = $p['___import___']('pyjamas.ui.Event.ONMOUSEUP', 'pyjamas', null, false);
-	$m['ONSCROLL'] = $p['___import___']('pyjamas.ui.Event.ONSCROLL', 'pyjamas', null, false);
-	$m['ONINPUT'] = $p['___import___']('pyjamas.ui.Event.ONINPUT', 'pyjamas', null, false);
-	$m['get_listener'] = function(item) {
-		var ret;
-		if ($p['bool']((item === null))) {
+	$m['DOM'] = $p['___import___']('pyjamas.DOM', null, null, false);
+	$m['sys'] = $p['___import___']('sys', null);
+	;
+	$m['AjaxError'] = (function(){
+		var $cls_definition = new Object();
+		var $method;
+		$cls_definition.__module__ = 'dynamic';
+		var $bases = new Array($p['RuntimeError']);
+		var $data = $p['dict']();
+		for (var $item in $cls_definition) { $data.__setitem__($item, $cls_definition[$item]); }
+		return $p['_create_class']('AjaxError', $p['tuple']($bases), $data);
+	})();
+	$m['createHttpRequest'] = function() {
+		var res,$pyjs_try_err;
+		if ($p['bool'](typeof $wnd.XMLHttpRequest != 'undefined')) {
+			return new XMLHttpRequest();
+		}
+		try {
+			res = new ActiveXObject("Msxml2.XMLHTTP");
+			return res;
+		} catch($pyjs_try_err) {
+			var $pyjs_try_err_name = (typeof $pyjs_try_err.__name__ == 'undefined' ? $pyjs_try_err.name : $pyjs_try_err.__name__ );
+			$pyjs.__last_exception__ = {error: $pyjs_try_err, module: $m};
+			if (true) {
+			}
+		}
+		return null;
+	};
+	$m['createHttpRequest'].__name__ = 'createHttpRequest';
+
+	$m['createHttpRequest'].__bind_type__ = 0;
+	$m['createHttpRequest'].__args__ = [null,null];
+	$m['load'] = function(url, onreadystatechange, on_load_fn, async) {
+		if (typeof onreadystatechange == 'undefined') onreadystatechange=arguments.callee.__args__[3][1];
+		if (typeof on_load_fn == 'undefined') on_load_fn=arguments.callee.__args__[4][1];
+		if (typeof async == 'undefined') async=arguments.callee.__args__[5][1];
+		var $or5,$or4,$and3,$or3,req,$and4,$pyjs_try_err,$add2,$add1,$or6;
+		;
+		$wnd.status = $p['__op_add']($add1='Loading ',$add2=url);
+		req = $m['createHttpRequest']();
+		if ($p['bool']((onreadystatechange === null))) {
+			onreadystatechange = function(evnt) {
+				var $or1,$add4,$or2,$and1,$and2,$add3,str;
+				if ($p['bool'](($p['bool']($and1=$p['op_eq']($p['getattr'](req, 'readyState'), 4))?($p['bool']($or1=$p['op_eq']($p['getattr'](req, 'status'), 200))?$or1:$p['op_eq']($p['getattr'](req, 'status'), 0)):$and1))) {
+					str = $p['getattr'](req, 'responseText');
+					$wnd.status = $p['__op_add']($add3='Loaded ',$add4=url);
+					if ($p['bool'](!$p['bool']((on_load_fn === null)))) {
+						on_load_fn(evnt, req);
+					}
+				}
+				return null;
+			};
+			onreadystatechange.__name__ = 'onreadystatechange';
+
+			onreadystatechange.__bind_type__ = 0;
+			onreadystatechange.__args__ = [null,null,['evnt']];
+		}
+req.onreadystatechange = onreadystatechange;
+		req['open']('GET', url, async);
+		try {
+			req['send'](null);
+			if ($p['bool'](async)) {
+				return null;
+			}
+			while ($p['bool'](true)) {
+				if ($p['bool'](($p['bool']($or3=$p['op_eq']($p['getattr'](req, 'status'), 200))?$or3:($p['bool']($and3=$p['op_eq']($p['getattr'](req, 'status'), 0))?$p['getattr'](req, 'responseText'):$and3)))) {
+					if ($p['bool'](!$p['bool']((on_load_fn === null)))) {
+						on_load_fn(null, req);
+					}
+					return req;
+				}
+				if ($p['bool'](($p['bool']($or5=!$p['op_eq']($p['getattr'](req, 'status'), 0))?$or5:!$p['op_eq']($p['getattr'](req, 'responseText'), '')))) {
+					break;
+				}
+			}
+		} catch($pyjs_try_err) {
+			var $pyjs_try_err_name = (typeof $pyjs_try_err.__name__ == 'undefined' ? $pyjs_try_err.name : $pyjs_try_err.__name__ );
+			$pyjs.__last_exception__ = {error: $pyjs_try_err, module: $m};
+			if (true) {
+			}
+		}
+		throw ($m['AjaxError']('Synchronous error', $p['getattr'](req, 'status')));
+		return null;
+	};
+	$m['load'].__name__ = 'load';
+
+	$m['load'].__bind_type__ = 0;
+	$m['load'].__args__ = [null,null,['url'],['onreadystatechange', null],['on_load_fn', null],['async', false]];
+	$m['inject'] = function(values, namespace, names) {
+		if (typeof namespace == 'undefined') namespace=arguments.callee.__args__[3][1];
+		if (typeof names == 'undefined') names=arguments.callee.__args__[4][1];
+		var $iter2_nextval,$iter1_nextval,$iter1_type,$iter2_iter,$iter1_idx,k,$iter1_iter,$iter2_idx,v,$iter2_type,$iter2_array,$iter1_array;
+		if ($p['bool']((namespace === null))) {
+			namespace = $pyjs.global_namespace;
+		}
+		values = $p['dict'](values);
+		if ($p['bool']((names === null))) {
+			$iter1_iter = values;
+			$iter1_nextval=$p['__iter_prepare']($iter1_iter,false);
+			while (typeof($p['__wrapped_next']($iter1_nextval).$nextval) != 'undefined') {
+				k = $iter1_nextval.$nextval;
+				v = values.__getitem__(k);
+namespace[k] = v;
+			}
+		}
+		else {
+			$iter2_iter = names;
+			$iter2_nextval=$p['__iter_prepare']($iter2_iter,false);
+			while (typeof($p['__wrapped_next']($iter2_nextval).$nextval) != 'undefined') {
+				k = $iter2_nextval.$nextval;
+				v = values.__getitem__(k);
+namespace[k] = v;
+			}
+		}
+		return null;
+	};
+	$m['inject'].__name__ = 'inject';
+
+	$m['inject'].__bind_type__ = 0;
+	$m['inject'].__args__ = [null,null,['values'],['namespace', null],['names', null]];
+	$m['activate_css'] = function(targetnode) {
+		var $iter3_idx,LC,$iter3_type,$iter3_nextval,scriptnodes,$iter3_iter,$iter3_array,fileref,sn;
+		scriptnodes = $p['list'](targetnode['getElementsByTagName']('link'));
+		$iter3_iter = $p['range']($p['len'](scriptnodes));
+		$iter3_nextval=$p['__iter_prepare']($iter3_iter,false);
+		while (typeof($p['__wrapped_next']($iter3_nextval).$nextval) != 'undefined') {
+			LC = $iter3_nextval.$nextval;
+			sn = scriptnodes.__getitem__(LC);
+			sn['parentNode']['removeChild'](sn);
+			fileref = $m['DOM']['createElement']('link');
+			if ($p['bool']((typeof hassattr == "undefined"?$m.hassattr:hassattr)(sn, 'href'))) {
+				fileref.href = $p['getattr'](sn, 'href');
+			}
+			else {
+				fileref.text = $p['getattr'](sn, 'text');
+			}
+			fileref.rel = 'stylesheet';
+			fileref.type = 'text/css';
+			$doc['getElementsByTagName']('head')['item'](0)['appendChild'](fileref);
+		}
+		return null;
+	};
+	$m['activate_css'].__name__ = 'activate_css';
+
+	$m['activate_css'].__bind_type__ = 0;
+	$m['activate_css'].__args__ = [null,null,['targetnode']];
+	$m['activate_javascript'] = function(txt) {
+		var fileref;
+		fileref = $m['DOM']['createElement']('script');
+		fileref.text = txt;
+		fileref.type = 'text/javascript';
+		fileref.language = 'javascript';
+		fileref = fileref['cloneNode'](true);
+		$doc['getElementsByTagName']('head')['item'](0)['appendChild'](fileref);
+		return null;
+	};
+	$m['activate_javascript'].__name__ = 'activate_javascript';
+
+	$m['activate_javascript'].__bind_type__ = 0;
+	$m['activate_javascript'].__args__ = [null,null,['txt']];
+	$m['eval'] = function(str) {
+
+		return eval(str);
+	};
+	$m['eval'].__name__ = 'eval';
+
+	$m['eval'].__bind_type__ = 0;
+	$m['eval'].__args__ = [null,null,['str']];
+	$m['ajax_eval'] = function(url, on_load_fn, async) {
+		var onready;
+		;
+		onready = function(evnt, req) {
+			var str;
+			str = $p['getattr'](req, 'responseText');
+			$m['activate_javascript'](str);
+			if ($p['bool'](!$p['bool']((on_load_fn === null)))) {
+				on_load_fn();
+			}
 			return null;
-		}
-		if ($p['bool']($p['hasattr'](item, '__instance__'))) {
-			ret = $m['listeners']['get']($p['getattr'](item, '__instance__'));
-		}
-		else {
-			ret = $m['listeners']['get']($p['hash'](item));
-		}
-		return ret;
-	};
-	$m['get_listener'].__name__ = 'get_listener';
+		};
+		onready.__name__ = 'onready';
 
-	$m['get_listener'].__bind_type__ = 0;
-	$m['get_listener'].__args__ = [null,null,['item']];
-	$m['set_listener'] = function(item, listener) {
-
-		if ($p['bool']($p['hasattr'](item, '__instance__'))) {
-			$m['listeners'].__setitem__($p['getattr'](item, '__instance__'), listener);
-		}
-		else if ($p['bool']((listener === null))) {
-			$m['listeners']['pop']($p['hash'](item));
-		}
-		else {
-			$m['listeners'].__setitem__($p['hash'](item), listener);
-		}
+		onready.__bind_type__ = 0;
+		onready.__args__ = [null,null,['evnt'],['req']];
+		$m['load'](url, null, onready, async);
 		return null;
 	};
-	$m['set_listener'].__name__ = 'set_listener';
+	$m['ajax_eval'].__name__ = 'ajax_eval';
 
-	$m['set_listener'].__bind_type__ = 0;
-	$m['set_listener'].__args__ = [null,null,['item'],['listener']];
-	$m['hack_timer_workaround_bug_button'] = null;
-	$m['init'] = function() {
-		var mousewheel;
-		mousewheel = $p['getattr']($m['Event'], 'eventbits').__getitem__($p['getattr']($m['Event'], 'eventmap').__getitem__('mousewheel')).__getitem__(0);
-
-    // Set up capture event dispatchers.
-    $wnd.__dispatchCapturedMouseEvent = function(evt) {
-        if ($wnd.__dispatchCapturedEvent(evt)) {
-            var cap = $m.getCaptureElement();
-            if (cap && cap.__listener) {
-                $m.dispatchEvent(evt, cap, cap.__listener);
-                evt.stopPropagation();
-            }
-        }
-    };
-
-    $wnd.__dispatchCapturedEvent = function(evt) {
-        if (!$m.previewEvent(evt).valueOf()) {
-            evt.stopPropagation();
-            evt.preventDefault();
-            return false;
-        }
-
-        return true;
-        };
-
-    $wnd.addEventListener(
-        'mouseout',
-        function(evt){
-            var cap = $m.getCaptureElement();
-            if (cap) {
-                if (!evt.relatedTarget) {
-                    // When the mouse leaves the window during capture,
-                    // release capture and synthesize an 'onlosecapture' event.
-                    $m['sCaptureElem'] = null;
-                    if (cap.__listener) {
-                        var lcEvent = $doc.createEvent('UIEvent');
-                        lcEvent.initUIEvent('losecapture', false, false,
-                                             $wnd, 0);
-                        $m.dispatchEvent(lcEvent, cap, cap.__listener);
-                    }
-                }
-            }
-        },
-        true
-    );
-
-    var dcme = $wnd.__dispatchCapturedMouseEvent;
-    var dce = $wnd.__dispatchCapturedEvent;
-
-    $wnd.addEventListener('click', dcme, true);
-    $wnd.addEventListener('dblclick', dcme, true);
-    $wnd.addEventListener('mousedown', dcme, true);
-    $wnd.addEventListener('mouseup', dcme, true);
-    $wnd.addEventListener('mousemove', dcme, true);
-    $wnd.addEventListener('keydown', dce, true);
-    $wnd.addEventListener('keyup', dce, true);
-    $wnd.addEventListener('keypress', dce, true);
-    
-    $wnd.__dispatchEvent = function(evt) {
-    
-        var listener, curElem = this;
-        
-        while (curElem && !(listener = curElem.__listener)) {
-            curElem = curElem.parentNode;
-        }
-        if (curElem && curElem.nodeType != 1) {
-            curElem = null;
-        }
-    
-        if (listener) {
-            $m.dispatchEvent(evt, curElem, listener);
-        }
-    };
-    var dcme = $wnd.__dispatchCapturedMouseEvent;
-    $wnd.addEventListener(mousewheel, dcme, true);
-    
-	};
-	$m['init'].__name__ = 'init';
-
-	$m['init'].__bind_type__ = 0;
-	$m['init'].__args__ = [null,null];
-	$m['_init_testing'] = function() {
-		var body;
-		body = $doc['getElementsByTagName']('body').__getitem__(0);
-		$m.mf['_addEventListener'](body, 'click', (typeof cb == "undefined"?$m.cb:cb));
-		$m.mf['_addEventListener'](body, 'change', (typeof cb == "undefined"?$m.cb:cb));
-		$m.mf['_addEventListener'](body, 'mouseout', (typeof cb == "undefined"?$m.cb:cb));
-		$m.mf['_addEventListener'](body, 'mousedown', (typeof cb == "undefined"?$m.cb:cb));
-		$m.mf['_addEventListener'](body, 'mouseup', (typeof cb == "undefined"?$m.cb:cb));
-		$m.mf['_addEventListener'](body, 'mousemove', (typeof cb == "undefined"?$m.cb:cb));
-		$m.mf['_addEventListener'](body, 'resize', (typeof cb == "undefined"?$m.cb:cb));
-		$m.mf['_addEventListener'](body, 'keyup', (typeof cb == "undefined"?$m.cb:cb));
-		$m.mf['_addEventListener'](body, 'keydown', (typeof cb == "undefined"?$m.cb:cb));
-		$m.mf['_addEventListener'](body, 'keypress', (typeof cb == "undefined"?$m.cb:cb));
-		return null;
-	};
-	$m['_init_testing'].__name__ = '_init_testing';
-
-	$m['_init_testing'].__bind_type__ = 0;
-	$m['_init_testing'].__args__ = [null,null];
-	$m['_dispatchWindowEvent'] = function(sender, evt, useCap) {
-
- 		return null;
-	};
-	$m['_dispatchWindowEvent'].__name__ = '_dispatchWindowEvent';
-
-	$m['_dispatchWindowEvent'].__bind_type__ = 0;
-	$m['_dispatchWindowEvent'].__args__ = [null,null,['sender'],['evt'],['useCap']];
-	$m['_dispatchEvent'] = function(sender, evt, useCap) {
-		var curElem,$and3,$and1,$and2,cap,$and4,$and5,$and6,listener,$pyjs_try_err;
-		if ($p['bool']((evt === null))) {
-			evt = $p['getattr']($wnd, 'event');
+	$m['ajax_eval'].__bind_type__ = 0;
+	$m['ajax_eval'].__args__ = [null,null,['url'],['on_load_fn'],['async']];
+	$m['__imported__'] = $p['dict']([]);
+	$m['ajax_import'] = function(url, namespace, names) {
+		if (typeof namespace == 'undefined') namespace=arguments.callee.__args__[3][1];
+		if (typeof names == 'undefined') names=arguments.callee.__args__[4][1];
+		var e,name,script,$iter4_nextval,req,module,$iter4_idx,name_getter,$pyjs_try_err,$iter4_type,$iter4_array,$iter4_iter;
+		;
+		if ($p['bool']($m['__imported__']['has_key'](url))) {
+			module = $m['__imported__'].__getitem__(url);
 		}
 		else {
+			req = $m['load'](url, null, null, false);
+			module = null;
+			name_getter = $p['list']([]);
+			if ($p['bool']((names === null))) {
+				names = $p['list']([]);
+			}
+			$iter4_iter = names;
+			$iter4_nextval=$p['__iter_prepare']($iter4_iter,false);
+			while (typeof($p['__wrapped_next']($iter4_nextval).$nextval) != 'undefined') {
+				name = $iter4_nextval.$nextval;
+				name_getter['append']($p['sprintf']("$pyjs$moduleObject['%s'] = %s;", $p['tuple']([name, name])));
+			}
+			script = $p['sprintf']('(function ( ) {\n$pyjs$moduleObject={};\n%s;\n%s\nreturn $pyjs$moduleObject;\n})();', $p['tuple']([$p['getattr'](req, 'responseText'), '\n'['join'](name_getter)]));
 			try {
-				sender = $m.get_main_frame()['gobject_wrap'](sender);
-				evt = $m.get_main_frame()['gobject_wrap'](evt);
+				module = $m['eval'](script);
 			} catch($pyjs_try_err) {
 				var $pyjs_try_err_name = (typeof $pyjs_try_err.__name__ == 'undefined' ? $pyjs_try_err.name : $pyjs_try_err.__name__ );
 				$pyjs.__last_exception__ = {error: $pyjs_try_err, module: $m};
 				if (true) {
+					e = $m['sys']['exc_info']();
+					throw ($m['AjaxError']($p['sprintf']('Error in %s: %s', $p['tuple']([url, $p['getattr'](e, 'message')]))));
 				}
 			}
+			$m['__imported__'].__setitem__(url, module);
 		}
-		listener = null;
-		curElem = sender;
-		cap = (typeof getCaptureElement == "undefined"?$m.getCaptureElement:getCaptureElement)();
-		listener = $m['get_listener'](cap);
-		if ($p['bool'](($p['bool']($and1=cap)?(listener !== null):$and1))) {
-			(typeof dispatchEvent == "undefined"?$m.dispatchEvent:dispatchEvent)(evt, cap, listener);
-			evt['stopPropagation']();
-			return null;
-		}
-		while ($p['bool'](($p['bool']($and3=curElem)?($m['get_listener'](curElem) === null):$and3))) {
-			curElem = (typeof getParent == "undefined"?$m.getParent:getParent)(curElem);
-		}
-		if ($p['bool'](($p['bool']($and5=curElem)?!$p['op_eq']((typeof getNodeType == "undefined"?$m.getNodeType:getNodeType)(curElem), 1):$and5))) {
-			curElem = null;
-		}
-		listener = $m['get_listener'](curElem);
-		if ($p['bool']((listener !== null))) {
-			(typeof dispatchEvent == "undefined"?$m.dispatchEvent:dispatchEvent)(evt, curElem, listener);
-		}
+		$m['inject'](module, namespace, names);
 		return null;
 	};
-	$m['_dispatchEvent'].__name__ = '_dispatchEvent';
+	$m['ajax_import'].__name__ = 'ajax_import';
 
-	$m['_dispatchEvent'].__bind_type__ = 0;
-	$m['_dispatchEvent'].__args__ = [null,null,['sender'],['evt'],['useCap']];
-	$m['_dispatchCapturedMouseEvent'] = function(evt) {
-		var listener,$and8,cap,$and7;
-		if ($p['bool'](!$p['bool']((typeof _dispatchCapturedEvent == "undefined"?$m._dispatchCapturedEvent:_dispatchCapturedEvent)(evt)))) {
-			return null;
-		}
-		cap = (typeof getCaptureElement == "undefined"?$m.getCaptureElement:getCaptureElement)();
-		listener = $m['get_listener'](cap);
-		if ($p['bool'](($p['bool']($and7=cap)?(listener !== null):$and7))) {
-			(typeof dispatchEvent == "undefined"?$m.dispatchEvent:dispatchEvent)(evt, cap, listener);
-			evt['stopPropagation']();
-		}
+	$m['ajax_import'].__bind_type__ = 0;
+	$m['ajax_import'].__args__ = [null,null,['url'],['namespace', null],['names', null]];
+	$m['load_script'] = function(url, onload, async) {
+		var e,onload_fn,$add6,$add5;
+		$wnd.status = $p['__op_add']($add5='Loading ',$add6=url);
+		onload_fn = function() {
+			var $add8,$add7;
+			$wnd.status = $p['__op_add']($add7='Loaded ',$add8=url);
+			if ($p['bool'](!$p['bool']((onload === null)))) {
+				$m['eval'](onload);
+			}
+			return true;
+		};
+		onload_fn.__name__ = 'onload_fn';
+
+		onload_fn.__bind_type__ = 0;
+		onload_fn.__args__ = [null,null];
+		e = $m['DOM']['createElement']('script');
+		e.src = url;
+		e.type = 'text/javascript';
+		e.language = 'javascript';
+		e.defer = async;
+		e.onload = onload_fn;
+		$doc['getElementsByTagName']('head').__getitem__(0)['appendChild'](e);
 		return null;
 	};
-	$m['_dispatchCapturedMouseEvent'].__name__ = '_dispatchCapturedMouseEvent';
+	$m['load_script'].__name__ = 'load_script';
 
-	$m['_dispatchCapturedMouseEvent'].__bind_type__ = 0;
-	$m['_dispatchCapturedMouseEvent'].__args__ = [null,null,['evt']];
-	$m['_dispatchCapturedMouseoutEvent'] = function(evt) {
-		var listener,lcEvent,cap;
-		cap = (typeof getCaptureElement == "undefined"?$m.getCaptureElement:getCaptureElement)();
-		if ($p['bool']((cap === null))) {
+	$m['load_script'].__bind_type__ = 0;
+	$m['load_script'].__args__ = [null,null,['url'],['onload'],['async']];
+	$m['running_timeout'] = 0;
+	$m['timeout_idname'] = null;
+	$m['timeout_url'] = null;
+	$m['timeout_on_load_fn'] = null;
+	$m['redo_timeout'] = null;
+	$m['timeout_id'] = null;
+	$m['ajax_dlink_refresh'] = function(idname, url, on_load_fn, timeout) {
+
+		$m['timeout_idname'] = idname;
+		$m['timeout_url'] = url;
+		$m['timeout_on_load_fn'] = on_load_fn;
+		$m['redo_timeout'] = timeout;
+		if ($p['bool'](($p['cmp']($m['running_timeout'], 0) == 1))) {
 			return null;
 		}
-		if ($p['bool']((typeof eventGetToElement == "undefined"?$m.eventGetToElement:eventGetToElement)(evt))) {
-			return null;
-		}
-		(typeof setCapture == "undefined"?$m.setCapture:setCapture)(null);
-		listener = $m['get_listener'](cap);
-		if ($p['bool']((listener === null))) {
-			return null;
-		}
-		lcEvent = $doc['createEvent']('UIEvent');
-		lcEvent['initUIEvent']('losecapture', false, false, $wnd, 0);
-		(typeof dispatchEvent == "undefined"?$m.dispatchEvent:dispatchEvent)(lcEvent, cap, listener);
+		$m['timeout_id'] = setTimeout((typeof do_ajax_dlink_refresh == "undefined"?$m.do_ajax_dlink_refresh:do_ajax_dlink_refresh), timeout);
+		$m['running_timeout'] = 1;
 		return null;
 	};
-	$m['_dispatchCapturedMouseoutEvent'].__name__ = '_dispatchCapturedMouseoutEvent';
+	$m['ajax_dlink_refresh'].__name__ = 'ajax_dlink_refresh';
 
-	$m['_dispatchCapturedMouseoutEvent'].__bind_type__ = 0;
-	$m['_dispatchCapturedMouseoutEvent'].__args__ = [null,null,['evt']];
-	$m['browser_event_cb'] = function(view, event, from_window) {
-		var $or4,$or1,$or3,$or2,$pyjs_try_err,et;
-		if ($p['bool']((event === null))) {
-			event = $p['getattr']($wnd, 'event');
+	$m['ajax_dlink_refresh'].__bind_type__ = 0;
+	$m['ajax_dlink_refresh'].__args__ = [null,null,['idname'],['url'],['on_load_fn'],['timeout']];
+	$m['do_ajax_dlink_refresh'] = function() {
+
+		if ($p['bool']($p['op_eq']((typeof ajax_dlink == "undefined"?$m.ajax_dlink:ajax_dlink)($m['timeout_idname'], $m['timeout_url'], $m['timeout_on_load_fn']), 0))) {
+			$m['timeout_id'] = null;
+			$m['running_timeout'] = 0;
+			return null;
 		}
-		else {
-			try {
-				event = $m.get_main_frame()['gobject_wrap'](event);
-			} catch($pyjs_try_err) {
-				var $pyjs_try_err_name = (typeof $pyjs_try_err.__name__ == 'undefined' ? $pyjs_try_err.name : $pyjs_try_err.__name__ );
-				$pyjs.__last_exception__ = {error: $pyjs_try_err, module: $m};
-				if (true) {
+		$m['timeout_id'] = null;
+		$m['running_timeout'] = 0;
+		$m['ajax_dlink_refresh']($m['timeout_idname'], $m['timeout_url'], $m['timeout_on_load_fn'], $m['redo_timeout']);
+		return null;
+	};
+	$m['do_ajax_dlink_refresh'].__name__ = 'do_ajax_dlink_refresh';
+
+	$m['do_ajax_dlink_refresh'].__bind_type__ = 0;
+	$m['do_ajax_dlink_refresh'].__args__ = [null,null];
+	$m['ajax_dlink'] = function(idname, url, on_load_fn) {
+		var body,xhtoj,onreadystatechange;
+		body = $p['getattr']($doc, 'body');
+		if ($p['bool']($m['timeout_id'])) {
+			clearTimeout($m['timeout_id']);
+		}
+		onreadystatechange = function() {
+			var txt,jsnode;
+			if ($p['bool']($p['op_eq']($p['getattr']((typeof xhtoj == "undefined"?$m.xhtoj:xhtoj), 'readyState'), 4))) {
+				jsnode = 0;
+				if ($p['bool']($p['op_eq']($p['getattr']((typeof xhtoj == "undefined"?$m.xhtoj:xhtoj), 'status'), 200))) {
+					txt = $p['getattr']((typeof xhtoj == "undefined"?$m.xhtoj:xhtoj), 'responseText');
+					jsnode = null;
+					if ($p['bool'](idname)) {
+						jsnode = $m['DOM']['getElementById'](idname);
+					}
+					if ($p['bool']((jsnode === null))) {
+						jsnode = $m['DOM']['createElement']('script');
+					}
+					$m['activate_javascript'](txt);
+					if ($p['bool'](!$p['bool']((on_load_fn === null)))) {
+						$wnd['alert'](on_load_fn);
+						(typeof test_fn == "undefined"?$m.test_fn:test_fn)();
+					}
+					return 1;
+				}
+				else {
+					jsnode = $m['DOM']['getElementById'](idname);
+					if ($p['bool'](!$p['bool']((jsnode === null)))) {
+						jsnode.innerHTML = $p['getattr']((typeof xhtoj == "undefined"?$m.xhtoj:xhtoj), 'status');
+					}
 				}
 			}
-		}
-		et = (typeof eventGetType == "undefined"?$m.eventGetType:eventGetType)(event);
-		if ($p['bool']($p['op_eq'](et, 'resize'))) {
-			$m['onResize']();
 			return null;
-		}
-		if ($p['bool']($p['op_eq'](et, 'mouseout'))) {
-			$m['_dispatchCapturedMouseoutEvent'](event);
-		}
-		if ($p['bool'](($p['bool']($or1=$p['op_eq'](et, 'keyup'))?$or1:($p['bool']($or2=$p['op_eq'](et, 'keydown'))?$or2:($p['bool']($or3=$p['op_eq'](et, 'keypress'))?$or3:$p['op_eq'](et, 'change')))))) {
-			return (typeof _dispatchCapturedEvent == "undefined"?$m._dispatchCapturedEvent:_dispatchCapturedEvent)(event);
-		}
-		else {
-			return $m['_dispatchCapturedMouseEvent'](event);
-		}
-		return null;
-	};
-	$m['browser_event_cb'].__name__ = 'browser_event_cb';
-
-	$m['browser_event_cb'].__bind_type__ = 0;
-	$m['browser_event_cb'].__args__ = [null,null,['view'],['event'],['from_window']];
-	$m['_dispatchCapturedEvent'] = function(event) {
-
-		if ($p['bool'](!$p['bool']((typeof previewEvent == "undefined"?$m.previewEvent:previewEvent)(event)))) {
-			event['stopPropagation']();
-			(typeof eventPreventDefault == "undefined"?$m.eventPreventDefault:eventPreventDefault)(event);
-			return false;
-		}
-		return true;
-	};
-	$m['_dispatchCapturedEvent'].__name__ = '_dispatchCapturedEvent';
-
-	$m['_dispatchCapturedEvent'].__bind_type__ = 0;
-	$m['_dispatchCapturedEvent'].__args__ = [null,null,['event']];
-	$m['addEventPreview'] = function(preview) {
-
-		$m['sEventPreviewStack']['append'](preview);
-		return null;
-	};
-	$m['addEventPreview'].__name__ = 'addEventPreview';
-
-	$m['addEventPreview'].__bind_type__ = 0;
-	$m['addEventPreview'].__args__ = [null,null,['preview']];
-	$m['appendChild'] = function(parent, child) {
-
-		parent['appendChild'](child);
-		return null;
-	};
-	$m['appendChild'].__name__ = 'appendChild';
-
-	$m['appendChild'].__bind_type__ = 0;
-	$m['appendChild'].__args__ = [null,null,['parent'],['child']];
-	$m['removeChild'] = function(parent, child) {
-
-		parent['removeChild'](child);
-		return null;
-	};
-	$m['removeChild'].__name__ = 'removeChild';
-
-	$m['removeChild'].__bind_type__ = 0;
-	$m['removeChild'].__args__ = [null,null,['parent'],['child']];
-	$m['replaceChild'] = function(parent, newChild, oldChild) {
-
-		parent['replaceChild'](newChild, oldChild);
-		return null;
-	};
-	$m['replaceChild'].__name__ = 'replaceChild';
-
-	$m['replaceChild'].__bind_type__ = 0;
-	$m['replaceChild'].__args__ = [null,null,['parent'],['newChild'],['oldChild']];
-	$m['buttonClick'] = function(button) {
-
-
-    button.click();
-    
-	};
-	$m['buttonClick'].__name__ = 'buttonClick';
-
-	$m['buttonClick'].__bind_type__ = 0;
-	$m['buttonClick'].__args__ = [null,null,['button']];
-	$m['compare'] = function(elem1, elem2) {
-
-
-    return (elem1 == elem2);
-    
-	};
-	$m['compare'].__name__ = 'compare';
-
-	$m['compare'].__bind_type__ = 0;
-	$m['compare'].__args__ = [null,null,['elem1'],['elem2']];
-	$m['createAnchor'] = function() {
-
-		return (typeof createElement == "undefined"?$m.createElement:createElement)('A');
-	};
-	$m['createAnchor'].__name__ = 'createAnchor';
-
-	$m['createAnchor'].__bind_type__ = 0;
-	$m['createAnchor'].__args__ = [null,null];
-	$m['createButton'] = function() {
-
-		return (typeof createElement == "undefined"?$m.createElement:createElement)('button');
-	};
-	$m['createButton'].__name__ = 'createButton';
-
-	$m['createButton'].__bind_type__ = 0;
-	$m['createButton'].__args__ = [null,null];
-	$m['createCol'] = function() {
-
-		return (typeof createElement == "undefined"?$m.createElement:createElement)('col');
-	};
-	$m['createCol'].__name__ = 'createCol';
-
-	$m['createCol'].__bind_type__ = 0;
-	$m['createCol'].__args__ = [null,null];
-	$m['createDiv'] = function() {
-
-		return (typeof createElement == "undefined"?$m.createElement:createElement)('div');
-	};
-	$m['createDiv'].__name__ = 'createDiv';
-
-	$m['createDiv'].__bind_type__ = 0;
-	$m['createDiv'].__args__ = [null,null];
-	$m['createElement'] = function(tag) {
-
-
-    return $doc.createElement(tag);
-    
-	};
-	$m['createElement'].__name__ = 'createElement';
-
-	$m['createElement'].__bind_type__ = 0;
-	$m['createElement'].__args__ = [null,null,['tag']];
-	$m['createFieldSet'] = function() {
-
-		return $m['createElement']('fieldset');
-	};
-	$m['createFieldSet'].__name__ = 'createFieldSet';
-
-	$m['createFieldSet'].__bind_type__ = 0;
-	$m['createFieldSet'].__args__ = [null,null];
-	$m['createForm'] = function() {
-
-		return $m['createElement']('form');
-	};
-	$m['createForm'].__name__ = 'createForm';
-
-	$m['createForm'].__bind_type__ = 0;
-	$m['createForm'].__args__ = [null,null];
-	$m['createIFrame'] = function() {
-
-		return $m['createElement']('iframe');
-	};
-	$m['createIFrame'].__name__ = 'createIFrame';
-
-	$m['createIFrame'].__bind_type__ = 0;
-	$m['createIFrame'].__args__ = [null,null];
-	$m['createImg'] = function() {
-
-		return $m['createElement']('img');
-	};
-	$m['createImg'].__name__ = 'createImg';
-
-	$m['createImg'].__bind_type__ = 0;
-	$m['createImg'].__args__ = [null,null];
-	$m['createInputCheck'] = function() {
-
-		return (typeof createInputElement == "undefined"?$m.createInputElement:createInputElement)('checkbox');
-	};
-	$m['createInputCheck'].__name__ = 'createInputCheck';
-
-	$m['createInputCheck'].__bind_type__ = 0;
-	$m['createInputCheck'].__args__ = [null,null];
-	$m['createInputElement'] = function(elementType) {
-
-
-    var e = $doc.createElement("INPUT");
-    e.type = elementType;
-    return e;
-    
-	};
-	$m['createInputElement'].__name__ = 'createInputElement';
-
-	$m['createInputElement'].__bind_type__ = 0;
-	$m['createInputElement'].__args__ = [null,null,['elementType']];
-	$m['createInputPassword'] = function() {
-
-		return $m['createInputElement']('password');
-	};
-	$m['createInputPassword'].__name__ = 'createInputPassword';
-
-	$m['createInputPassword'].__bind_type__ = 0;
-	$m['createInputPassword'].__args__ = [null,null];
-	$m['createInputRadio'] = function(group) {
-
-
-    var elem = $doc.createElement("INPUT");
-    elem.type = 'radio';
-    elem.name = group;
-    return elem;
-    
-	};
-	$m['createInputRadio'].__name__ = 'createInputRadio';
-
-	$m['createInputRadio'].__bind_type__ = 0;
-	$m['createInputRadio'].__args__ = [null,null,['group']];
-	$m['createInputText'] = function() {
-
-		return $m['createInputElement']('text');
-	};
-	$m['createInputText'].__name__ = 'createInputText';
-
-	$m['createInputText'].__bind_type__ = 0;
-	$m['createInputText'].__args__ = [null,null];
-	$m['createLabel'] = function() {
-
-		return $m['createElement']('label');
-	};
-	$m['createLabel'].__name__ = 'createLabel';
-
-	$m['createLabel'].__bind_type__ = 0;
-	$m['createLabel'].__args__ = [null,null];
-	$m['createLegend'] = function() {
-
-		return $m['createElement']('legend');
-	};
-	$m['createLegend'].__name__ = 'createLegend';
-
-	$m['createLegend'].__bind_type__ = 0;
-	$m['createLegend'].__args__ = [null,null];
-	$m['createOptions'] = function() {
-
-		return $m['createElement']('options');
-	};
-	$m['createOptions'].__name__ = 'createOptions';
-
-	$m['createOptions'].__bind_type__ = 0;
-	$m['createOptions'].__args__ = [null,null];
-	$m['createSelect'] = function() {
-
-		return $m['createElement']('select');
-	};
-	$m['createSelect'].__name__ = 'createSelect';
-
-	$m['createSelect'].__bind_type__ = 0;
-	$m['createSelect'].__args__ = [null,null];
-	$m['createSpan'] = function() {
-
-		return $m['createElement']('span');
-	};
-	$m['createSpan'].__name__ = 'createSpan';
-
-	$m['createSpan'].__bind_type__ = 0;
-	$m['createSpan'].__args__ = [null,null];
-	$m['createTable'] = function() {
-
-		return $m['createElement']('table');
-	};
-	$m['createTable'].__name__ = 'createTable';
-
-	$m['createTable'].__bind_type__ = 0;
-	$m['createTable'].__args__ = [null,null];
-	$m['createTBody'] = function() {
-
-		return $m['createElement']('tbody');
-	};
-	$m['createTBody'].__name__ = 'createTBody';
-
-	$m['createTBody'].__bind_type__ = 0;
-	$m['createTBody'].__args__ = [null,null];
-	$m['createTD'] = function() {
-
-		return $m['createElement']('td');
-	};
-	$m['createTD'].__name__ = 'createTD';
-
-	$m['createTD'].__bind_type__ = 0;
-	$m['createTD'].__args__ = [null,null];
-	$m['createTextArea'] = function() {
-
-		return $m['createElement']('textarea');
-	};
-	$m['createTextArea'].__name__ = 'createTextArea';
-
-	$m['createTextArea'].__bind_type__ = 0;
-	$m['createTextArea'].__args__ = [null,null];
-	$m['createTH'] = function() {
-
-		return $m['createElement']('th');
-	};
-	$m['createTH'].__name__ = 'createTH';
-
-	$m['createTH'].__bind_type__ = 0;
-	$m['createTH'].__args__ = [null,null];
-	$m['createTR'] = function() {
-
-		return $m['createElement']('tr');
-	};
-	$m['createTR'].__name__ = 'createTR';
-
-	$m['createTR'].__bind_type__ = 0;
-	$m['createTR'].__args__ = [null,null];
-	$m['eventStopPropagation'] = function(evt) {
-
-		evt['stopPropagation']();
-		return null;
-	};
-	$m['eventStopPropagation'].__name__ = 'eventStopPropagation';
-
-	$m['eventStopPropagation'].__bind_type__ = 0;
-	$m['eventStopPropagation'].__args__ = [null,null,['evt']];
-	$m['eventCancelBubble'] = function(evt, cancel) {
-
-		evt.cancelBubble = cancel;
-		return null;
-	};
-	$m['eventCancelBubble'].__name__ = 'eventCancelBubble';
-
-	$m['eventCancelBubble'].__bind_type__ = 0;
-	$m['eventCancelBubble'].__args__ = [null,null,['evt'],['cancel']];
-	$m['eventGetAltKey'] = function(evt) {
-
-		return $p['getattr'](evt, 'altKey');
-	};
-	$m['eventGetAltKey'].__name__ = 'eventGetAltKey';
-
-	$m['eventGetAltKey'].__bind_type__ = 0;
-	$m['eventGetAltKey'].__args__ = [null,null,['evt']];
-	$m['eventGetButton'] = function(evt) {
-
-
-    var button = evt.button;
-    if(button == 0){
-        return 1;
-    } else {
-        return button;
-    }
-    
-	};
-	$m['eventGetButton'].__name__ = 'eventGetButton';
-
-	$m['eventGetButton'].__bind_type__ = 0;
-	$m['eventGetButton'].__args__ = [null,null,['evt']];
-	$m['eventGetClientX'] = function(evt) {
-
-		return $p['getattr'](evt, 'clientX');
-	};
-	$m['eventGetClientX'].__name__ = 'eventGetClientX';
-
-	$m['eventGetClientX'].__bind_type__ = 0;
-	$m['eventGetClientX'].__args__ = [null,null,['evt']];
-	$m['eventGetClientY'] = function(evt) {
-
-		return $p['getattr'](evt, 'clientY');
-	};
-	$m['eventGetClientY'].__name__ = 'eventGetClientY';
-
-	$m['eventGetClientY'].__bind_type__ = 0;
-	$m['eventGetClientY'].__args__ = [null,null,['evt']];
-	$m['eventGetCtrlKey'] = function(evt) {
-
-		return $p['getattr'](evt, 'ctrlKey');
-	};
-	$m['eventGetCtrlKey'].__name__ = 'eventGetCtrlKey';
-
-	$m['eventGetCtrlKey'].__bind_type__ = 0;
-	$m['eventGetCtrlKey'].__args__ = [null,null,['evt']];
-	$m['eventGetFromElement'] = function(evt) {
-
-
-    return evt.fromElement ? evt.fromElement : null;
-    
-	};
-	$m['eventGetFromElement'].__name__ = 'eventGetFromElement';
-
-	$m['eventGetFromElement'].__bind_type__ = 0;
-	$m['eventGetFromElement'].__args__ = [null,null,['evt']];
-	$m['eventGetKeyCode'] = function(evt) {
-
-
-    return evt.which ? evt.which :
-            (evt.keyCode ? evt.keyCode : 0);
-    
-	};
-	$m['eventGetKeyCode'].__name__ = 'eventGetKeyCode';
-
-	$m['eventGetKeyCode'].__bind_type__ = 0;
-	$m['eventGetKeyCode'].__args__ = [null,null,['evt']];
-	$m['eventGetRepeat'] = function(evt) {
-
-		return $p['getattr'](evt, 'repeat');
-	};
-	$m['eventGetRepeat'].__name__ = 'eventGetRepeat';
-
-	$m['eventGetRepeat'].__bind_type__ = 0;
-	$m['eventGetRepeat'].__args__ = [null,null,['evt']];
-	$m['eventGetScreenX'] = function(evt) {
-
-		return $p['getattr'](evt, 'screenX');
-	};
-	$m['eventGetScreenX'].__name__ = 'eventGetScreenX';
-
-	$m['eventGetScreenX'].__bind_type__ = 0;
-	$m['eventGetScreenX'].__args__ = [null,null,['evt']];
-	$m['eventGetScreenY'] = function(evt) {
-
-		return $p['getattr'](evt, 'screenY');
-	};
-	$m['eventGetScreenY'].__name__ = 'eventGetScreenY';
-
-	$m['eventGetScreenY'].__bind_type__ = 0;
-	$m['eventGetScreenY'].__args__ = [null,null,['evt']];
-	$m['eventGetShiftKey'] = function(evt) {
-
-		return $p['getattr'](evt, 'shiftKey');
-	};
-	$m['eventGetShiftKey'].__name__ = 'eventGetShiftKey';
-
-	$m['eventGetShiftKey'].__bind_type__ = 0;
-	$m['eventGetShiftKey'].__args__ = [null,null,['evt']];
-	$m['eventGetCurrentTarget'] = function(event) {
-
-		return $p['getattr'](event, 'currentTarget');
-	};
-	$m['eventGetCurrentTarget'].__name__ = 'eventGetCurrentTarget';
-
-	$m['eventGetCurrentTarget'].__bind_type__ = 0;
-	$m['eventGetCurrentTarget'].__args__ = [null,null,['event']];
-	$m['eventGetTarget'] = function(event) {
-
-
-    return event.target ? event.target : null;
-    
-	};
-	$m['eventGetTarget'].__name__ = 'eventGetTarget';
-
-	$m['eventGetTarget'].__bind_type__ = 0;
-	$m['eventGetTarget'].__args__ = [null,null,['event']];
-	$m['eventGetToElement'] = function(evt) {
-
-
-    return evt.relatedTarget ? evt.relatedTarget : null;
-    
-	};
-	$m['eventGetToElement'].__name__ = 'eventGetToElement';
-
-	$m['eventGetToElement'].__bind_type__ = 0;
-	$m['eventGetToElement'].__args__ = [null,null,['evt']];
-	$m['eventGetType'] = function(event) {
-
-		return $p['getattr'](event, 'type');
-	};
-	$m['eventGetType'].__name__ = 'eventGetType';
-
-	$m['eventGetType'].__bind_type__ = 0;
-	$m['eventGetType'].__args__ = [null,null,['event']];
-	$m['eventGetTypeInt'] = function(event) {
-
-		return $m['Event']['eventmap']['get']($p['str']($p['getattr'](event, 'type')), 0);
-	};
-	$m['eventGetTypeInt'].__name__ = 'eventGetTypeInt';
-
-	$m['eventGetTypeInt'].__bind_type__ = 0;
-	$m['eventGetTypeInt'].__args__ = [null,null,['event']];
-	$m['eventGetTypeString'] = function(event) {
-
-		return $m['eventGetType'](event);
-	};
-	$m['eventGetTypeString'].__name__ = 'eventGetTypeString';
-
-	$m['eventGetTypeString'].__bind_type__ = 0;
-	$m['eventGetTypeString'].__args__ = [null,null,['event']];
-	$m['eventPreventDefault'] = function(evt) {
-
-		evt['preventDefault']();
-		return null;
-	};
-	$m['eventPreventDefault'].__name__ = 'eventPreventDefault';
-
-	$m['eventPreventDefault'].__bind_type__ = 0;
-	$m['eventPreventDefault'].__args__ = [null,null,['evt']];
-	$m['eventSetKeyCode'] = function(evt, key) {
-
-		evt.keyCode = key;
-		return null;
-	};
-	$m['eventSetKeyCode'].__name__ = 'eventSetKeyCode';
-
-	$m['eventSetKeyCode'].__bind_type__ = 0;
-	$m['eventSetKeyCode'].__args__ = [null,null,['evt'],['key']];
-	$m['eventToString'] = function(evt) {
-
-
-    return evt.toString();
-    
-	};
-	$m['eventToString'].__name__ = 'eventToString';
-
-	$m['eventToString'].__bind_type__ = 0;
-	$m['eventToString'].__args__ = [null,null,['evt']];
-	$m['iframeGetSrc'] = function(elem) {
-
-		return $p['getattr'](elem, 'src');
-	};
-	$m['iframeGetSrc'].__name__ = 'iframeGetSrc';
-
-	$m['iframeGetSrc'].__bind_type__ = 0;
-	$m['iframeGetSrc'].__args__ = [null,null,['elem']];
-	$m['getAbsoluteLeft'] = function(_elem) {
-
-
-    var left = 0;
-    var elem = _elem;
-    var curr = elem.parentNode;
-    // This intentionally excludes body
-    while (curr && curr != $doc.body) {
-
-      // see https://bugs.opera.com/show_bug.cgi?id=249965
-      // The net effect is that TR and TBODY elemnts report the scroll offsets
-      // of the BODY and HTML elements instead of 0.
-      if (curr.tagName != 'TR' && curr.tagName != 'TBODY') {
-        left -= curr.scrollLeft;
-      }
-      curr = curr.parentNode;
-    }
-
-    while (elem) {
-      left += elem.offsetLeft;
-      elem = elem.offsetParent;
-    }
-    return left;
-    
-	};
-	$m['getAbsoluteLeft'].__name__ = 'getAbsoluteLeft';
-
-	$m['getAbsoluteLeft'].__bind_type__ = 0;
-	$m['getAbsoluteLeft'].__args__ = [null,null,['_elem']];
-	$m['getAbsoluteTop'] = function(_elem) {
-
-
-    var top = 0;
-    var elem = _elem;
-
-    // This intentionally excludes body
-    var curr = elem.parentNode;
-    while (curr && curr != $doc.body) {
-      // see getAbsoluteLeft()
-      if (curr.tagName != 'TR' && curr.tagName != 'TBODY') {
-        top -= curr.scrollTop;
-      }
-      curr = curr.parentNode;
-    }
-
-    while (elem) {
-      top += elem.offsetTop;
-      elem = elem.offsetParent;
-    }
-    return top;
-    
-	};
-	$m['getAbsoluteTop'].__name__ = 'getAbsoluteTop';
-
-	$m['getAbsoluteTop'].__bind_type__ = 0;
-	$m['getAbsoluteTop'].__args__ = [null,null,['_elem']];
-	$m['getAttribute'] = function(elem, attr) {
-
-
-    var ret = elem[attr];
-    return (ret == null) ? null : String(ret);
-    
-	};
-	$m['getAttribute'].__name__ = 'getAttribute';
-
-	$m['getAttribute'].__bind_type__ = 0;
-	$m['getAttribute'].__args__ = [null,null,['elem'],['attr']];
-	$m['getElemAttribute'] = function(elem, attr) {
-
-		return elem['getAttribute'](attr);
-	};
-	$m['getElemAttribute'].__name__ = 'getElemAttribute';
-
-	$m['getElemAttribute'].__bind_type__ = 0;
-	$m['getElemAttribute'].__args__ = [null,null,['elem'],['attr']];
-	$m['getBooleanAttribute'] = function(elem, attr) {
-
-
-    return !!elem[attr];
-    
-	};
-	$m['getBooleanAttribute'].__name__ = 'getBooleanAttribute';
-
-	$m['getBooleanAttribute'].__bind_type__ = 0;
-	$m['getBooleanAttribute'].__args__ = [null,null,['elem'],['attr']];
-	$m['getBooleanElemAttribute'] = function(elem, attr) {
-
-		if ($p['bool'](!$p['bool'](elem['hasAttribute'](attr)))) {
-			return null;
-		}
-		return $p['bool'](elem['getAttribute'](attr));
-	};
-	$m['getBooleanElemAttribute'].__name__ = 'getBooleanElemAttribute';
-
-	$m['getBooleanElemAttribute'].__bind_type__ = 0;
-	$m['getBooleanElemAttribute'].__args__ = [null,null,['elem'],['attr']];
-	$m['getCaptureElement'] = function() {
-
-		return $m['sCaptureElem'];
-	};
-	$m['getCaptureElement'].__name__ = 'getCaptureElement';
-
-	$m['getCaptureElement'].__bind_type__ = 0;
-	$m['getCaptureElement'].__args__ = [null,null];
-	$m['getChild'] = function(elem, index) {
-
-
-    var count = 0, child = elem.firstChild;
-    while (child) {
-      var next = child.nextSibling;
-      if (child.nodeType == 1) {
-        if (index == count)
-          return child;
-        ++count;
-      }
-      child = next;
-    }
-
-    return null;
-    
-	};
-	$m['getChild'].__name__ = 'getChild';
-
-	$m['getChild'].__bind_type__ = 0;
-	$m['getChild'].__args__ = [null,null,['elem'],['index']];
-	$m['getChildCount'] = function(elem) {
-
-
-    var count = 0, child = elem.firstChild;
-    while (child) {
-      if (child.nodeType == 1)
-      ++count;
-      child = child.nextSibling;
-    }
-    return count;
-    
-	};
-	$m['getChildCount'].__name__ = 'getChildCount';
-
-	$m['getChildCount'].__bind_type__ = 0;
-	$m['getChildCount'].__args__ = [null,null,['elem']];
-	$m['getChildIndex'] = function(parent, toFind) {
-
-
-    var count = 0, child = parent.firstChild;
-    while (child) {
-        if (child == toFind)
-            return count;
-        if (child.nodeType == 1)
-            ++count;
-        child = child.nextSibling;
-    }
-
-    return -1;
-    
-	};
-	$m['getChildIndex'].__name__ = 'getChildIndex';
-
-	$m['getChildIndex'].__bind_type__ = 0;
-	$m['getChildIndex'].__args__ = [null,null,['parent'],['toFind']];
-	$m['getElementById'] = function(id) {
-
-
-    var elem = $doc.getElementById(id);
-    return elem ? elem : null;
-    
-	};
-	$m['getElementById'].__name__ = 'getElementById';
-
-	$m['getElementById'].__bind_type__ = 0;
-	$m['getElementById'].__args__ = [null,null,['id']];
-	$m['getEventListener'] = function(element) {
-
-
-    return element.__listener;
-    
-	};
-	$m['getEventListener'].__name__ = 'getEventListener';
-
-	$m['getEventListener'].__bind_type__ = 0;
-	$m['getEventListener'].__args__ = [null,null,['element']];
-	$m['eventbitsmap'] = $p['dict']([]);
-	$m['getEventsSunk'] = function(element) {
-
-		return element.__eventBits ? element.__eventBits : 0;
-	};
-	$m['getEventsSunk'].__name__ = 'getEventsSunk';
-
-	$m['getEventsSunk'].__bind_type__ = 0;
-	$m['getEventsSunk'].__args__ = [null,null,['element']];
-	$m['getFirstChild'] = function(elem) {
-
-
-    var child = elem.firstChild;
-    while (child && child.nodeType != 1)
-      child = child.nextSibling;
-    return child ? child : null;
-    
-	};
-	$m['getFirstChild'].__name__ = 'getFirstChild';
-
-	$m['getFirstChild'].__bind_type__ = 0;
-	$m['getFirstChild'].__args__ = [null,null,['elem']];
-	$m['getInnerHTML'] = function(element) {
-
-
-    var ret = element.innerHTML;
-    return (ret == null) ? null : ret;
-    
-	};
-	$m['getInnerHTML'].__name__ = 'getInnerHTML';
-
-	$m['getInnerHTML'].__bind_type__ = 0;
-	$m['getInnerHTML'].__args__ = [null,null,['element']];
-	$m['getInnerText'] = function(element) {
-
-
-    // To mimic IE's 'innerText' property in the W3C DOM, we need to recursively
-    // concatenate all child text nodes (depth first).
-    var text = '', child = element.firstChild;
-    while (child) {
-      if (child.nodeType == 1){ // 1 == Element node
-        text += $m['getInnerText'](child);
-      } else if (child.nodeValue) {
-        text += child.nodeValue;
-      }
-      child = child.nextSibling;
-    }
-    return text;
-    
-	};
-	$m['getInnerText'].__name__ = 'getInnerText';
-
-	$m['getInnerText'].__bind_type__ = 0;
-	$m['getInnerText'].__args__ = [null,null,['element']];
-	$m['getIntAttribute'] = function(elem, attr) {
-
-
-    var i = parseInt(elem[attr]);
-    if (!i) {
-        return 0;
-    }
-    return i;
-    
-	};
-	$m['getIntAttribute'].__name__ = 'getIntAttribute';
-
-	$m['getIntAttribute'].__bind_type__ = 0;
-	$m['getIntAttribute'].__args__ = [null,null,['elem'],['attr']];
-	$m['getIntElemAttribute'] = function(elem, attr) {
-
-		if ($p['bool'](!$p['bool'](elem['hasAttribute'](attr)))) {
-			return null;
-		}
-		return $p['float_int'](elem['getAttribute'](attr));
-	};
-	$m['getIntElemAttribute'].__name__ = 'getIntElemAttribute';
-
-	$m['getIntElemAttribute'].__bind_type__ = 0;
-	$m['getIntElemAttribute'].__args__ = [null,null,['elem'],['attr']];
-	$m['getIntStyleAttribute'] = function(elem, attr) {
-
-
-    var i = parseInt(elem.style[attr]);
-    if (!i) {
-        return 0;
-    }
-    return i;
-    
-	};
-	$m['getIntStyleAttribute'].__name__ = 'getIntStyleAttribute';
-
-	$m['getIntStyleAttribute'].__bind_type__ = 0;
-	$m['getIntStyleAttribute'].__args__ = [null,null,['elem'],['attr']];
-	$m['getNextSibling'] = function(elem) {
-
-
-    var sib = elem.nextSibling;
-    while (sib && sib.nodeType != 1)
-      sib = sib.nextSibling;
-    return sib ? sib : null;
-    
-	};
-	$m['getNextSibling'].__name__ = 'getNextSibling';
-
-	$m['getNextSibling'].__bind_type__ = 0;
-	$m['getNextSibling'].__args__ = [null,null,['elem']];
-	$m['getNodeType'] = function(elem) {
-
-		return $p['getattr'](elem, 'nodeType');
-	};
-	$m['getNodeType'].__name__ = 'getNodeType';
-
-	$m['getNodeType'].__bind_type__ = 0;
-	$m['getNodeType'].__args__ = [null,null,['elem']];
-	$m['getParent'] = function(elem) {
-
-
-    var parent = elem.parentNode;
-    if(parent == null) {
-        return null;
-    }
-    if (parent.nodeType != 1)
-        parent = null;
-    return parent ? parent : null;
-    
-	};
-	$m['getParent'].__name__ = 'getParent';
-
-	$m['getParent'].__bind_type__ = 0;
-	$m['getParent'].__args__ = [null,null,['elem']];
-	$m['getStyleAttribute'] = function(elem, attr) {
-
-
-    var ret = elem.style[attr];
-    return (ret == null) ? null : ret;
-    
-	};
-	$m['getStyleAttribute'].__name__ = 'getStyleAttribute';
-
-	$m['getStyleAttribute'].__bind_type__ = 0;
-	$m['getStyleAttribute'].__args__ = [null,null,['elem'],['attr']];
-	$m['insertChild'] = function(parent, toAdd, index) {
-
-
-    var count = 0, child = parent.firstChild, before = null;
-    while (child) {
-      if (child.nodeType == 1) {
-        if (count == index) {
-          before = child;
-          break;
-        }
-        ++count;
-      }
-      child = child.nextSibling;
-    }
-
-    parent.insertBefore(toAdd, before);
-    
-	};
-	$m['insertChild'].__name__ = 'insertChild';
-
-	$m['insertChild'].__bind_type__ = 0;
-	$m['insertChild'].__args__ = [null,null,['parent'],['toAdd'],['index']];
-	$m['IterChildrenClass'] = (function(){
-		var $cls_definition = new Object();
-		var $method;
-		$cls_definition.__module__ = 'pyjamas.DOM';
-		$method = $pyjs__bind_method2('__init__', function(elem) {
-			if (this.__is_instance__ === true) {
-				var self = this;
-			} else {
-				var self = arguments[0];
-				elem = arguments[1];
-			}
-
-			self.parent = elem;
-			self.child = $p['getattr'](elem, 'firstChild');
-			self.lastChild = null;
-			return null;
-		}
-	, 1, [null,null,['self'],['elem']]);
-		$cls_definition['__init__'] = $method;
-		$method = $pyjs__bind_method2('next', function() {
-			if (this.__is_instance__ === true) {
-				var self = this;
-			} else {
-				var self = arguments[0];
-			}
-
-			if ($p['bool'](!$p['bool']($p['getattr'](self, 'child')))) {
-				throw ($p['StopIteration']);
-			}
-			self.lastChild = $p['getattr'](self, 'child');
-			self.child = $m['getNextSibling']($p['getattr'](self, 'child'));
-			return $p['getattr'](self, 'lastChild');
-		}
-	, 1, [null,null,['self']]);
-		$cls_definition['next'] = $method;
-		$method = $pyjs__bind_method2('remove', function() {
-			if (this.__is_instance__ === true) {
-				var self = this;
-			} else {
-				var self = arguments[0];
-			}
-
-			self['parent']['removeChild']($p['getattr'](self, 'lastChild'));
-			return null;
-		}
-	, 1, [null,null,['self']]);
-		$cls_definition['remove'] = $method;
-		$method = $pyjs__bind_method2('__iter__', function() {
-			if (this.__is_instance__ === true) {
-				var self = this;
-			} else {
-				var self = arguments[0];
-			}
-
-			return self;
-		}
-	, 1, [null,null,['self']]);
-		$cls_definition['__iter__'] = $method;
-		var $bases = new Array(pyjslib.object);
-		var $data = $p['dict']();
-		for (var $item in $cls_definition) { $data.__setitem__($item, $cls_definition[$item]); }
-		return $p['_create_class']('IterChildrenClass', $p['tuple']($bases), $data);
-	})();
-	$m['iterChildren'] = function(elem) {
-
-
-    var parent = elem;
-    var child = elem.firstChild;
-    var lastChild = null;
-    return {
-        'next': function() {
-            if (child == null) {
-                throw $p['StopIteration'];
-            }
-            lastChild = child;
-            child = $m['getNextSibling'](child);
-            return lastChild;
-        },
-        'remove': function() {        
-            parent.removeChild(lastChild);
-        },
-        __iter__: function() {
-            return this;
-        }
-    };
-    
-	};
-	$m['iterChildren'].__name__ = 'iterChildren';
-
-	$m['iterChildren'].__bind_type__ = 0;
-	$m['iterChildren'].__args__ = [null,null,['elem']];
-	$m['IterWalkChildren'] = (function(){
-		var $cls_definition = new Object();
-		var $method;
-		$cls_definition.__module__ = 'pyjamas.DOM';
-		$method = $pyjs__bind_method2('__init__', function(elem) {
-			if (this.__is_instance__ === true) {
-				var self = this;
-			} else {
-				var self = arguments[0];
-				elem = arguments[1];
-			}
-
-			self.parent = elem;
-			self.child = $m['getFirstChild'](elem);
-			self.lastChild = null;
-			self.stack = $p['list']([]);
-			return null;
-		}
-	, 1, [null,null,['self'],['elem']]);
-		$cls_definition['__init__'] = $method;
-		$method = $pyjs__bind_method2('next', function() {
-			if (this.__is_instance__ === true) {
-				var self = this;
-			} else {
-				var self = arguments[0];
-			}
-			var nextSibling,firstChild;
-			if ($p['bool'](!$p['bool']($p['getattr'](self, 'child')))) {
-				throw ($p['StopIteration']);
-			}
-			self.lastChild = $p['getattr'](self, 'child');
-			firstChild = $m['getFirstChild']($p['getattr'](self, 'child'));
-			nextSibling = $m['getNextSibling']($p['getattr'](self, 'child'));
-			if ($p['bool']((firstChild !== null))) {
-				if ($p['bool']((nextSibling !== null))) {
-					self['stack']['append']($p['tuple']([nextSibling, $p['getattr'](self, 'parent')]));
-				}
-				self.parent = $p['getattr'](self, 'child');
-				self.child = firstChild;
-			}
-			else if ($p['bool']((nextSibling !== null))) {
-				self.child = nextSibling;
-			}
-			else if ($p['bool'](($p['cmp']($p['len']($p['getattr'](self, 'stack')), 0) == 1))) {
-				var $tupleassign1 = $p['__ass_unpack'](self['stack']['pop'](), 2, null);
-				self.child = $tupleassign1[0];
-				self.parent = $tupleassign1[1];
-			}
-			else {
-				self.child = null;
-			}
-			return $p['getattr'](self, 'lastChild');
-		}
-	, 1, [null,null,['self']]);
-		$cls_definition['next'] = $method;
-		$method = $pyjs__bind_method2('remove', function() {
-			if (this.__is_instance__ === true) {
-				var self = this;
-			} else {
-				var self = arguments[0];
-			}
-
-			self['parent']['removeChild']($p['getattr'](self, 'lastChild'));
-			return null;
-		}
-	, 1, [null,null,['self']]);
-		$cls_definition['remove'] = $method;
-		$method = $pyjs__bind_method2('__iter__', function() {
-			if (this.__is_instance__ === true) {
-				var self = this;
-			} else {
-				var self = arguments[0];
-			}
-
-			return self;
-		}
-	, 1, [null,null,['self']]);
-		$cls_definition['__iter__'] = $method;
-		var $bases = new Array(pyjslib.object);
-		var $data = $p['dict']();
-		for (var $item in $cls_definition) { $data.__setitem__($item, $cls_definition[$item]); }
-		return $p['_create_class']('IterWalkChildren', $p['tuple']($bases), $data);
-	})();
-	$m['walkChildren'] = function(elem) {
-
-
-    var parent = elem;
-    var child = $m['getFirstChild'](elem);
-    var lastChild = null;
-    var stack = [];
-    var parentStack = [];
-    return {
-        'next': function() {
-            if (child == null) {
-                throw $p['StopIteration'];
-            }
-            lastChild = child;
-            var firstChild = $m['getFirstChild'](child);
-            var nextSibling = $m['getNextSibling'](child);
-            if(firstChild != null) {
-               if(nextSibling != null) {
-                   stack.push(nextSibling);
-                   parentStack.push(parent);
-                }
-                parent = child;
-                child = firstChild;
-            } else if(nextSibling != null) {
-                child = nextSibling;
-            } else if(stack.length > 0) {
-                child = stack.pop();
-                parent = parentStack.pop();
-            } else {
-                child = null;
-            }
-            return lastChild;
-        },
-        'remove': function() {        
-            parent.removeChild(lastChild);
-        },
-        __iter__: function() {
-            return this;
-        }
-    };
-    
-	};
-	$m['walkChildren'].__name__ = 'walkChildren';
-
-	$m['walkChildren'].__bind_type__ = 0;
-	$m['walkChildren'].__args__ = [null,null,['elem']];
-	$m['isOrHasChild'] = function(parent, child) {
-
-		while ($p['bool'](child)) {
-			if ($p['bool']($m['compare'](parent, child))) {
-				return true;
-			}
-			child = $p['getattr'](child, 'parentNode');
-			if ($p['bool'](!$p['bool'](child))) {
-				return false;
-			}
-			if ($p['bool'](!$p['op_eq']($p['getattr'](child, 'nodeType'), 1))) {
-				child = null;
-			}
-		}
-		return false;
-	};
-	$m['isOrHasChild'].__name__ = 'isOrHasChild';
-
-	$m['isOrHasChild'].__bind_type__ = 0;
-	$m['isOrHasChild'].__args__ = [null,null,['parent'],['child']];
-	$m['releaseCapture'] = function(elem) {
-		var $and10,$and9;
-		if ($p['bool'](($p['bool']($and9=$m['sCaptureElem'])?$m['compare'](elem, $m['sCaptureElem']):$and9))) {
-			$m['sCaptureElem'] = null;
-			(typeof releaseCapture_impl == "undefined"?$m.releaseCapture_impl:releaseCapture_impl)(elem);
-		}
-		return null;
-	};
-	$m['releaseCapture'].__name__ = 'releaseCapture';
-
-	$m['releaseCapture'].__bind_type__ = 0;
-	$m['releaseCapture'].__args__ = [null,null,['elem']];
-	$m['releaseCapture_impl'] = function(elem) {
-
- 		return null;
-	};
-	$m['releaseCapture_impl'].__name__ = 'releaseCapture_impl';
-
-	$m['releaseCapture_impl'].__bind_type__ = 0;
-	$m['releaseCapture_impl'].__args__ = [null,null,['elem']];
-	$m['removeEventPreview'] = function(preview) {
-
-		$m['sEventPreviewStack']['remove'](preview);
-		return null;
-	};
-	$m['removeEventPreview'].__name__ = 'removeEventPreview';
-
-	$m['removeEventPreview'].__bind_type__ = 0;
-	$m['removeEventPreview'].__args__ = [null,null,['preview']];
-	$m['getOffsetHeight'] = function(elem) {
-
-		return $p['getattr'](elem, 'offsetHeight');
-	};
-	$m['getOffsetHeight'].__name__ = 'getOffsetHeight';
-
-	$m['getOffsetHeight'].__bind_type__ = 0;
-	$m['getOffsetHeight'].__args__ = [null,null,['elem']];
-	$m['getOffsetWidth'] = function(elem) {
-
-		return $p['getattr'](elem, 'offsetWidth');
-	};
-	$m['getOffsetWidth'].__name__ = 'getOffsetWidth';
-
-	$m['getOffsetWidth'].__bind_type__ = 0;
-	$m['getOffsetWidth'].__args__ = [null,null,['elem']];
-	$m['scrollIntoView'] = function(elem) {
-
-
-    var left = elem.offsetLeft, top = elem.offsetTop;
-    var width = elem.offsetWidth, height = elem.offsetHeight;
-    
-    if (elem.parentNode != elem.offsetParent) {
-        left -= elem.parentNode.offsetLeft;
-        top -= elem.parentNode.offsetTop;
-    }
-
-    var cur = elem.parentNode;
-    while (cur && (cur.nodeType == 1)) {
-        if ((cur.style.overflow == 'auto') || (cur.style.overflow == 'scroll')) {
-            if (left < cur.scrollLeft) {
-                cur.scrollLeft = left;
-            }
-            if (left + width > cur.scrollLeft + cur.clientWidth) {
-                cur.scrollLeft = (left + width) - cur.clientWidth;
-            }
-            if (top < cur.scrollTop) {
-                cur.scrollTop = top;
-            }
-            if (top + height > cur.scrollTop + cur.clientHeight) {
-                cur.scrollTop = (top + height) - cur.clientHeight;
-            }
-        }
-
-        var offsetLeft = cur.offsetLeft, offsetTop = cur.offsetTop;
-        if (cur.parentNode != cur.offsetParent) {
-            offsetLeft -= cur.parentNode.offsetLeft;
-            offsetTop -= cur.parentNode.offsetTop;
-        }
-
-        left += offsetLeft - cur.scrollLeft;
-        top += offsetTop - cur.scrollTop;
-        cur = cur.parentNode;
-    }
-    
-	};
-	$m['scrollIntoView'].__name__ = 'scrollIntoView';
-
-	$m['scrollIntoView'].__bind_type__ = 0;
-	$m['scrollIntoView'].__args__ = [null,null,['elem']];
-	$m['mash_name_for_glib'] = function(name, joiner) {
-		if (typeof joiner == 'undefined') joiner=arguments.callee.__args__[3][1];
-		var c,$iter1_nextval,$iter1_idx,res,$iter1_iter,$add2,$add3,$add1,$add6,$iter1_array,$add4,$add5,$iter1_type;
-		res = '';
-		$iter1_iter = name;
-		$iter1_nextval=$p['__iter_prepare']($iter1_iter,false);
-		while (typeof($p['__wrapped_next']($iter1_nextval).$nextval) != 'undefined') {
-			c = $iter1_nextval.$nextval;
-			if ($p['bool'](c['isupper']())) {
-				res = $p['__op_add']($add3=res,$add4=$p['__op_add']($add1=joiner,$add2=c['lower']()));
-			}
-			else {
-				res = $p['__op_add']($add5=res,$add6=c);
-			}
-		}
-		return res;
-	};
-	$m['mash_name_for_glib'].__name__ = 'mash_name_for_glib';
-
-	$m['mash_name_for_glib'].__bind_type__ = 0;
-	$m['mash_name_for_glib'].__args__ = [null,null,['name'],['joiner', '-']];
-	$m['removeAttribute'] = function(element, attribute) {
-
-
-    delete element[attribute];
-    
-	};
-	$m['removeAttribute'].__name__ = 'removeAttribute';
-
-	$m['removeAttribute'].__bind_type__ = 0;
-	$m['removeAttribute'].__args__ = [null,null,['element'],['attribute']];
-	$m['setAttribute'] = function(element, attribute, value) {
-
-
-    element[attribute] = value;
-    
-	};
-	$m['setAttribute'].__name__ = 'setAttribute';
-
-	$m['setAttribute'].__bind_type__ = 0;
-	$m['setAttribute'].__args__ = [null,null,['element'],['attribute'],['value']];
-	$m['setElemAttribute'] = function(element, attribute, value) {
-
-		element['setAttribute'](attribute, value);
-		return null;
-	};
-	$m['setElemAttribute'].__name__ = 'setElemAttribute';
-
-	$m['setElemAttribute'].__bind_type__ = 0;
-	$m['setElemAttribute'].__args__ = [null,null,['element'],['attribute'],['value']];
-	$m['setBooleanAttribute'] = function(elem, attr, value) {
-
-
-    elem[attr] = value;
-    
-	};
-	$m['setBooleanAttribute'].__name__ = 'setBooleanAttribute';
-
-	$m['setBooleanAttribute'].__bind_type__ = 0;
-	$m['setBooleanAttribute'].__args__ = [null,null,['elem'],['attr'],['value']];
-	$m['setCapture'] = function(elem) {
-
-		$m['sCaptureElem'] = elem;
-		(typeof setCapture_impl == "undefined"?$m.setCapture_impl:setCapture_impl)(elem);
-		return null;
-	};
-	$m['setCapture'].__name__ = 'setCapture';
-
-	$m['setCapture'].__bind_type__ = 0;
-	$m['setCapture'].__args__ = [null,null,['elem']];
-	$m['setCapture_impl'] = function(elem) {
-
- 		return null;
-	};
-	$m['setCapture_impl'].__name__ = 'setCapture_impl';
-
-	$m['setCapture_impl'].__bind_type__ = 0;
-	$m['setCapture_impl'].__args__ = [null,null,['elem']];
-	$m['setEventListener'] = function(element, listener) {
-
-
-    element.__listener = listener;
-    
-	};
-	$m['setEventListener'].__name__ = 'setEventListener';
-
-	$m['setEventListener'].__bind_type__ = 0;
-	$m['setEventListener'].__args__ = [null,null,['element'],['listener']];
-	$m['createTextNode'] = function(txt) {
-
-		return $doc['createTextNode'](txt);
-	};
-	$m['createTextNode'].__name__ = 'createTextNode';
-
-	$m['createTextNode'].__bind_type__ = 0;
-	$m['createTextNode'].__args__ = [null,null,['txt']];
-	$m['setInnerHTML'] = function(element, html) {
-
-element.innerHTML = html || "";
-	};
-	$m['setInnerHTML'].__name__ = 'setInnerHTML';
-
-	$m['setInnerHTML'].__bind_type__ = 0;
-	$m['setInnerHTML'].__args__ = [null,null,['element'],['html']];
-	$m['setInnerText'] = function(elem, text) {
-
-
-    // Remove all children first.
-    while (elem.firstChild) {
-        elem.removeChild(elem.firstChild);
-    }
-    // Add a new text node.
-    elem.appendChild($doc.createTextNode(text));
-    
-	};
-	$m['setInnerText'].__name__ = 'setInnerText';
-
-	$m['setInnerText'].__bind_type__ = 0;
-	$m['setInnerText'].__args__ = [null,null,['elem'],['text']];
-	$m['setIntElemAttribute'] = function(elem, attr, value) {
-
-		elem['setAttribute'](attr, $p['str'](value));
-		return null;
-	};
-	$m['setIntElemAttribute'].__name__ = 'setIntElemAttribute';
-
-	$m['setIntElemAttribute'].__bind_type__ = 0;
-	$m['setIntElemAttribute'].__args__ = [null,null,['elem'],['attr'],['value']];
-	$m['setIntAttribute'] = function(elem, attr, value) {
-
-
-    elem[attr] = value.valueOf();
-    
-	};
-	$m['setIntAttribute'].__name__ = 'setIntAttribute';
-
-	$m['setIntAttribute'].__bind_type__ = 0;
-	$m['setIntAttribute'].__args__ = [null,null,['elem'],['attr'],['value']];
-	$m['setIntStyleAttribute'] = function(elem, attr, value) {
-
-
-    elem.style[attr] = value.valueOf();
-    
-	};
-	$m['setIntStyleAttribute'].__name__ = 'setIntStyleAttribute';
-
-	$m['setIntStyleAttribute'].__bind_type__ = 0;
-	$m['setIntStyleAttribute'].__args__ = [null,null,['elem'],['attr'],['value']];
-	$m['setOptionText'] = function(select, text, index) {
-		var option;
-		option = select['options']['item'](index);
-		option.text = text;
-		return null;
-	};
-	$m['setOptionText'].__name__ = 'setOptionText';
-
-	$m['setOptionText'].__bind_type__ = 0;
-	$m['setOptionText'].__args__ = [null,null,['select'],['text'],['index']];
-	$m['setStyleAttribute'] = function(element, attr, value) {
-
-
-    element.style[attr] = value;
-    
-	};
-	$m['setStyleAttribute'].__name__ = 'setStyleAttribute';
-
-	$m['setStyleAttribute'].__bind_type__ = 0;
-	$m['setStyleAttribute'].__args__ = [null,null,['element'],['attr'],['value']];
-	$m['setStyleAttributes'] = function(element) {
-		var kwargs = arguments.length >= 2 ? arguments[arguments.length-1] : arguments[arguments.length];
-		if (typeof kwargs != 'object' || kwargs.__name__ != 'dict' || typeof kwargs.$pyjs_is_kwarg == 'undefined') {
-			kwargs = arguments[arguments.length+1];
-		} else {
-			delete kwargs['$pyjs_is_kwarg'];
-		}
-		if (typeof kwargs == 'undefined') {
-			kwargs = $p['__empty_dict']();
-			if (typeof element != 'undefined') {
-				if (element !== null && typeof element['$pyjs_is_kwarg'] != 'undefined') {
-					kwargs = element;
-					element = arguments[1];
-				}
-			} else {
-			}
-		}
-		var $iter2_nextval,$iter2_type,attr,$iter2_iter,$iter2_idx,val,$iter2_array;
-		$iter2_iter = kwargs['items']();
-		$iter2_nextval=$p['__iter_prepare']($iter2_iter,false);
-		while (typeof($p['__wrapped_next']($iter2_nextval).$nextval) != 'undefined') {
-			var $tupleassign2 = $p['__ass_unpack']($iter2_nextval.$nextval, 2, null);
-			attr = $tupleassign2[0];
-			val = $tupleassign2[1];
-			if ($p['bool']($p['hasattr']($p['getattr'](element, 'style'), 'setProperty'))) {
-				element['style']['setProperty']($m['mash_name_for_glib'](attr), val, '');
-			}
-			else {
-				element['style']['setAttribute'](attr, val, '');
-			}
-		}
-		return null;
-	};
-	$m['setStyleAttributes'].__name__ = 'setStyleAttributes';
-
-	$m['setStyleAttributes'].__bind_type__ = 0;
-	$m['setStyleAttributes'].__args__ = [null,['kwargs'],['element']];
-	$m['sinkEvents'] = function(element, bits) {
-		var $iter5_nextval,$iter3_idx,$iter5_idx,dispEvnt,event_name,$iter4_iter,$iter3_nextval,$iter3_array,$iter5_array,$iter4_idx,$iter5_iter,$iter3_iter,$iter4_type,$iter3_type,$iter4_array,$iter5_type,bit,$iter4_nextval;
-element.__eventBits = bits;
-		(typeof sinkEventsMozilla == "undefined"?$m.sinkEventsMozilla:sinkEventsMozilla)(element, bits);
-		dispEvnt = $wnd.__dispatchEvent;
-		$iter3_iter = $p['getattr']($m['Event'], 'eventbits');
-		$iter3_nextval=$p['__iter_prepare']($iter3_iter,false);
-		while (typeof($p['__wrapped_next']($iter3_nextval).$nextval) != 'undefined') {
-			bit = $iter3_nextval.$nextval;
-			if ($p['bool']((bits)&(bit))) {
-				$iter4_iter = $p['getattr']($m['Event'], 'eventbits').__getitem__(bit).__getitem__(1);
-				$iter4_nextval=$p['__iter_prepare']($iter4_iter,false);
-				while (typeof($p['__wrapped_next']($iter4_nextval).$nextval) != 'undefined') {
-					event_name = $iter4_nextval.$nextval;
-element['on'+event_name] = dispEvnt
-				}
-			}
-			else {
-				$iter5_iter = $p['getattr']($m['Event'], 'eventbits').__getitem__(bit).__getitem__(1);
-				$iter5_nextval=$p['__iter_prepare']($iter5_iter,false);
-				while (typeof($p['__wrapped_next']($iter5_nextval).$nextval) != 'undefined') {
-					event_name = $iter5_nextval.$nextval;
-element['on'+event_name] = null
-				}
-			}
-		}
-		return null;
-	};
-	$m['sinkEvents'].__name__ = 'sinkEvents';
-
-	$m['sinkEvents'].__bind_type__ = 0;
-	$m['sinkEvents'].__args__ = [null,null,['element'],['bits']];
-	$m['sinkEventsMozilla'] = function(element, bits) {
-
- 		return null;
-	};
-	$m['sinkEventsMozilla'].__name__ = 'sinkEventsMozilla';
-
-	$m['sinkEventsMozilla'].__bind_type__ = 0;
-	$m['sinkEventsMozilla'].__args__ = [null,null,['element'],['bits']];
-	$m['toString'] = function(elem) {
-
-
-    var temp = elem.cloneNode(true);
-    var tempDiv = $doc.createElement("DIV");
-    tempDiv.appendChild(temp);
-    var outer = tempDiv.innerHTML;
-    temp.innerHTML = "";
-    return outer;
-    
-	};
-	$m['toString'].__name__ = 'toString';
-
-	$m['toString'].__bind_type__ = 0;
-	$m['toString'].__args__ = [null,null,['elem']];
-	$m['dispatchEvent'] = function(event, element, listener) {
-
-		(typeof dispatchEventImpl == "undefined"?$m.dispatchEventImpl:dispatchEventImpl)(event, element, listener);
-		return null;
-	};
-	$m['dispatchEvent'].__name__ = 'dispatchEvent';
-
-	$m['dispatchEvent'].__bind_type__ = 0;
-	$m['dispatchEvent'].__args__ = [null,null,['event'],['element'],['listener']];
-	$m['previewEvent'] = function(evt) {
-		var $sub2,$sub1,preview,ret;
-		ret = true;
-		if ($p['bool'](($p['cmp']($p['len']($m['sEventPreviewStack']), 0) == 1))) {
-			preview = $m['sEventPreviewStack'].__getitem__($p['__op_sub']($sub1=$p['len']($m['sEventPreviewStack']),$sub2=1));
-			ret = preview['onEventPreview'](evt);
-			if ($p['bool'](!$p['bool'](ret))) {
-				$m['eventCancelBubble'](evt, true);
-				$m['eventPreventDefault'](evt);
-			}
-		}
-		return ret;
-	};
-	$m['previewEvent'].__name__ = 'previewEvent';
-
-	$m['previewEvent'].__bind_type__ = 0;
-	$m['previewEvent'].__args__ = [null,null,['evt']];
-	$m['dispatchEventAndCatch'] = function(evt, elem, listener, handler) {
-
- 		return null;
-	};
-	$m['dispatchEventAndCatch'].__name__ = 'dispatchEventAndCatch';
-
-	$m['dispatchEventAndCatch'].__bind_type__ = 0;
-	$m['dispatchEventAndCatch'].__args__ = [null,null,['evt'],['elem'],['listener'],['handler']];
-	$m['currentEvent'] = null;
-	$m['dispatchEventImpl'] = function(event, element, listener) {
-		var prevCurrentEvent;
-		if ($p['bool']($p['op_eq'](element, $m['sCaptureElem']))) {
-			if ($p['bool']($p['op_eq']($m['eventGetType'](event), 'losecapture'))) {
-				$m['sCaptureElem'] = null;
-			}
-		}
-		prevCurrentEvent = $m['currentEvent'];
-		$m['currentEvent'] = event;
-		listener['onBrowserEvent'](event);
-		$m['currentEvent'] = prevCurrentEvent;
-		return null;
-	};
-	$m['dispatchEventImpl'].__name__ = 'dispatchEventImpl';
-
-	$m['dispatchEventImpl'].__bind_type__ = 0;
-	$m['dispatchEventImpl'].__args__ = [null,null,['event'],['element'],['listener']];
-	$m['eventGetCurrentEvent'] = function() {
-
-		return $m['currentEvent'];
-	};
-	$m['eventGetCurrentEvent'].__name__ = 'eventGetCurrentEvent';
-
-	$m['eventGetCurrentEvent'].__bind_type__ = 0;
-	$m['eventGetCurrentEvent'].__args__ = [null,null];
-	$m['insertListItem'] = function(select, item, value, index) {
-		var option;
-		option = $m['createElement']('OPTION');
-		$m['setInnerText'](option, item);
-		if ($p['bool']((value !== null))) {
-			$m['setAttribute'](option, 'value', value);
-		}
-		if ($p['bool']($p['op_eq'](index, (typeof ($usub1=1)=='number'?
-			-$usub1:
-			$p['op_usub']($usub1))))) {
-			$m['appendChild'](select, option);
-		}
-		else {
-			$m['insertChild'](select, option, index);
-		}
-		return null;
-	};
-	$m['insertListItem'].__name__ = 'insertListItem';
-
-	$m['insertListItem'].__bind_type__ = 0;
-	$m['insertListItem'].__args__ = [null,null,['select'],['item'],['value'],['index']];
-	$m['getBodyOffsetTop'] = function() {
-
+		};
+		onreadystatechange.__name__ = 'onreadystatechange';
+
+		onreadystatechange.__bind_type__ = 0;
+		onreadystatechange.__args__ = [null,null];
+		xhtoj = $m['createHttpRequest']();
+		xhtoj.onreadystatechange = onreadystatechange;
+		xhtoj['open']('GET', url, true);
+		xhtoj['send']('');
 		return 0;
 	};
-	$m['getBodyOffsetTop'].__name__ = 'getBodyOffsetTop';
+	$m['ajax_dlink'].__name__ = 'ajax_dlink';
 
-	$m['getBodyOffsetTop'].__bind_type__ = 0;
-	$m['getBodyOffsetTop'].__args__ = [null,null];
-	$m['getBodyOffsetLeft'] = function() {
-
-		return 0;
-	};
-	$m['getBodyOffsetLeft'].__name__ = 'getBodyOffsetLeft';
-
-	$m['getBodyOffsetLeft'].__bind_type__ = 0;
-	$m['getBodyOffsetLeft'].__args__ = [null,null];
-	$m['eventGetMouseWheelVelocityY'] = function(evt) {
-
-
-    return evt.detail * 4 || 0;
-    
-	};
-	$m['eventGetMouseWheelVelocityY'].__name__ = 'eventGetMouseWheelVelocityY';
-
-	$m['eventGetMouseWheelVelocityY'].__bind_type__ = 0;
-	$m['eventGetMouseWheelVelocityY'].__args__ = [null,null,['evt']];
-	if ($p['bool'](!$p['bool']($p['getattr']($m['pyjd'], 'is_desktop')))) {
-		$m['init']();
-	}
+	$m['ajax_dlink'].__bind_type__ = 0;
+	$m['ajax_dlink'].__args__ = [null,null,['idname'],['url'],['on_load_fn']];
 	return this;
-}; /* end pyjamas.DOM */
+}; /* end dynamic */
 
 
-/* end module: pyjamas.DOM */
+/* end module: dynamic */
 
 
 /*
-PYJS_DEPS: ['pyjd', 'pyjamas.Window.onResize', 'pyjamas', 'pyjamas.Window', 'pyjamas.Window.onClosing', 'pyjamas.Window.onClosed', 'pyjamas.ui.Event', 'pyjamas.ui', 'pyjamas.ui.Event.ONBLUR', 'pyjamas.ui.Event.ONCHANGE', 'pyjamas.ui.Event.ONCLICK', 'pyjamas.ui.Event.ONCONTEXTMENU', 'pyjamas.ui.Event.ONDBLCLICK', 'pyjamas.ui.Event.ONERROR', 'pyjamas.ui.Event.ONFOCUS', 'pyjamas.ui.Event.ONKEYDOWN', 'pyjamas.ui.Event.ONKEYPRESS', 'pyjamas.ui.Event.ONKEYUP', 'pyjamas.ui.Event.ONLOAD', 'pyjamas.ui.Event.ONLOSECAPTURE', 'pyjamas.ui.Event.ONMOUSEDOWN', 'pyjamas.ui.Event.ONMOUSEMOVE', 'pyjamas.ui.Event.ONMOUSEOUT', 'pyjamas.ui.Event.ONMOUSEOVER', 'pyjamas.ui.Event.ONMOUSEUP', 'pyjamas.ui.Event.ONSCROLL', 'pyjamas.ui.Event.ONINPUT']
+PYJS_DEPS: ['pyjamas.DOM', 'pyjamas', 'sys']
 */
-
---></script>
-<script type="text/javascript"><!--
-/* start module: pyjamas.Window */
-$pyjs.loaded_modules['pyjamas.Window'] = function (__mod_name__) {
-	if($pyjs.loaded_modules['pyjamas.Window'].__was_initialized__) return $pyjs.loaded_modules['pyjamas.Window'];
-	if(typeof $pyjs.loaded_modules['pyjamas'] == 'undefined' || !$pyjs.loaded_modules['pyjamas'].__was_initialized__) $p['___import___']('pyjamas', null);
-	var $m = $pyjs.loaded_modules["pyjamas.Window"];
-	$m.__repr__ = function() { return "<module: pyjamas.Window>"; };
-	$m.__was_initialized__ = true;
-	if ((__mod_name__ === null) || (typeof __mod_name__ == 'undefined')) __mod_name__ = 'pyjamas.Window';
-	$m.__name__ = __mod_name__;
-	$pyjs.loaded_modules['pyjamas']['Window'] = $pyjs.loaded_modules['pyjamas.Window'];
-
-
-	$m['closingListeners'] = $p['list']([]);
-	$m['resizeListeners'] = $p['list']([]);
-	$m['Location'] = $p['___import___']('pyjamas.Location', 'pyjamas', null, false);
-	$m['init_listeners'] = function() {
-
-		if ($p['bool'](!$p['bool']($m['closingListeners']))) {
-			$m['closingListeners'] = $p['list']([]);
-		}
-		if ($p['bool'](!$p['bool']($m['resizeListeners']))) {
-			$m['resizeListeners'] = $p['list']([]);
-		}
-		return null;
-	};
-	$m['init_listeners'].__name__ = 'init_listeners';
-
-	$m['init_listeners'].__bind_type__ = 0;
-	$m['init_listeners'].__args__ = [null,null];
-	$m['addWindowCloseListener'] = function(listener) {
-
-		$m['closingListeners']['append'](listener);
-		return null;
-	};
-	$m['addWindowCloseListener'].__name__ = 'addWindowCloseListener';
-
-	$m['addWindowCloseListener'].__bind_type__ = 0;
-	$m['addWindowCloseListener'].__args__ = [null,null,['listener']];
-	$m['addWindowResizeListener'] = function(listener) {
-
-		$m['resizeListeners']['append'](listener);
-		return null;
-	};
-	$m['addWindowResizeListener'].__name__ = 'addWindowResizeListener';
-
-	$m['addWindowResizeListener'].__bind_type__ = 0;
-	$m['addWindowResizeListener'].__args__ = [null,null,['listener']];
-	$m['removeWindowCloseListener'] = function(listener) {
-
-		$m['closingListeners']['remove'](listener);
-		return null;
-	};
-	$m['removeWindowCloseListener'].__name__ = 'removeWindowCloseListener';
-
-	$m['removeWindowCloseListener'].__bind_type__ = 0;
-	$m['removeWindowCloseListener'].__args__ = [null,null,['listener']];
-	$m['removeWindowResizeListener'] = function(listener) {
-
-		$m['resizeListeners']['remove'](listener);
-		return null;
-	};
-	$m['removeWindowResizeListener'].__name__ = 'removeWindowResizeListener';
-
-	$m['removeWindowResizeListener'].__bind_type__ = 0;
-	$m['removeWindowResizeListener'].__args__ = [null,null,['listener']];
-	$m['alert'] = function(msg) {
-
-		$wnd['alert'](msg);
-		return null;
-	};
-	$m['alert'].__name__ = 'alert';
-
-	$m['alert'].__bind_type__ = 0;
-	$m['alert'].__args__ = [null,null,['msg']];
-	$m['confirm'] = function(msg) {
-
-		return $wnd['confirm'](msg);
-	};
-	$m['confirm'].__name__ = 'confirm';
-
-	$m['confirm'].__bind_type__ = 0;
-	$m['confirm'].__args__ = [null,null,['msg']];
-	$m['prompt'] = function(msg, defaultReply) {
-		if (typeof defaultReply == 'undefined') defaultReply=arguments.callee.__args__[3][1];
-
-		return $wnd['prompt'](msg, defaultReply);
-	};
-	$m['prompt'].__name__ = 'prompt';
-
-	$m['prompt'].__bind_type__ = 0;
-	$m['prompt'].__args__ = [null,null,['msg'],['defaultReply', '']];
-	$m['enableScrolling'] = function(enable) {
-		var $and1,$and2,$or1,$or2;
-		$p['getattr']($p['getattr']($doc, 'body'), 'style').overflow = ($p['bool']($or1=($p['bool']($and1=enable)?'auto':$and1))?$or1:'hidden');
-		return null;
-	};
-	$m['enableScrolling'].__name__ = 'enableScrolling';
-
-	$m['enableScrolling'].__bind_type__ = 0;
-	$m['enableScrolling'].__args__ = [null,null,['enable']];
-	$m['scrollBy'] = function(x, y) {
-
-		$wnd['scrollBy'](x, y);
-		return null;
-	};
-	$m['scrollBy'].__name__ = 'scrollBy';
-
-	$m['scrollBy'].__bind_type__ = 0;
-	$m['scrollBy'].__args__ = [null,null,['x'],['y']];
-	$m['scroll'] = function(x, y) {
-
-		$wnd['scroll'](x, y);
-		return null;
-	};
-	$m['scroll'].__name__ = 'scroll';
-
-	$m['scroll'].__bind_type__ = 0;
-	$m['scroll'].__args__ = [null,null,['x'],['y']];
-	$m['getClientHeight'] = function() {
-
-		return $wnd.innerHeight;
-	};
-	$m['getClientHeight'].__name__ = 'getClientHeight';
-
-	$m['getClientHeight'].__bind_type__ = 0;
-	$m['getClientHeight'].__args__ = [null,null];
-	$m['getClientWidth'] = function() {
-
-		return $wnd.innerWidth;
-	};
-	$m['getClientWidth'].__name__ = 'getClientWidth';
-
-	$m['getClientWidth'].__bind_type__ = 0;
-	$m['getClientWidth'].__args__ = [null,null];
-	$m['getScrollLeft'] = function() {
-
-		return $p['getattr']((typeof getDocumentRoot == "undefined"?$m.getDocumentRoot:getDocumentRoot)(), 'scrollLeft');
-		return null;
-	};
-	$m['getScrollLeft'].__name__ = 'getScrollLeft';
-
-	$m['getScrollLeft'].__bind_type__ = 0;
-	$m['getScrollLeft'].__args__ = [null,null];
-	$m['getScrollTop'] = function() {
-
-		return $p['getattr']((typeof getDocumentRoot == "undefined"?$m.getDocumentRoot:getDocumentRoot)(), 'scrollTop');
-		return null;
-	};
-	$m['getScrollTop'].__name__ = 'getScrollTop';
-
-	$m['getScrollTop'].__bind_type__ = 0;
-	$m['getScrollTop'].__args__ = [null,null];
-	$m['getDocumentRoot'] = function() {
-
-		if ($p['bool']($p['op_eq']($p['getattr']($doc, 'compatMode'), 'CSS1Compat'))) {
-			return $p['getattr']($doc, 'documentElement');
-		}
-		return $p['getattr']($doc, 'body');
-	};
-	$m['getDocumentRoot'].__name__ = 'getDocumentRoot';
-
-	$m['getDocumentRoot'].__bind_type__ = 0;
-	$m['getDocumentRoot'].__args__ = [null,null];
-	$m['setLocation'] = function(url) {
-		var w;
-		w = $wnd;
-		w.location = url;
-		return null;
-	};
-	$m['setLocation'].__name__ = 'setLocation';
-
-	$m['setLocation'].__bind_type__ = 0;
-	$m['setLocation'].__args__ = [null,null,['url']];
-	$m['location'] = null;
-	$m['getLocation'] = function() {
-
-		if ($p['bool'](!$p['bool']($m['location']))) {
-			$m['location'] = $m['Location']['Location']($p['getattr']($wnd, 'location'));
-		}
-		return $m['location'];
-	};
-	$m['getLocation'].__name__ = 'getLocation';
-
-	$m['getLocation'].__bind_type__ = 0;
-	$m['getLocation'].__args__ = [null,null];
-	$m['getTitle'] = function() {
-
-		return $doc.title;
-	};
-	$m['getTitle'].__name__ = 'getTitle';
-
-	$m['getTitle'].__bind_type__ = 0;
-	$m['getTitle'].__args__ = [null,null];
-	$m['open'] = function(url, name, features) {
-
-		return $wnd['open'](url, name, features);
-	};
-	$m['open'].__name__ = 'open';
-
-	$m['open'].__bind_type__ = 0;
-	$m['open'].__args__ = [null,null,['url'],['name'],['features']];
-	$m['setMargin'] = function(size) {
-
-		$p['getattr']($p['getattr']($doc, 'body'), 'style').margin = size;
-		return null;
-	};
-	$m['setMargin'].__name__ = 'setMargin';
-
-	$m['setMargin'].__bind_type__ = 0;
-	$m['setMargin'].__args__ = [null,null,['size']];
-	$m['setTitle'] = function(title) {
-		var d;
-		d = $doc;
-		d.title = title;
-		return null;
-	};
-	$m['setTitle'].__name__ = 'setTitle';
-
-	$m['setTitle'].__bind_type__ = 0;
-	$m['setTitle'].__args__ = [null,null,['title']];
-	$m['setOnError'] = function(onError) {
-
-		if ($p['bool'](!$p['bool']($p['callable'](onError)))) {
-			throw ($p['TypeError']('object is not callable'));
-		}
-    $wnd.onerror=function(msg, url, linenumber){
-        return onError(msg, url, linenumber);
-    }
-    
-	};
-	$m['setOnError'].__name__ = 'setOnError';
-
-	$m['setOnError'].__bind_type__ = 0;
-	$m['setOnError'].__args__ = [null,null,['onError']];
-	$m['onError'] = function(msg, url, linenumber) {
-		var tracestr,dialog;
-		dialog = $doc['createElement']('div');
-		dialog.className = 'errordialog';
-		tracestr = $m.sys['trackstackstr']($pyjs.trackstack.slice(0,-1));
-		tracestr = tracestr['$$replace']('\n', '<br />\n&nbsp;&nbsp;&nbsp;');
-		dialog.innerHTML = $p['sprintf']('&nbsp;<b style="color:red">JavaScript Error: </b>\n%s at line number %d. Please inform webmaster.\n<br />&nbsp;&nbsp;&nbsp;%s\n', $p['tuple']([msg, linenumber, tracestr]));
-		$doc['body']['appendChild'](dialog);
-		return true;
-	};
-	$m['onError'].__name__ = 'onError';
-
-	$m['onError'].__bind_type__ = 0;
-	$m['onError'].__args__ = [null,null,['msg'],['url'],['linenumber']];
-	$m['onClosed'] = function() {
-
-		(typeof fireClosedImpl == "undefined"?$m.fireClosedImpl:fireClosedImpl)();
-		return null;
-	};
-	$m['onClosed'].__name__ = 'onClosed';
-
-	$m['onClosed'].__bind_type__ = 0;
-	$m['onClosed'].__args__ = [null,null];
-	$m['onClosing'] = function() {
-
-		return (typeof fireClosingImpl == "undefined"?$m.fireClosingImpl:fireClosingImpl)();
-	};
-	$m['onClosing'].__name__ = 'onClosing';
-
-	$m['onClosing'].__bind_type__ = 0;
-	$m['onClosing'].__args__ = [null,null];
-	$m['onResize'] = function() {
-
-		(typeof fireResizedImpl == "undefined"?$m.fireResizedImpl:fireResizedImpl)();
-		return null;
-	};
-	$m['onResize'].__name__ = 'onResize';
-
-	$m['onResize'].__bind_type__ = 0;
-	$m['onResize'].__args__ = [null,null];
-	$m['fireClosedAndCatch'] = function(handler) {
-
- 		return null;
-	};
-	$m['fireClosedAndCatch'].__name__ = 'fireClosedAndCatch';
-
-	$m['fireClosedAndCatch'].__bind_type__ = 0;
-	$m['fireClosedAndCatch'].__args__ = [null,null,['handler']];
-	$m['fireClosedImpl'] = function() {
-		var $iter1_nextval,$iter1_type,$iter1_iter,listener,$iter1_array,$iter1_idx;
-		$iter1_iter = $m['closingListeners'];
-		$iter1_nextval=$p['__iter_prepare']($iter1_iter,false);
-		while (typeof($p['__wrapped_next']($iter1_nextval).$nextval) != 'undefined') {
-			listener = $iter1_nextval.$nextval;
-			listener['onWindowClosed']();
-		}
-		return null;
-	};
-	$m['fireClosedImpl'].__name__ = 'fireClosedImpl';
-
-	$m['fireClosedImpl'].__bind_type__ = 0;
-	$m['fireClosedImpl'].__args__ = [null,null];
-	$m['fireClosingAndCatch'] = function(handler) {
-
- 		return null;
-	};
-	$m['fireClosingAndCatch'].__name__ = 'fireClosingAndCatch';
-
-	$m['fireClosingAndCatch'].__bind_type__ = 0;
-	$m['fireClosingAndCatch'].__args__ = [null,null,['handler']];
-	$m['resize'] = function(width, height) {
-
-		$wnd['resizeTo'](width, height);
-		return null;
-	};
-	$m['resize'].__name__ = 'resize';
-
-	$m['resize'].__bind_type__ = 0;
-	$m['resize'].__args__ = [null,null,['width'],['height']];
-	$m['resizeBy'] = function(width, height) {
-
-		$wnd['resizeBy'](width, height);
-		return null;
-	};
-	$m['resizeBy'].__name__ = 'resizeBy';
-
-	$m['resizeBy'].__bind_type__ = 0;
-	$m['resizeBy'].__args__ = [null,null,['width'],['height']];
-	$m['fireClosingImpl'] = function() {
-		var $iter2_nextval,$iter2_type,$iter2_iter,ret,listener,$iter2_idx,msg,$iter2_array;
-		ret = null;
-		$iter2_iter = $m['closingListeners'];
-		$iter2_nextval=$p['__iter_prepare']($iter2_iter,false);
-		while (typeof($p['__wrapped_next']($iter2_nextval).$nextval) != 'undefined') {
-			listener = $iter2_nextval.$nextval;
-			msg = listener['onWindowClosing']();
-			if ($p['bool']((ret === null))) {
-				ret = msg;
-			}
-		}
-		return ret;
-	};
-	$m['fireClosingImpl'].__name__ = 'fireClosingImpl';
-
-	$m['fireClosingImpl'].__bind_type__ = 0;
-	$m['fireClosingImpl'].__args__ = [null,null];
-	$m['fireResizedAndCatch'] = function(handler) {
-
- 		return null;
-	};
-	$m['fireResizedAndCatch'].__name__ = 'fireResizedAndCatch';
-
-	$m['fireResizedAndCatch'].__bind_type__ = 0;
-	$m['fireResizedAndCatch'].__args__ = [null,null,['handler']];
-	$m['fireResizedImpl'] = function() {
-		var $iter3_idx,$iter3_nextval,$iter3_type,listener,$iter3_iter,$iter3_array;
-		$iter3_iter = $m['resizeListeners'];
-		$iter3_nextval=$p['__iter_prepare']($iter3_iter,false);
-		while (typeof($p['__wrapped_next']($iter3_nextval).$nextval) != 'undefined') {
-			listener = $iter3_nextval.$nextval;
-			listener['onWindowResized']($m['getClientWidth'](), $m['getClientHeight']());
-		}
-		return null;
-	};
-	$m['fireResizedImpl'].__name__ = 'fireResizedImpl';
-
-	$m['fireResizedImpl'].__bind_type__ = 0;
-	$m['fireResizedImpl'].__args__ = [null,null];
-	$m['init'] = function() {
-
-		$m['sys'] = $p['___import___']('sys', 'pyjamas');
-		$m['init_listeners']();
-
-    $wnd.__pygwt_initHandlers(
-        function() {
-            $m['onResize']();
-        },
-        function() {
-            return $m['onClosing']();
-        },
-        function() {
-            $m['onClosed']();
-            /*$wnd.onresize = null;
-            $wnd.onbeforeclose = null;
-            $wnd.onclose = null;*/
-        }
-    );
-    
-		$m['setOnError']($m['onError']);
-		return null;
-	};
-	$m['init'].__name__ = 'init';
-
-	$m['init'].__bind_type__ = 0;
-	$m['init'].__args__ = [null,null];
-	$m['init']();
-	return this;
-}; /* end pyjamas.Window */
-
-
-/* end module: pyjamas.Window */
-
-
-/*
-PYJS_DEPS: ['pyjamas.Location', 'pyjamas', 'sys']
-*/
-
---></script>
-<script type="text/javascript"><!--
-/* start module: ballotTree */
-$pyjs.loaded_modules['ballotTree'] = function (__mod_name__) {
-	if($pyjs.loaded_modules['ballotTree'].__was_initialized__) return $pyjs.loaded_modules['ballotTree'];
-	var $m = $pyjs.loaded_modules["ballotTree"];
-	$m.__repr__ = function() { return "<module: ballotTree>"; };
-	$m.__was_initialized__ = true;
-	if ((__mod_name__ === null) || (typeof __mod_name__ == 'undefined')) __mod_name__ = 'ballotTree';
-	$m.__name__ = __mod_name__;
-	$m.__track_lines__ = new Array();
-	$m.__track_lines__[1] = 'ballotTree.py, line 1:\n    class Race(object):';
-	$m.__track_lines__[2] = 'ballotTree.py, line 2:\n    def __init__(self, name, selectionList, instructions):';
-	$m.__track_lines__[3] = 'ballotTree.py, line 3:\n    self.name = name';
-	$m.__track_lines__[4] = 'ballotTree.py, line 4:\n    self.selectionList = selectionList';
-	$m.__track_lines__[5] = 'ballotTree.py, line 5:\n    self.instructions = instructions';
-	$m.__track_lines__[6] = 'ballotTree.py, line 6:\n    self.works = "worker"';
-	$m.__track_lines__[8] = 'ballotTree.py, line 8:\n    def __repr__(self):';
-	$m.__track_lines__[9] = "ballotTree.py, line 9:\n    return '<pjBallotObj>'";
-	$m.__track_lines__[11] = 'ballotTree.py, line 11:\n    class Contest(object):';
-	$m.__track_lines__[12] = 'ballotTree.py, line 12:\n    def __init__(self, name, selectionList=None, userSelection=None):';
-	$m.__track_lines__[13] = 'ballotTree.py, line 13:\n    self.name = name';
-	$m.__track_lines__[14] = 'ballotTree.py, line 14:\n    if selectionList is None:';
-	$m.__track_lines__[15] = 'ballotTree.py, line 15:\n    self.selectionList = []';
-	$m.__track_lines__[16] = 'ballotTree.py, line 16:\n    else: self.selectionList = selectionList #candidates';
-	$m.__track_lines__[17] = 'ballotTree.py, line 17:\n    if userSelection is None:';
-	$m.__track_lines__[18] = 'ballotTree.py, line 18:\n    self.userSelection = []';
-	$m.__track_lines__[19] = 'ballotTree.py, line 19:\n    else: self.selectionList = userSelection';
-	$m.__track_lines__[21] = 'ballotTree.py, line 21:\n    class Candidate(object):';
-	$m.__track_lines__[22] = 'ballotTree.py, line 22:\n    def __init__(self, name):';
-	$m.__track_lines__[23] = 'ballotTree.py, line 23:\n    self.name = name';
-
-
-	$pyjs.track.module='ballotTree';
-	$pyjs.track.lineno=1;
-	$pyjs.track.lineno=1;
-	$m['Race'] = (function(){
-		var $cls_definition = new Object();
-		var $method;
-		$cls_definition.__module__ = 'ballotTree';
-		$pyjs.track.lineno=2;
-		$method = $pyjs__bind_method2('__init__', function(name, selectionList, instructions) {
-			if (this.__is_instance__ === true) {
-				var self = this;
-			} else {
-				var self = arguments[0];
-				name = arguments[1];
-				selectionList = arguments[2];
-				instructions = arguments[3];
-			}
-
-			$pyjs.track={module:'ballotTree', lineno:2};$pyjs.trackstack.push($pyjs.track);
-			$pyjs.track.module='ballotTree';
-			$pyjs.track.lineno=2;
-			$pyjs.track.lineno=3;
-			self.$$name = name;
-			$pyjs.track.lineno=4;
-			self.selectionList = selectionList;
-			$pyjs.track.lineno=5;
-			self.instructions = instructions;
-			$pyjs.track.lineno=6;
-			self.works = 'worker';
-			$pyjs.trackstack.pop();$pyjs.track=$pyjs.trackstack.pop();$pyjs.trackstack.push($pyjs.track);
-			return null;
-		}
-	, 1, [null,null,['self'],['name'],['selectionList'],['instructions']]);
-		$cls_definition['__init__'] = $method;
-		$pyjs.track.lineno=8;
-		$method = $pyjs__bind_method2('__repr__', function() {
-			if (this.__is_instance__ === true) {
-				var self = this;
-			} else {
-				var self = arguments[0];
-			}
-
-			$pyjs.track={module:'ballotTree', lineno:8};$pyjs.trackstack.push($pyjs.track);
-			$pyjs.track.module='ballotTree';
-			$pyjs.track.lineno=8;
-			$pyjs.track.lineno=9;
-			$pyjs.track.lineno=9;
-			var $pyjs__ret = '<pjBallotObj>';
-			$pyjs.trackstack.pop();$pyjs.track=$pyjs.trackstack.pop();$pyjs.trackstack.push($pyjs.track);
-			return $pyjs__ret;
-		}
-	, 1, [null,null,['self']]);
-		$cls_definition['__repr__'] = $method;
-		$pyjs.track.lineno=1;
-		var $bases = new Array($p['object']);
-		var $data = $p['dict']();
-		for (var $item in $cls_definition) { $data.__setitem__($item, $cls_definition[$item]); }
-		return $p['_create_class']('Race', $p['tuple']($bases), $data);
-	})();
-	$pyjs.track.lineno=11;
-	$m['Contest'] = (function(){
-		var $cls_definition = new Object();
-		var $method;
-		$cls_definition.__module__ = 'ballotTree';
-		$pyjs.track.lineno=12;
-		$method = $pyjs__bind_method2('__init__', function(name, selectionList, userSelection) {
-			if (this.__is_instance__ === true) {
-				var self = this;
-			} else {
-				var self = arguments[0];
-				name = arguments[1];
-				selectionList = arguments[2];
-				userSelection = arguments[3];
-			}
-			if (typeof selectionList == 'undefined') selectionList=arguments.callee.__args__[4][1];
-			if (typeof userSelection == 'undefined') userSelection=arguments.callee.__args__[5][1];
-
-			$pyjs.track={module:'ballotTree', lineno:12};$pyjs.trackstack.push($pyjs.track);
-			$pyjs.track.module='ballotTree';
-			$pyjs.track.lineno=12;
-			$pyjs.track.lineno=13;
-			self.$$name = name;
-			$pyjs.track.lineno=14;
-			if ((function(){try{try{$pyjs.in_try_except += 1;
-				return $p['bool']((selectionList === null));
-}finally{$pyjs.in_try_except-=1;}}catch($pyjs_dbg_1_err){if (!$p['isinstance']($pyjs_dbg_1_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_1_err);}throw $pyjs_dbg_1_err;
-}})()) {
-				$pyjs.track.lineno=15;
-				self.selectionList = (function(){try{try{$pyjs.in_try_except += 1;
-				return $p['list']([]);
-}finally{$pyjs.in_try_except-=1;}}catch($pyjs_dbg_2_err){if (!$p['isinstance']($pyjs_dbg_2_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_2_err);}throw $pyjs_dbg_2_err;
-}})();
-			}
-			else {
-				$pyjs.track.lineno=16;
-				self.selectionList = selectionList;
-			}
-			$pyjs.track.lineno=17;
-			if ((function(){try{try{$pyjs.in_try_except += 1;
-				return $p['bool']((userSelection === null));
-}finally{$pyjs.in_try_except-=1;}}catch($pyjs_dbg_3_err){if (!$p['isinstance']($pyjs_dbg_3_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_3_err);}throw $pyjs_dbg_3_err;
-}})()) {
-				$pyjs.track.lineno=18;
-				self.userSelection = (function(){try{try{$pyjs.in_try_except += 1;
-				return $p['list']([]);
-}finally{$pyjs.in_try_except-=1;}}catch($pyjs_dbg_4_err){if (!$p['isinstance']($pyjs_dbg_4_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_4_err);}throw $pyjs_dbg_4_err;
-}})();
-			}
-			else {
-				$pyjs.track.lineno=19;
-				self.selectionList = userSelection;
-			}
-			$pyjs.trackstack.pop();$pyjs.track=$pyjs.trackstack.pop();$pyjs.trackstack.push($pyjs.track);
-			return null;
-		}
-	, 1, [null,null,['self'],['name'],['selectionList', null],['userSelection', null]]);
-		$cls_definition['__init__'] = $method;
-		$pyjs.track.lineno=11;
-		var $bases = new Array($p['object']);
-		var $data = $p['dict']();
-		for (var $item in $cls_definition) { $data.__setitem__($item, $cls_definition[$item]); }
-		return $p['_create_class']('Contest', $p['tuple']($bases), $data);
-	})();
-	$pyjs.track.lineno=21;
-	$m['Candidate'] = (function(){
-		var $cls_definition = new Object();
-		var $method;
-		$cls_definition.__module__ = 'ballotTree';
-		$pyjs.track.lineno=22;
-		$method = $pyjs__bind_method2('__init__', function(name) {
-			if (this.__is_instance__ === true) {
-				var self = this;
-			} else {
-				var self = arguments[0];
-				name = arguments[1];
-			}
-
-			$pyjs.track={module:'ballotTree', lineno:22};$pyjs.trackstack.push($pyjs.track);
-			$pyjs.track.module='ballotTree';
-			$pyjs.track.lineno=22;
-			$pyjs.track.lineno=23;
-			self.$$name = name;
-			$pyjs.trackstack.pop();$pyjs.track=$pyjs.trackstack.pop();$pyjs.trackstack.push($pyjs.track);
-			return null;
-		}
-	, 1, [null,null,['self'],['name']]);
-		$cls_definition['__init__'] = $method;
-		$pyjs.track.lineno=21;
-		var $bases = new Array($p['object']);
-		var $data = $p['dict']();
-		for (var $item in $cls_definition) { $data.__setitem__($item, $cls_definition[$item]); }
-		return $p['_create_class']('Candidate', $p['tuple']($bases), $data);
-	})();
-	return this;
-}; /* end ballotTree */
-
-
-/* end module: ballotTree */
-
-
 
 --></script>
 <script type="text/javascript"><!--
@@ -17462,14 +17269,14 @@ function app_imported() {
         $p('pyjslib');
         $pyjs.__modules__.pyjslib = $p['pyjslib']
         pyjslib.___import___(
-            'sampleBallot',
+            'fysom',
             null,
             '__main__');
     } else {
         var B$ = $pyjs.loaded_modules['__builtin__'];
         $p = B$['$dict'];
         B$.$module_init('__builtin__');
-        $p._start_main('sampleBallot');
+        $p._start_main('fysom');
     }
     return;
 }
@@ -17511,7 +17318,7 @@ function prepare_app() {
         };
         wait();
     }
-    wait_for_loading_modules(app_imported, ['pyjamas.Window','pyjslib','pyjamas.ui','pyjamas','sampleBallot','dynamic','pyjamas.DOM','pyjd','sys','pyjamas.Location','fysom','ballotTree','pyjamas.ui.Event']);
+    wait_for_loading_modules(app_imported, ['pyjamas.Window','pyjslib','pyjamas.ui','pyjamas','dynamic','pyjamas.DOM','pyjd','sys','pyjamas.Location','fysom','pyjamas.ui.Event']);
 }
 
 function pygwtOnLoad(onLoadError, name) {

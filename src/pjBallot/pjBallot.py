@@ -20,14 +20,15 @@ from pyjamas import JSONService
 from ballotTree import Candidate, Race, Contest
 from json import loads
 from pyjamas.JSONService import JSONResponseTextHandler
+#from sampleBallot import srace
+import sampleBallot
 
 
-def tester(d):
-    Window.alert("YAY")
-    inst = 'yay'
-    return inst
 
-class pjBallot:
+def tester():
+    return 'hello'
+
+class PjBallot:
     def __init__(self):
         self.mainPanel = VerticalPanel()
         self.contest = HorizontalPanel()
@@ -37,6 +38,7 @@ class pjBallot:
         self.button = Button('test', self.test)
         self.status = Label('hi')
         self.x = 1
+        self.srace = Race("",[],[])
     
     def test(self):
         self.button.setText("No, really click me!")
@@ -89,9 +91,12 @@ class pjBallot:
         self.remote_py.passBallot(self)
             
     def onRemoteResponse(self, response, request_info): 
-        race = response  
-        name = race.works
+        self.srace = response  
+        sampleBallot.sendRace(self.srace)
+        name = self.srace.works
         self.mainPanel.add(HTML('pleasework %s' % name))
+        inst = sampleBallot.getInstruction()
+        self.mainPanel.add(HTML('pleasework %s' % inst))
     
     def onRemoteError(self):
         pass
@@ -115,5 +120,5 @@ class RootPanelListener(RootPanelCls, KeyboardHandler):
           
 if __name__ == '__main__':
 #    pyjd.setup("public/Hello.html?fred=foo#me")
-    app = pjBallot()
+    app = PjBallot()
     app.onModuleLoad()
