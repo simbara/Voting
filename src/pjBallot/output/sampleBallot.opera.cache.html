@@ -811,6 +811,10 @@ $pyjs.loaded_modules['sampleBallot'] = function (__mod_name__) {
 	$m.__track_lines__[6] = 'sampleBallot.py, line 6:\n    def sendRace(srace):';
 	$m.__track_lines__[7] = 'sampleBallot.py, line 7:\n    global race';
 	$m.__track_lines__[8] = 'sampleBallot.py, line 8:\n    race = srace';
+	$m.__track_lines__[10] = 'sampleBallot.py, line 10:\n    def getInstruction():';
+	$m.__track_lines__[11] = 'sampleBallot.py, line 11:\n    return race.instructions';
+	$m.__track_lines__[196] = "sampleBallot.py, line 196:\n    '''";
+	$m.__track_lines__[167] = "sampleBallot.py, line 167:\n    '''";
 
 
 	$pyjs.track.module='sampleBallot';
@@ -847,6 +851,24 @@ $pyjs.loaded_modules['sampleBallot'] = function (__mod_name__) {
 
 	$m['sendRace'].__bind_type__ = 0;
 	$m['sendRace'].__args__ = [null,null,['srace']];
+	$pyjs.track.lineno=10;
+	$m['getInstruction'] = function() {
+
+		$pyjs.track={module:'sampleBallot',lineno:10};$pyjs.trackstack.push($pyjs.track);
+		$pyjs.track.module='sampleBallot';
+		$pyjs.track.lineno=10;
+		$pyjs.track.lineno=11;
+		$pyjs.track.lineno=11;
+		var $pyjs__ret = $p['getattr']($m['race'], 'instructions');
+		$pyjs.trackstack.pop();$pyjs.track=$pyjs.trackstack.pop();$pyjs.trackstack.push($pyjs.track);
+		return $pyjs__ret;
+	};
+	$m['getInstruction'].__name__ = 'getInstruction';
+
+	$m['getInstruction'].__bind_type__ = 0;
+	$m['getInstruction'].__args__ = [null,null];
+	$pyjs.track.lineno=167;
+	$pyjs.track.lineno=196;
 	return this;
 }; /* end sampleBallot */
 
