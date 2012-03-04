@@ -8,7 +8,7 @@ def sendRace(srace):
     race = srace
     
 def getInstruction():
-    return race.instructions
+    return race.name
 
 #race = PjBallot.race
 #PjBallot.mainPanel.add(HTML('pleasework %s' % race))
@@ -169,7 +169,7 @@ States and Events
 '''
 
 fsm = Fysom({
-#  'initial': 'intro',
+  'initial': 'intro',
   'events': [
     {'name': 'startVoting',  'src': 'intro',  'dst': 'contests'},
     {'name': 'selectContest', 'src': 'contests',   'dst': 'candidates'},

@@ -14,7 +14,7 @@ $pyjs.loaded_modules['sampleBallot'] = function (__mod_name__) {
 	$m.__track_lines__[7] = 'sampleBallot.py, line 7:\n    global race';
 	$m.__track_lines__[8] = 'sampleBallot.py, line 8:\n    race = srace';
 	$m.__track_lines__[10] = 'sampleBallot.py, line 10:\n    def getInstruction():';
-	$m.__track_lines__[11] = 'sampleBallot.py, line 11:\n    return race.instructions';
+	$m.__track_lines__[11] = 'sampleBallot.py, line 11:\n    return race.name';
 	$m.__track_lines__[22] = 'sampleBallot.py, line 22:\n    def goToNextState(obj, pos, okToAdvance=True, contestPos=None):';
 	$m.__track_lines__[23] = "sampleBallot.py, line 23:\n    if fsm.current == 'contests':";
 	$m.__track_lines__[25] = 'sampleBallot.py, line 25:\n    fsm.selectContest(race=obj, contestPos=pos)';
@@ -155,7 +155,7 @@ $pyjs.loaded_modules['sampleBallot'] = function (__mod_name__) {
 		$pyjs.track.lineno=10;
 		$pyjs.track.lineno=11;
 		$pyjs.track.lineno=11;
-		var $pyjs__ret = $p['getattr']($m['race'], 'instructions');
+		var $pyjs__ret = $p['getattr']($m['race'], '$$name');
 		$pyjs.trackstack.pop();$pyjs.track=$pyjs.trackstack.pop();$pyjs.trackstack.push($pyjs.track);
 		return $pyjs__ret;
 	};
@@ -885,7 +885,7 @@ $pyjs.loaded_modules['sampleBallot'] = function (__mod_name__) {
 	$pyjs.track.lineno=171;
 	$m['fsm'] = (function(){try{try{$pyjs.in_try_except += 1;
 	return $m['Fysom']((function(){try{try{$pyjs.in_try_except += 1;
-	return $p['dict']([['events', (function(){try{try{$pyjs.in_try_except += 1;
+	return $p['dict']([['initial', 'intro'], ['events', (function(){try{try{$pyjs.in_try_except += 1;
 	return $p['list']([(function(){try{try{$pyjs.in_try_except += 1;
 	return $p['dict']([['name', 'startVoting'], ['src', 'intro'], ['dst', 'contests']]);
 }finally{$pyjs.in_try_except-=1;}}catch($pyjs_dbg_107_err){if (!$p['isinstance']($pyjs_dbg_107_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_107_err);}throw $pyjs_dbg_107_err;

@@ -1,3 +1,35 @@
+from __pyjamas__ import INT, JS, setCompilerOptions, debugger
+
+setCompilerOptions("noDebug", "noBoundMethods", "noDescriptors", "noGetattrSupport", "noAttributeChecking", "noSourceTracking", "noLineTracking", "noStoreSource")
+
+platform = JS("$pyjs.platform")
+sys = None
+dynamic = None
+Ellipsis = None
+JS("""
+var $max_float_int = 1;
+for (var i = 0; i < 1000; i++) {
+    $max_float_int *= 2;
+    if ($max_float_int + 1 == $max_float_int) {
+        break;
+    }
+}
+$max_int = 0x7fffffff;
+$min_int = -0x80000000;
+""")
+
+_handle_exception = JS("""function(err) {
+    $pyjs.loaded_modules['sys'].save_exception_stack();
+
+    if (!$pyjs.in_try_except) {
+        var $pyjs_msg = $pyjs.loaded_modules['sys']._get_traceback(err);
+        $pyjs.__active_exception_stack__ = null;
+        @{{debugReport}}($pyjs_msg);
+    }
+    throw err;
+};
+""")
+
 #
 # fysom.py - pYthOn Finite State Machine - this is a port of Jake
 #            Gordon's javascript-state-machine to python
@@ -332,7 +364,14 @@ class Fysom(object):
         if self._before_event(e) == False:
           return
         def _tran():
-          delattr(self, 'transition')
+#          import pdb
+#          pdb.set_trace()
+          str = "i am not here"
+#          delattr(self, 'transition')
+          JS('''
+          delete self.transition
+          ''')
+#          del self.transition
           self.current = dst
           self._enter_state(e)
           self._change_state(e)

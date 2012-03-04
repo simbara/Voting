@@ -86,24 +86,25 @@ $pyjs.loaded_modules['pjBallot'] = function (__mod_name__) {
 	$m.__track_lines__[97] = "pjBallot.py, line 97:\n    self.mainPanel.add(HTML('pleasework %s' % name))";
 	$m.__track_lines__[98] = 'pjBallot.py, line 98:\n    inst = sampleBallot.getInstruction()';
 	$m.__track_lines__[99] = "pjBallot.py, line 99:\n    self.mainPanel.add(HTML('pleasework %s' % inst))";
-	$m.__track_lines__[101] = 'pjBallot.py, line 101:\n    def onRemoteError(self):';
-	$m.__track_lines__[102] = 'pjBallot.py, line 102:\n    pass';
-	$m.__track_lines__[104] = 'pjBallot.py, line 104:\n    class JSONService(JSONProxy):';
-	$m.__track_lines__[105] = 'pjBallot.py, line 105:\n    def __init__(self):';
-	$m.__track_lines__[106] = 'pjBallot.py, line 106:\n    JSONProxy.__init__(self, "http://127.0.0.1:8000/test-service/", ["passBallot", "echo", "reverse", "uppercase", "lowercase", "nonexistant"])';
-	$m.__track_lines__[108] = 'pjBallot.py, line 108:\n    class RootPanelListener(RootPanelCls, KeyboardHandler):';
-	$m.__track_lines__[109] = 'pjBallot.py, line 109:\n    def __init__(self, Parent, *args, **kwargs):';
-	$m.__track_lines__[110] = 'pjBallot.py, line 110:\n    self.Parent = Parent';
-	$m.__track_lines__[111] = 'pjBallot.py, line 111:\n    self.focussed = False';
-	$m.__track_lines__[112] = 'pjBallot.py, line 112:\n    self.Parent.setFocus(False)';
-	$m.__track_lines__[113] = 'pjBallot.py, line 113:\n    RootPanelCls.__init__(self, *args, **kwargs)';
-	$m.__track_lines__[114] = 'pjBallot.py, line 114:\n    KeyboardHandler.__init__(self)';
-	$m.__track_lines__[116] = 'pjBallot.py, line 116:\n    self.addKeyboardListener(self)';
-	$m.__track_lines__[118] = 'pjBallot.py, line 118:\n    def onKeyDown(self, sender, keyCode, modifiers = None):';
-	$m.__track_lines__[119] = 'pjBallot.py, line 119:\n    app.onKeyPress(sender, keyCode, modifiers)';
-	$m.__track_lines__[121] = "pjBallot.py, line 121:\n    if __name__ == '__main__':";
-	$m.__track_lines__[123] = 'pjBallot.py, line 123:\n    app = PjBallot()';
-	$m.__track_lines__[124] = 'pjBallot.py, line 124:\n    app.onModuleLoad()';
+	$m.__track_lines__[100] = 'pjBallot.py, line 100:\n    sampleBallot.fsm.startVoting()';
+	$m.__track_lines__[103] = 'pjBallot.py, line 103:\n    def onRemoteError(self):';
+	$m.__track_lines__[104] = 'pjBallot.py, line 104:\n    pass';
+	$m.__track_lines__[106] = 'pjBallot.py, line 106:\n    class JSONService(JSONProxy):';
+	$m.__track_lines__[107] = 'pjBallot.py, line 107:\n    def __init__(self):';
+	$m.__track_lines__[108] = 'pjBallot.py, line 108:\n    JSONProxy.__init__(self, "http://127.0.0.1:8000/test-service/", ["passBallot", "echo", "reverse", "uppercase", "lowercase", "nonexistant"])';
+	$m.__track_lines__[110] = 'pjBallot.py, line 110:\n    class RootPanelListener(RootPanelCls, KeyboardHandler):';
+	$m.__track_lines__[111] = 'pjBallot.py, line 111:\n    def __init__(self, Parent, *args, **kwargs):';
+	$m.__track_lines__[112] = 'pjBallot.py, line 112:\n    self.Parent = Parent';
+	$m.__track_lines__[113] = 'pjBallot.py, line 113:\n    self.focussed = False';
+	$m.__track_lines__[114] = 'pjBallot.py, line 114:\n    self.Parent.setFocus(False)';
+	$m.__track_lines__[115] = 'pjBallot.py, line 115:\n    RootPanelCls.__init__(self, *args, **kwargs)';
+	$m.__track_lines__[116] = 'pjBallot.py, line 116:\n    KeyboardHandler.__init__(self)';
+	$m.__track_lines__[118] = 'pjBallot.py, line 118:\n    self.addKeyboardListener(self)';
+	$m.__track_lines__[120] = 'pjBallot.py, line 120:\n    def onKeyDown(self, sender, keyCode, modifiers = None):';
+	$m.__track_lines__[121] = 'pjBallot.py, line 121:\n    app.onKeyPress(sender, keyCode, modifiers)';
+	$m.__track_lines__[123] = "pjBallot.py, line 123:\n    if __name__ == '__main__':";
+	$m.__track_lines__[125] = 'pjBallot.py, line 125:\n    app = PjBallot()';
+	$m.__track_lines__[126] = 'pjBallot.py, line 126:\n    app.onModuleLoad()';
 
 
 	$pyjs.track.module='pjBallot';
@@ -627,12 +628,17 @@ $pyjs.loaded_modules['pjBallot'] = function (__mod_name__) {
 }})());
 }finally{$pyjs.in_try_except-=1;}}catch($pyjs_dbg_54_err){if (!$p['isinstance']($pyjs_dbg_54_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_54_err);}throw $pyjs_dbg_54_err;
 }})();
+			$pyjs.track.lineno=100;
+			(function(){try{try{$pyjs.in_try_except += 1;
+			return $m['sampleBallot']['fsm']['startVoting']();
+}finally{$pyjs.in_try_except-=1;}}catch($pyjs_dbg_55_err){if (!$p['isinstance']($pyjs_dbg_55_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_55_err);}throw $pyjs_dbg_55_err;
+}})();
 			$pyjs.trackstack.pop();$pyjs.track=$pyjs.trackstack.pop();$pyjs.trackstack.push($pyjs.track);
 			return null;
 		}
 	, 1, [null,null,['self'],['response'],['request_info']]);
 		$cls_definition['onRemoteResponse'] = $method;
-		$pyjs.track.lineno=101;
+		$pyjs.track.lineno=103;
 		$method = $pyjs__bind_method2('onRemoteError', function() {
 			if (this.__is_instance__ === true) {
 				var self = this;
@@ -640,10 +646,10 @@ $pyjs.loaded_modules['pjBallot'] = function (__mod_name__) {
 				var self = arguments[0];
 			}
 
-			$pyjs.track={module:'pjBallot', lineno:101};$pyjs.trackstack.push($pyjs.track);
+			$pyjs.track={module:'pjBallot', lineno:103};$pyjs.trackstack.push($pyjs.track);
 			$pyjs.track.module='pjBallot';
-			$pyjs.track.lineno=101;
-			$pyjs.track.lineno=102;
+			$pyjs.track.lineno=103;
+			$pyjs.track.lineno=104;
 			$pyjs.trackstack.pop();$pyjs.track=$pyjs.trackstack.pop();$pyjs.trackstack.push($pyjs.track);
 			return null;
 		}
@@ -655,12 +661,12 @@ $pyjs.loaded_modules['pjBallot'] = function (__mod_name__) {
 		for (var $item in $cls_definition) { $data.__setitem__($item, $cls_definition[$item]); }
 		return $p['_create_class']('PjBallot', $p['tuple']($bases), $data);
 	})();
-	$pyjs.track.lineno=104;
+	$pyjs.track.lineno=106;
 	$m['JSONService'] = (function(){
 		var $cls_definition = new Object();
 		var $method;
 		$cls_definition.__module__ = 'pjBallot';
-		$pyjs.track.lineno=105;
+		$pyjs.track.lineno=107;
 		$method = $pyjs__bind_method2('__init__', function() {
 			if (this.__is_instance__ === true) {
 				var self = this;
@@ -668,34 +674,34 @@ $pyjs.loaded_modules['pjBallot'] = function (__mod_name__) {
 				var self = arguments[0];
 			}
 
-			$pyjs.track={module:'pjBallot', lineno:105};$pyjs.trackstack.push($pyjs.track);
+			$pyjs.track={module:'pjBallot', lineno:107};$pyjs.trackstack.push($pyjs.track);
 			$pyjs.track.module='pjBallot';
-			$pyjs.track.lineno=105;
-			$pyjs.track.lineno=106;
+			$pyjs.track.lineno=107;
+			$pyjs.track.lineno=108;
 			(function(){try{try{$pyjs.in_try_except += 1;
 			return $m['JSONProxy']['__init__'](self, 'http://127.0.0.1:8000/test-service/', (function(){try{try{$pyjs.in_try_except += 1;
 			return $p['list'](['passBallot', 'echo', 'reverse', 'uppercase', 'lowercase', 'nonexistant']);
-}finally{$pyjs.in_try_except-=1;}}catch($pyjs_dbg_55_err){if (!$p['isinstance']($pyjs_dbg_55_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_55_err);}throw $pyjs_dbg_55_err;
-}})());
 }finally{$pyjs.in_try_except-=1;}}catch($pyjs_dbg_56_err){if (!$p['isinstance']($pyjs_dbg_56_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_56_err);}throw $pyjs_dbg_56_err;
+}})());
+}finally{$pyjs.in_try_except-=1;}}catch($pyjs_dbg_57_err){if (!$p['isinstance']($pyjs_dbg_57_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_57_err);}throw $pyjs_dbg_57_err;
 }})();
 			$pyjs.trackstack.pop();$pyjs.track=$pyjs.trackstack.pop();$pyjs.trackstack.push($pyjs.track);
 			return null;
 		}
 	, 1, [null,null,['self']]);
 		$cls_definition['__init__'] = $method;
-		$pyjs.track.lineno=104;
+		$pyjs.track.lineno=106;
 		var $bases = new Array($m['JSONProxy']);
 		var $data = $p['dict']();
 		for (var $item in $cls_definition) { $data.__setitem__($item, $cls_definition[$item]); }
 		return $p['_create_class']('JSONService', $p['tuple']($bases), $data);
 	})();
-	$pyjs.track.lineno=108;
+	$pyjs.track.lineno=110;
 	$m['RootPanelListener'] = (function(){
 		var $cls_definition = new Object();
 		var $method;
 		$cls_definition.__module__ = 'pjBallot';
-		$pyjs.track.lineno=109;
+		$pyjs.track.lineno=111;
 		$method = $pyjs__bind_method2('__init__', function(Parent) {
 			if (this.__is_instance__ === true) {
 				var self = this;
@@ -737,39 +743,39 @@ $pyjs.loaded_modules['pjBallot'] = function (__mod_name__) {
 				}
 			}
 
-			$pyjs.track={module:'pjBallot', lineno:109};$pyjs.trackstack.push($pyjs.track);
+			$pyjs.track={module:'pjBallot', lineno:111};$pyjs.trackstack.push($pyjs.track);
 			$pyjs.track.module='pjBallot';
-			$pyjs.track.lineno=109;
-			$pyjs.track.lineno=110;
-			self.Parent = Parent;
 			$pyjs.track.lineno=111;
-			self.focussed = false;
 			$pyjs.track.lineno=112;
-			(function(){try{try{$pyjs.in_try_except += 1;
-			return self['Parent']['setFocus'](false);
-}finally{$pyjs.in_try_except-=1;}}catch($pyjs_dbg_57_err){if (!$p['isinstance']($pyjs_dbg_57_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_57_err);}throw $pyjs_dbg_57_err;
-}})();
+			self.Parent = Parent;
 			$pyjs.track.lineno=113;
-			(function(){try{try{$pyjs.in_try_except += 1;
-			return $pyjs_kwargs_call($m['RootPanelCls'], '__init__', args, kwargs, [{}, self]);
-}finally{$pyjs.in_try_except-=1;}}catch($pyjs_dbg_58_err){if (!$p['isinstance']($pyjs_dbg_58_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_58_err);}throw $pyjs_dbg_58_err;
-}})();
+			self.focussed = false;
 			$pyjs.track.lineno=114;
 			(function(){try{try{$pyjs.in_try_except += 1;
-			return $m['KeyboardHandler']['__init__'](self);
+			return self['Parent']['setFocus'](false);
+}finally{$pyjs.in_try_except-=1;}}catch($pyjs_dbg_58_err){if (!$p['isinstance']($pyjs_dbg_58_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_58_err);}throw $pyjs_dbg_58_err;
+}})();
+			$pyjs.track.lineno=115;
+			(function(){try{try{$pyjs.in_try_except += 1;
+			return $pyjs_kwargs_call($m['RootPanelCls'], '__init__', args, kwargs, [{}, self]);
 }finally{$pyjs.in_try_except-=1;}}catch($pyjs_dbg_59_err){if (!$p['isinstance']($pyjs_dbg_59_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_59_err);}throw $pyjs_dbg_59_err;
 }})();
 			$pyjs.track.lineno=116;
 			(function(){try{try{$pyjs.in_try_except += 1;
-			return self['addKeyboardListener'](self);
+			return $m['KeyboardHandler']['__init__'](self);
 }finally{$pyjs.in_try_except-=1;}}catch($pyjs_dbg_60_err){if (!$p['isinstance']($pyjs_dbg_60_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_60_err);}throw $pyjs_dbg_60_err;
+}})();
+			$pyjs.track.lineno=118;
+			(function(){try{try{$pyjs.in_try_except += 1;
+			return self['addKeyboardListener'](self);
+}finally{$pyjs.in_try_except-=1;}}catch($pyjs_dbg_61_err){if (!$p['isinstance']($pyjs_dbg_61_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_61_err);}throw $pyjs_dbg_61_err;
 }})();
 			$pyjs.trackstack.pop();$pyjs.track=$pyjs.trackstack.pop();$pyjs.trackstack.push($pyjs.track);
 			return null;
 		}
 	, 1, ['args',['kwargs'],['self'],['Parent']]);
 		$cls_definition['__init__'] = $method;
-		$pyjs.track.lineno=118;
+		$pyjs.track.lineno=120;
 		$method = $pyjs__bind_method2('onKeyDown', function(sender, keyCode, modifiers) {
 			if (this.__is_instance__ === true) {
 				var self = this;
@@ -781,39 +787,39 @@ $pyjs.loaded_modules['pjBallot'] = function (__mod_name__) {
 			}
 			if (typeof modifiers == 'undefined') modifiers=arguments.callee.__args__[5][1];
 
-			$pyjs.track={module:'pjBallot', lineno:118};$pyjs.trackstack.push($pyjs.track);
+			$pyjs.track={module:'pjBallot', lineno:120};$pyjs.trackstack.push($pyjs.track);
 			$pyjs.track.module='pjBallot';
-			$pyjs.track.lineno=118;
-			$pyjs.track.lineno=119;
+			$pyjs.track.lineno=120;
+			$pyjs.track.lineno=121;
 			(function(){try{try{$pyjs.in_try_except += 1;
 			return $m.app['onKeyPress'](sender, keyCode, modifiers);
-}finally{$pyjs.in_try_except-=1;}}catch($pyjs_dbg_61_err){if (!$p['isinstance']($pyjs_dbg_61_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_61_err);}throw $pyjs_dbg_61_err;
+}finally{$pyjs.in_try_except-=1;}}catch($pyjs_dbg_62_err){if (!$p['isinstance']($pyjs_dbg_62_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_62_err);}throw $pyjs_dbg_62_err;
 }})();
 			$pyjs.trackstack.pop();$pyjs.track=$pyjs.trackstack.pop();$pyjs.trackstack.push($pyjs.track);
 			return null;
 		}
 	, 1, [null,null,['self'],['sender'],['keyCode'],['modifiers', null]]);
 		$cls_definition['onKeyDown'] = $method;
-		$pyjs.track.lineno=108;
+		$pyjs.track.lineno=110;
 		var $bases = new Array($m['RootPanelCls'],$m['KeyboardHandler']);
 		var $data = $p['dict']();
 		for (var $item in $cls_definition) { $data.__setitem__($item, $cls_definition[$item]); }
 		return $p['_create_class']('RootPanelListener', $p['tuple']($bases), $data);
 	})();
-	$pyjs.track.lineno=121;
+	$pyjs.track.lineno=123;
 	if ((function(){try{try{$pyjs.in_try_except += 1;
 		return $p['bool']($p['op_eq']((typeof __name__ == "undefined"?$m.__name__:__name__), '__main__'));
-}finally{$pyjs.in_try_except-=1;}}catch($pyjs_dbg_62_err){if (!$p['isinstance']($pyjs_dbg_62_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_62_err);}throw $pyjs_dbg_62_err;
+}finally{$pyjs.in_try_except-=1;}}catch($pyjs_dbg_63_err){if (!$p['isinstance']($pyjs_dbg_63_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_63_err);}throw $pyjs_dbg_63_err;
 }})()) {
-		$pyjs.track.lineno=123;
+		$pyjs.track.lineno=125;
 		$m['app'] = (function(){try{try{$pyjs.in_try_except += 1;
 		return $m['PjBallot']();
-}finally{$pyjs.in_try_except-=1;}}catch($pyjs_dbg_63_err){if (!$p['isinstance']($pyjs_dbg_63_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_63_err);}throw $pyjs_dbg_63_err;
+}finally{$pyjs.in_try_except-=1;}}catch($pyjs_dbg_64_err){if (!$p['isinstance']($pyjs_dbg_64_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_64_err);}throw $pyjs_dbg_64_err;
 }})();
-		$pyjs.track.lineno=124;
+		$pyjs.track.lineno=126;
 		(function(){try{try{$pyjs.in_try_except += 1;
 		return $m['app']['onModuleLoad']();
-}finally{$pyjs.in_try_except-=1;}}catch($pyjs_dbg_64_err){if (!$p['isinstance']($pyjs_dbg_64_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_64_err);}throw $pyjs_dbg_64_err;
+}finally{$pyjs.in_try_except-=1;}}catch($pyjs_dbg_65_err){if (!$p['isinstance']($pyjs_dbg_65_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_65_err);}throw $pyjs_dbg_65_err;
 }})();
 	}
 	return this;

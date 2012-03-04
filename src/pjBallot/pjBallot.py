@@ -97,6 +97,8 @@ class PjBallot:
         self.mainPanel.add(HTML('pleasework %s' % name))
         inst = sampleBallot.getInstruction()
         self.mainPanel.add(HTML('pleasework %s' % inst))
+        sampleBallot.fsm.startVoting()
+
     
     def onRemoteError(self):
         pass
