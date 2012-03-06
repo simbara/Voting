@@ -57,7 +57,9 @@ class PjBallot:
         pass
 
     def onModuleLoad(self):
-        self.remote_py = JSONService()
+        self.remote_py = JSONService()       
+        self.mainPanel.add(sampleBallot.name)
+        self.mainPanel.add(sampleBallot.instructions)
         self.mainPanel.add(sampleBallot.contest)
         self.mainPanel.add(sampleBallot.candidate)
         self.mainPanel.add(sampleBallot.selection)        
@@ -72,9 +74,6 @@ class PjBallot:
     def onRemoteResponse(self, response, request_info): 
         self.srace = response  
         sampleBallot.sendRace(self.srace)
-        self.mainPanel.add(HTML('Name: %s' % self.srace.name))
-        inst = sampleBallot.getInstruction()
-        self.mainPanel.add(HTML('Instruction: %s' %  self.srace.instructions))
         sampleBallot.fsm.startVoting()
         sampleBallot.setContest()
 

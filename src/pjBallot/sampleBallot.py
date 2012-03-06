@@ -8,6 +8,10 @@ x = 0
 contestPosition = 0
 candidatePosition = 0
 
+name = HorizontalPanel()
+#name.setStyleName('words')
+instructions = HorizontalPanel()
+#instructions.setStyleName('words')
 contest = HorizontalPanel()
 contest.setStyleName('words')
 candidate = HorizontalPanel()
@@ -24,6 +28,8 @@ race = Race('', [], '')
 def sendRace(srace):
     global race
     race = srace
+    name.add(HTML('<b /> Name: %s' %race.name))
+    instructions.add(HTML('<b> Instructions: </b>%s' %race.instructions))
     
 def getInstruction():
     return race.name
@@ -38,11 +44,11 @@ def setContest():
     if not curcontest.userSelection:
         candidatePosition = 0
         selection.clear()
-        selection.add(HTML('<b /> Selection: None Made Yet'))
+        selection.add(HTML('<b> Selection:</b> None Made Yet'))
     else:
         candidatePosition = candidateList.index(curcontest.userSelection[-1]) 
         selection.clear()
-        selection.add(HTML('<b /> Selection: %s' % curcontest.userSelection[-1].name))
+        selection.add(HTML('<b /> Selection:</b> %s' % curcontest.userSelection[-1].name))
 
     setCandidate()
 
@@ -50,14 +56,14 @@ def setCandidate():
     curcontest = race.selectionList[contestPosition]
     candidateName = curcontest.selectionList[candidatePosition].name
     candidate.clear()
-    candidate.add(HTML('<b /> Candidate: %s' % candidateName))
+    candidate.add(HTML('<b> Candidate:</b> %s' % candidateName))
 
 def makeSelection():
     curcontest = race.selectionList[contestPosition]
     curcandidate = curcontest.selectionList[candidatePosition]
     curcontest.userSelection.append(curcandidate)
     selection.clear()
-    selection.add(HTML('<b /> Selection: %s' % curcontest.userSelection[-1].name))
+    selection.add(HTML('<b /> Selection:</b> %s' % curcontest.userSelection[-1].name))
  
 
 def onKeyPress(sender, keycode, modifiers):
