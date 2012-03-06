@@ -60,14 +60,12 @@ class PjBallot:
     def onKeyUp(self, sender, keycode, modifiers):
         pass
 
-
-
     def onModuleLoad(self):
         self.remote_py = JSONService()
 #        self.mainPanel.add(self.button)
         self.mainPanel.add(sampleBallot.contest)
         self.mainPanel.add(sampleBallot.selection)
-        self.mainPanel.add(self.status)
+#        self.mainPanel.add(self.status)
         panel = FocusPanel(Widget=self.mainPanel)
         gp = RootPanelListener(panel)
         manageRootPanel(gp)
@@ -79,11 +77,12 @@ class PjBallot:
     def onRemoteResponse(self, response, request_info): 
         self.srace = response  
         sampleBallot.sendRace(self.srace)
-        name = self.srace.works
-        self.mainPanel.add(HTML('pleasework %s' % name))
+        self.mainPanel.add(HTML('Name: %s' % self.srace.name))
         inst = sampleBallot.getInstruction()
-        self.mainPanel.add(HTML('pleasework %s' % inst))
+        self.mainPanel.add(HTML('Instruction: %s' %  self.srace.instructions))
         sampleBallot.fsm.startVoting()
+        sampleBallot.setContest()
+        sampleBallot.setCandidate()
     
     def onRemoteError(self):
         pass

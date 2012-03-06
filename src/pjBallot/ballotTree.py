@@ -16,7 +16,7 @@ class Contest(object):
         else: self.selectionList = selectionList #candidates
         if userSelection is None: 
             self.userSelection = []
-        else: self.selectionList = userSelection
+        else: self.userSelection = userSelection
         
 class Candidate(object):
     def __init__(self, name):

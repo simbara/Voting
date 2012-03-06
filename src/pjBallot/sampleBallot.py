@@ -5,20 +5,19 @@ from pyjamas.ui.HorizontalPanel import HorizontalPanel
 from pyjamas.ui.HTML import HTML
 
 x = 0
+contestPosition = 0
+candidatePosition = 0
 
 contest = HorizontalPanel()
 contest.setStyleName('words')
-h = HTML("<b />Contest: ")
-contest.add(h)
 
 selection = HorizontalPanel()
 selection.setStyleName('words')
-l = HTML("<b />Selection: ")
-selection.add(l)
+
 #       
         
 race = Race('', [], '')
-accept_key = False
+
 
 def sendRace(srace):
     global race
@@ -27,34 +26,56 @@ def sendRace(srace):
 def getInstruction():
     return race.name
 
-def nextContest():
-    global x
-    x += 1
-    global contest
+def setContest():
+    global candidatePosition
+    myrace = race
+    contestName = race.selectionList[contestPosition].name
     contest.clear()
-    contest.add(HTML('<b /> Contest: %d' % x))
+    contest.add(HTML('<b /> Contest: %s' % contestName))
+    candidateList = race.selectionList[contestPosition].userSelection
+    if not candidateList:
+        candidatePosition = 0
+    else:
+        candidatePosition = candidateList[0] 
+    setCandidate()
 
-def nextSelection():
-    global x
-    x += 1
-    global selection
+def setCandidate():
+    curcontest = race.selectionList[contestPosition]
+    candidateName = curcontest.selectionList[candidatePosition].name
     selection.clear()
-    selection.add(HTML('<b /> Selection: %d' % x))
+    selection.add(HTML('<b /> Selection: %s' % candidateName))
 
 
 def onKeyPress(sender, keycode, modifiers):
 #    DOM.eventPreventDefault(DOM.eventGetCurrentEvent()) #not needed
 #    if (accept_key):
+    global contestPosition, candidatePosition
+    contestList = race.selectionList
+    candidateList = race.selectionList[contestPosition].selectionList
     if keycode == KeyboardListener.KEY_UP:
-        nextContest()
+        if fsm.current == "contests":
+            contestPosition = (contestPosition+1) if (contestPosition+1<len(contestList)) else 0
+            setContest() 
+    
     if keycode == KeyboardListener.KEY_DOWN:
-        nextContest()
-    if keycode == KeyboardListener.KEY_LEFT:
-        nextSelection()
+        if fsm.current == "contests":
+            contestPosition = len(contestList)-1 if (contestPosition==0) else contestPosition-1
+            setContest() 
+            
     if keycode == KeyboardListener.KEY_RIGHT:
-        nextSelection()
+        if fsm.current == "contests":
+            candidatePosition = (candidatePosition+1) if (candidatePosition+1<len(candidateList)) else 0
+            setCandidate()
+
+    if keycode == KeyboardListener.KEY_LEFT:
+        if fsm.current == 'contests':
+            candidatePosition = len(candidateList)-1 if (candidatePosition==0) else candidatePosition-1
+            setCandidate()
+
     if keycode == KeyboardListener.KEY_ENTER:
         pass
+    
+    
 #race = PjBallot.race
 #PjBallot.mainPanel.add(HTML('pleasework %s' % race))
 
@@ -96,30 +117,14 @@ whatever selection the user made in the 'Contest.userSelection' list
 '''
 def traverselist(obj, contestPos=None):
     alist = obj.selectionList
-    pos = 0
-    print('* ' + alist[pos].name + ' highlighted *')
-    global accept_key 
-    accept_key = True
+    print('* ' + alist[contestPosition].name + ' highlighted *')
 
-#    while 1:
-#        kb = raw_input('\'y\' up, \'n\' down, \'h\' selects: ')
-#        #if fsm.current == 'contests':
-#        #    if kb.strip() == 'g':
-#        #else:
-#        if kb.strip() == 'y':
-#            pos = (pos+1) if (pos+1<len(alist)) else 0
-#        elif kb.strip() == 'n':
-#            pos = len(alist)-1 if (pos-1<0) else pos-1
-#        elif kb.strip() == 'h':
-#            break;    
-#        print('* ' + alist[pos].name + ' highlighted *')
-
-    if fsm.current == 'candidates':
-        print 'CANDIDATES LOOK: obj is', obj.name, 'pos is ', pos, 'contestPos is ', contestPos
-        #goToNextState(obj, pos, contestPos=contestPos)
-    else:
-        print 'DEFAULT GOTO, obj is', alist[pos], 'pos is ', pos, 'contestPos is ', contestPos
-        #goToNextState(alist[pos], pos, contestPos=contestPos)
+#    if fsm.current == 'candidates':
+#        print 'CANDIDATES LOOK: obj is', obj.name, 'pos is ', contestPosition, 'contestPos is ', contestPos
+#        #goToNextState(obj, pos, contestPos=contestPos)
+#    else:
+#        print 'DEFAULT GOTO, obj is', alist[contestPosition], 'pos is ', contestPosition, 'contestPos is ', contestPos
+#        #goToNextState(alist[pos], pos, contestPos=contestPos)
 
 '''
 Define State Behaviors
@@ -248,3 +253,4 @@ Assign State Behaviors
 #fsm.onchangestate = printstatechange
 
 #fsm.startVoting()
+    

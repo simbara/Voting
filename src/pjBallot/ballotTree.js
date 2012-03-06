@@ -23,7 +23,7 @@ $pyjs.loaded_modules['ballotTree'] = function (__mod_name__) {
 	$m.__track_lines__[16] = 'ballotTree.py, line 16:\n    else: self.selectionList = selectionList #candidates';
 	$m.__track_lines__[17] = 'ballotTree.py, line 17:\n    if userSelection is None:';
 	$m.__track_lines__[18] = 'ballotTree.py, line 18:\n    self.userSelection = []';
-	$m.__track_lines__[19] = 'ballotTree.py, line 19:\n    else: self.selectionList = userSelection';
+	$m.__track_lines__[19] = 'ballotTree.py, line 19:\n    else: self.userSelection = userSelection';
 	$m.__track_lines__[21] = 'ballotTree.py, line 21:\n    class Candidate(object):';
 	$m.__track_lines__[22] = 'ballotTree.py, line 22:\n    def __init__(self, name):';
 	$m.__track_lines__[23] = 'ballotTree.py, line 23:\n    self.name = name';
@@ -139,7 +139,7 @@ $pyjs.loaded_modules['ballotTree'] = function (__mod_name__) {
 			}
 			else {
 				$pyjs.track.lineno=19;
-				self.selectionList = userSelection;
+				self.userSelection = userSelection;
 			}
 			$pyjs.trackstack.pop();$pyjs.track=$pyjs.trackstack.pop();$pyjs.trackstack.push($pyjs.track);
 			return null;
