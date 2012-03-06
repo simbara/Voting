@@ -39,11 +39,7 @@ def tester():
 
 class PjBallot:
     def __init__(self):
-        self.mainPanel = VerticalPanel()
-        self.contest = HorizontalPanel()
-        self.contest.setStyleName('words')
-        self.selection = HorizontalPanel()
-        self.selection.setStyleName('words')
+        self.mainPanel = VerticalPanel()      
         self.button = Button('test', self.test)
         self.status = Label('hi')
         self.x = 1
@@ -62,10 +58,9 @@ class PjBallot:
 
     def onModuleLoad(self):
         self.remote_py = JSONService()
-#        self.mainPanel.add(self.button)
         self.mainPanel.add(sampleBallot.contest)
-        self.mainPanel.add(sampleBallot.selection)
-#        self.mainPanel.add(self.status)
+        self.mainPanel.add(sampleBallot.candidate)
+        self.mainPanel.add(sampleBallot.selection)        
         panel = FocusPanel(Widget=self.mainPanel)
         gp = RootPanelListener(panel)
         manageRootPanel(gp)
@@ -82,7 +77,7 @@ class PjBallot:
         self.mainPanel.add(HTML('Instruction: %s' %  self.srace.instructions))
         sampleBallot.fsm.startVoting()
         sampleBallot.setContest()
-        sampleBallot.setCandidate()
+
     
     def onRemoteError(self):
         pass

@@ -10,9 +10,11 @@ candidatePosition = 0
 
 contest = HorizontalPanel()
 contest.setStyleName('words')
-
+candidate = HorizontalPanel()
+candidate.setStyleName('words')
 selection = HorizontalPanel()
 selection.setStyleName('words')
+
 
 #       
         
@@ -29,22 +31,34 @@ def getInstruction():
 def setContest():
     global candidatePosition
     myrace = race
-    contestName = race.selectionList[contestPosition].name
+    curcontest = race.selectionList[contestPosition]
     contest.clear()
-    contest.add(HTML('<b /> Contest: %s' % contestName))
-    candidateList = race.selectionList[contestPosition].userSelection
-    if not candidateList:
+    contest.add(HTML('<b /> Contest: %s' % curcontest.name))
+    candidateList = curcontest.selectionList
+    if not curcontest.userSelection:
         candidatePosition = 0
+        selection.clear()
+        selection.add(HTML('<b /> Selection: None Made Yet'))
     else:
-        candidatePosition = candidateList[0] 
+        candidatePosition = candidateList.index(curcontest.userSelection[-1]) 
+        selection.clear()
+        selection.add(HTML('<b /> Selection: %s' % curcontest.userSelection[-1].name))
+
     setCandidate()
 
 def setCandidate():
     curcontest = race.selectionList[contestPosition]
     candidateName = curcontest.selectionList[candidatePosition].name
-    selection.clear()
-    selection.add(HTML('<b /> Selection: %s' % candidateName))
+    candidate.clear()
+    candidate.add(HTML('<b /> Candidate: %s' % candidateName))
 
+def makeSelection():
+    curcontest = race.selectionList[contestPosition]
+    curcandidate = curcontest.selectionList[candidatePosition]
+    curcontest.userSelection.append(curcandidate)
+    selection.clear()
+    selection.add(HTML('<b /> Selection: %s' % curcontest.userSelection[-1].name))
+ 
 
 def onKeyPress(sender, keycode, modifiers):
 #    DOM.eventPreventDefault(DOM.eventGetCurrentEvent()) #not needed
@@ -73,7 +87,8 @@ def onKeyPress(sender, keycode, modifiers):
             setCandidate()
 
     if keycode == KeyboardListener.KEY_ENTER:
-        pass
+        if fsm.current == 'contests':
+            makeSelection()
     
     
 #race = PjBallot.race
