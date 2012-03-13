@@ -8,7 +8,7 @@ made changes to
     var class_name = @{{obj}}["__jsonclass__"][0] hacked to remove [0]
 '''
 
-import pyjd # this is dummy in pyjs.
+#import pyjd # this is dummy in pyjs.
 from pyjamas.ui.RootPanel import RootPanel, RootPanelCls, manageRootPanel
 from pyjamas.ui.HorizontalPanel import HorizontalPanel
 from pyjamas.ui.VerticalPanel import VerticalPanel
@@ -22,13 +22,13 @@ from pyjamas.ui.KeyboardListener import KeyboardHandler
 from pyjamas.ui.FocusPanel import FocusPanel
 from pyjamas import DOM
 
-import pygwt
+#import pygwt
 from pyjamas.JSONService import JSONProxy
 from pyjamas.ui.Label import Label
 from pyjamas import JSONService
 #sampleBallot.fsm.startVoting()
 from ballotTree import Candidate, Race, Contest
-from json import loads
+#from json import loads
 from pyjamas.JSONService import JSONResponseTextHandler
 #from sampleBallot import srace
 import sampleBallot
@@ -47,10 +47,11 @@ class PjBallot:
     
     def test(self):
         self.button.setText("No, really click me!")
-#        Window.alert("Hello, AJAAAX!")
         self.contest.add(HTML('yay'))
 
     def onKeyDown(self, sender, keycode, modifiers):
+        #print "inside onKeyDown, self is", self, "sender is", sender, "keycode is", keycode
+        #self.mainPanel.add(keycode)
         pass
 
     def onKeyUp(self, sender, keycode, modifiers):
@@ -58,18 +59,19 @@ class PjBallot:
 
     def onModuleLoad(self):
         self.remote_py = JSONService()
+        self.mainPanel.add(sampleBallot.status)
         self.mainPanel.add(sampleBallot.contest)
         self.mainPanel.add(sampleBallot.candidate)
-        self.mainPanel.add(sampleBallot.selection)        
+        self.mainPanel.add(sampleBallot.selection)
         panel = FocusPanel(Widget=self.mainPanel)
         gp = RootPanelListener(panel)
         manageRootPanel(gp)
         RootPanel().add(panel)
         panel.setFocus(True)
-#        self.remote_py.uppercase('yay', self)
         self.remote_py.passBallot(self)
             
     def onRemoteResponse(self, response, request_info): 
+        print response  
         self.srace = response  
         sampleBallot.sendRace(self.srace)
         self.mainPanel.add(HTML('Name: %s' % self.srace.name))
@@ -78,10 +80,25 @@ class PjBallot:
         sampleBallot.fsm.startVoting()
         sampleBallot.setContest()
 
-    
-    def onRemoteError(self):
-        pass
-        
+    def onRemoteError(self, code, errobj, request_info):
+        # onRemoteError gets the HTTP error code or 0 and
+        # errobj is an jsonrpc 2.0 error dict:
+        #     {
+        #       'code': jsonrpc-error-code (integer) ,
+        #       'message': jsonrpc-error-message (string) ,
+        #       'data' : extra-error-data
+        #     }
+        message = errobj['message']
+        if code != 0:
+            self.status.setText("HTTP error %d: %s" %
+                                (code, message))
+            print "HTTP error %d: %s" % (code, message)
+        else:
+            code = errobj['code']
+            self.status.setText("JSONRPC Error %s: %s" %
+                                (code, message))
+            print "JSONRPC Error %s: %s" % (code, message)
+     
 class JSONService(JSONProxy):
     def __init__(self):
         JSONProxy.__init__(self, "http://127.0.0.1:8000/test-service/", ["passBallot", "echo", "reverse", "uppercase", "lowercase", "nonexistant"])        

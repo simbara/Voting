@@ -54,9 +54,9 @@ function __pygwt_forEachModule(lambda) {
 
 
 // When nested IFRAMEs load, they reach up into the parent page to announce that
-// they are ready to run. Because IFRAMEs load asynchronously relative to the
+// they are ready to run. Because IFRAMEs load asynchronously relative to the 
 // host page, one of two things can happen when they reach up:
-// (1) The host page's onload handler has not yet been called, in which case we
+// (1) The host page's onload handler has not yet been called, in which case we 
 //     retry until it has been called.
 // (2) The host page's onload handler has already been called, in which case the
 //     nested IFRAME should be initialized immediately.
@@ -153,13 +153,14 @@ function __pygwt_initHandlers(resize, beforeunload, unload) {
 function __pygwt_injectWebModeFrame(name) {
    if (document.body) {
       var parts = __pygwt_splitModuleNameRef(name);
-
+   
       // Insert an IFRAME
       var iframe = document.createElement("iframe");
       var selectorURL = parts[0] + parts[1] + ".nocache.html";
       iframe.src = selectorURL;
-      iframe.id = selectorURL;
-      iframe.style.display = 'none';
+      iframe.style.border = '0px';
+      iframe.style.width = '0px';
+      iframe.style.height = '0px';
       if (document.body.firstChild) {
          document.body.insertBefore(iframe, document.body.firstChild);
       } else {

@@ -1,5 +1,5 @@
 from __pyjamas__ import INT, JS, setCompilerOptions, debugger
-
+'''
 setCompilerOptions("noDebug", "noBoundMethods", "noDescriptors", "noGetattrSupport", "noAttributeChecking", "noSourceTracking", "noLineTracking", "noStoreSource")
 
 platform = JS("$pyjs.platform")
@@ -29,7 +29,7 @@ _handle_exception = JS("""function(err) {
     throw err;
 };
 """)
-
+'''
 #
 # fysom.py - pYthOn Finite State Machine - this is a port of Jake
 #            Gordon's javascript-state-machine to python

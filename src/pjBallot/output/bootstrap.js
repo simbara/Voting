@@ -158,9 +158,8 @@ function __pygwt_injectWebModeFrame(name) {
       var iframe = document.createElement("iframe");
       var selectorURL = parts[0] + parts[1] + ".nocache.html";
       iframe.src = selectorURL;
-      iframe.style.border = '0px';
-      iframe.style.width = '0px';
-      iframe.style.height = '0px';
+      iframe.id = selectorURL;
+      iframe.style.display = 'none';
       if (document.body.firstChild) {
          document.body.insertBefore(iframe, document.body.firstChild);
       } else {
