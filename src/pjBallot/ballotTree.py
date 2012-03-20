@@ -1,19 +1,18 @@
 class Race(object):
     def __init__(self, name, selectionList, instructions, audioPath):
         self.name = name
+        self.audioPath = audioPath
         self.selectionList = selectionList
         self.instructions = instructions
         self.works = "worker"
-        self.audioPath = audioPath
     
     def __repr__(self):
         return '<pjBallotObj>'
         
 class Contest(object):
-    def __init__(self, name, selectionList=None, userSelection=None, audioPath=None):
-        self.name = name
-        if audioPath is None:
-            self.audioPath = "" 
+    def __init__(self, name, audioPath, selectionList=None, userSelection=None):
+        self.name = name 
+        self.audioPath = audioPath
         if selectionList is None: 
             self.selectionList = []
         else: self.selectionList = selectionList #candidates
@@ -24,5 +23,4 @@ class Contest(object):
 class Candidate(object):
     def __init__(self, name, audioPath):
         self.name = name
-        self.audioPath = audioPath
-
+        self.audioPath = audioPath  
