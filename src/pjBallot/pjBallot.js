@@ -75,7 +75,7 @@ $pyjs.loaded_modules['pjBallot'] = function (__mod_name__) {
 	$m.__track_lines__[106] = 'pjBallot.py, line 106:\n    print "JSONRPC Error %s: %s" % (code, message)';
 	$m.__track_lines__[108] = 'pjBallot.py, line 108:\n    class JSONService(JSONProxy):';
 	$m.__track_lines__[109] = 'pjBallot.py, line 109:\n    def __init__(self):';
-	$m.__track_lines__[110] = 'pjBallot.py, line 110:\n    JSONProxy.__init__(self, "http://127.0.0.1:8000/test-service/", ["passBallot", "echo", "reverse", "uppercase", "lowercase", "nonexistant"])';
+	$m.__track_lines__[110] = 'pjBallot.py, line 110:\n    JSONProxy.__init__(self, "http://10.0.22.220/test-service/", ["passBallot", "echo", "reverse", "uppercase", "lowercase", "nonexistant"])';
 	$m.__track_lines__[112] = 'pjBallot.py, line 112:\n    class RootPanelListener(RootPanelCls, KeyboardHandler):';
 	$m.__track_lines__[113] = 'pjBallot.py, line 113:\n    def __init__(self, Parent, *args, **kwargs):';
 	$m.__track_lines__[114] = 'pjBallot.py, line 114:\n    self.Parent = Parent';
@@ -554,7 +554,7 @@ $pyjs.loaded_modules['pjBallot'] = function (__mod_name__) {
 			$pyjs.track.lineno=109;
 			$pyjs.track.lineno=110;
 			(function(){try{try{$pyjs.in_try_except += 1;
-			return $m['JSONProxy']['__init__'](self, 'http://127.0.0.1:8000/test-service/', (function(){try{try{$pyjs.in_try_except += 1;
+			return $m['JSONProxy']['__init__'](self, 'http://10.0.22.220/test-service/', (function(){try{try{$pyjs.in_try_except += 1;
 			return $p['list'](['passBallot', 'echo', 'reverse', 'uppercase', 'lowercase', 'nonexistant']);
 }finally{$pyjs.in_try_except-=1;}}catch($pyjs_dbg_48_err){if (!$p['isinstance']($pyjs_dbg_48_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_48_err);}throw $pyjs_dbg_48_err;
 }})());

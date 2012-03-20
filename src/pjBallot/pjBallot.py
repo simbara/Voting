@@ -107,7 +107,7 @@ class PjBallot:
      
 class JSONService(JSONProxy):
     def __init__(self):
-        JSONProxy.__init__(self, "http://127.0.0.1:8000/test-service/", ["passBallot", "echo", "reverse", "uppercase", "lowercase", "nonexistant"])        
+        JSONProxy.__init__(self, "http://10.0.22.220/test-service/", ["passBallot", "echo", "reverse", "uppercase", "lowercase", "nonexistant"])        
 
 class RootPanelListener(RootPanelCls, KeyboardHandler):
     def __init__(self, Parent, *args, **kwargs):
