@@ -43,7 +43,7 @@ class PjBallot:
         self.button = Button('test', self.test)
         self.status = Label('hi')
         self.x = 1
-        self.srace = Race("",[],[])
+        self.srace = Race('', '', [], '')
     
     def test(self):
         self.button.setText("No, really click me!")
@@ -58,11 +58,14 @@ class PjBallot:
         pass
 
     def onModuleLoad(self):
+        print "inside onModuleLoad"
         self.remote_py = JSONService()
-        self.mainPanel.add(sampleBallot.status)
+        self.mainPanel.add(sampleBallot.title)
+        self.mainPanel.add(sampleBallot.instructions)
         self.mainPanel.add(sampleBallot.contest)
         self.mainPanel.add(sampleBallot.candidate)
         self.mainPanel.add(sampleBallot.selection)
+        self.mainPanel.add(sampleBallot.status)
         panel = FocusPanel(Widget=self.mainPanel)
         gp = RootPanelListener(panel)
         manageRootPanel(gp)
@@ -71,12 +74,15 @@ class PjBallot:
         self.remote_py.passBallot(self)
             
     def onRemoteResponse(self, response, request_info): 
+        print "inside onRemoteResponse"
         print response  
         self.srace = response  
         sampleBallot.sendRace(self.srace)
-        self.mainPanel.add(HTML('Name: %s' % self.srace.name))
-        inst = sampleBallot.getInstruction()
-        self.mainPanel.add(HTML('Instruction: %s' %  self.srace.instructions))
+        #sampleBallot.instructions.clear()
+        sampleBallot.title.add(HTML('Name: %s' % self.srace.name))
+        sampleBallot.instructions.add(HTML('Instruction: %s' %  self.srace.instructions))
+        #inst = sampleBallot.getInstruction()
+        #self.mainPanel.add(HTML()
         sampleBallot.fsm.startVoting()
         sampleBallot.setContest()
 
