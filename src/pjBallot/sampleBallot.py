@@ -1,3 +1,4 @@
+from __pyjamas__ import JS
 from fysom import Fysom
 from ballotTree import Race
 from pyjamas.ui import KeyboardListener
@@ -18,10 +19,18 @@ candidate = HorizontalPanel()
 candidate.setStyleName('words')
 selection = HorizontalPanel()
 selection.setStyleName('words')
-
-
+audioTest = HorizontalPanel()
+#audioTest.setStyleName('words')
+#audioTest.add(HTML('''
+#        <audio id="audiotag1" controls="controls" preload="auto"> 
+#        <source src="http://10.0.1.6/media/can1.wav" type="audio/mpeg" /> 
+#        Your browser does not support the audio element. 
+#        </audio>'''))
+#(<audio id="audiotag1" src="http://10.0.22.220/media/Cecilia.mp3" preload="auto"></audio>'''))
 #       
-        
+JS('''
+var snd = new Audio();
+''')        
 race = Race('', [], '')
 
 
@@ -52,6 +61,7 @@ def setContest():
 
     setCandidate()
 
+
 def setCandidate():
     curcontest = race.selectionList[contestPosition]
     candidateName = curcontest.selectionList[candidatePosition].name
@@ -75,22 +85,38 @@ def onKeyPress(sender, keycode, modifiers):
     if keycode == KeyboardListener.KEY_UP:
         if fsm.current == "contests":
             contestPosition = (contestPosition+1) if (contestPosition+1<len(contestList)) else 0
-            setContest() 
+            setContest()
+            JS('''
+            $doc.getElementById('audiotag1').play();
+            ''') 
     
     if keycode == KeyboardListener.KEY_DOWN:
         if fsm.current == "contests":
             contestPosition = len(contestList)-1 if (contestPosition==0) else contestPosition-1
-            setContest() 
+            setContest()
+            JS('''
+            $doc.getElementById('audiotag1').pause();
+            ''')  
             
     if keycode == KeyboardListener.KEY_RIGHT:
         if fsm.current == "contests":
             candidatePosition = (candidatePosition+1) if (candidatePosition+1<len(candidateList)) else 0
             setCandidate()
+            path = 'http://10.0.22.220/media/' + race.audioPath
+            JS('''
+            snd.src = path; 
+            snd.play();
+            ''')  
+#snd.src = $p['getattr']($m['race'], 'audioPath');
 
     if keycode == KeyboardListener.KEY_LEFT:
         if fsm.current == 'contests':
             candidatePosition = len(candidateList)-1 if (candidatePosition==0) else candidatePosition-1
             setCandidate()
+            JS('''
+            snd.src = 'http://10.0.22.220/media/1.wav'
+            snd.play();
+            ''')             
 
     if keycode == KeyboardListener.KEY_ENTER:
         if fsm.current == 'contests':

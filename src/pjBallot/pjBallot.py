@@ -1,4 +1,8 @@
 '''
+NOTE! If ballot was changed:
+Call /Users/Rahul/environments/django/tutorial/mysite/pjBallot/createTTS.py to create TTS
+instead of doing it everytime the page loads
+
 made changes to 
 -- fysom because of how pyjamas/pyjs/src/pyjs/builtin/pyjslib.py 
     does not delete function type attributes
@@ -62,7 +66,8 @@ class PjBallot:
         self.mainPanel.add(sampleBallot.instructions)
         self.mainPanel.add(sampleBallot.contest)
         self.mainPanel.add(sampleBallot.candidate)
-        self.mainPanel.add(sampleBallot.selection)        
+        self.mainPanel.add(sampleBallot.selection)           
+        self.mainPanel.add(sampleBallot.audioTest)     
         panel = FocusPanel(Widget=self.mainPanel)
         gp = RootPanelListener(panel)
         manageRootPanel(gp)
@@ -70,20 +75,23 @@ class PjBallot:
         panel.setFocus(True)
 #        self.remote_py.uppercase('yay', self)
         self.remote_py.passBallot(self)
+
             
     def onRemoteResponse(self, response, request_info): 
+        print response
         self.srace = response  
         sampleBallot.sendRace(self.srace)
         sampleBallot.fsm.startVoting()
         sampleBallot.setContest()
-
+        
     
-    def onRemoteError(self):
-        pass
+    def onRemoteError(self, response, request_info):
+        print 'onRemoteError'
+        
         
 class JSONService(JSONProxy):
     def __init__(self):
-        JSONProxy.__init__(self, "http://127.0.0.1:8000/test-service/", ["passBallot", "echo", "reverse", "uppercase", "lowercase", "nonexistant"])        
+        JSONProxy.__init__(self, "http://10.0.22.220:80/test-service/", ["passBallot", "echo", "reverse", "uppercase", "lowercase", "nonexistant"])        
 
 class RootPanelListener(RootPanelCls, KeyboardHandler):
     def __init__(self, Parent, *args, **kwargs):
