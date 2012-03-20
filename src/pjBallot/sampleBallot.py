@@ -1,77 +1,137 @@
 from fysom import Fysom
 from ballotTree import Race
+from pyjamas.ui import KeyboardListener
+from pyjamas.ui.HorizontalPanel import HorizontalPanel
+from pyjamas.ui.HTML import HTML
 
-race = Race('',[],'')
+x = 0
+contestPosition = 0
+candidatePosition = 0
+confirm = 0
+
+contest = HorizontalPanel()
+contest.setStyleName('words')
+candidate = HorizontalPanel()
+candidate.setStyleName('words')
+selection = HorizontalPanel()
+selection.setStyleName('words')
+status = HorizontalPanel()
+status.add(HTML('STATUS'))
+status.setStyleName('words')
+
+#       
+
+race = Race('', [], '')
 
 def sendRace(srace):
     global race
     race = srace
     
 def getInstruction():
-    return race.instructions
+    return race.name
 
-#race = PjBallot.race
-#PjBallot.mainPanel.add(HTML('pleasework %s' % race))
+def setContest():
+    global candidatePosition
+    myrace = race
+    curcontest = race.selectionList[contestPosition]
+    contest.clear()
+    contest.add(HTML('<b /> Contest: %s' % curcontest.name))
+    candidateList = curcontest.selectionList
+    if not curcontest.userSelection:
+        candidatePosition = 0
+        selection.clear()
+        selection.add(HTML('<b /> Selection: -'))
+    else:
+        candidatePosition = candidateList.index(curcontest.userSelection[-1]) 
+        selection.clear()
+        selection.add(HTML('<b /> Selection: %s' % curcontest.userSelection[-1].name))
+    
+def setConfirm(num):
+    confirm += num;
+    status.clear()
+    if confirm % 2 == 0:
+        status.add(HTML('YES'))
+        return True
+    else:
+        status.add(HTML('NO'))
+        return False
+    
+    
+def setCandidate():
+    curcontest = race.selectionList[contestPosition]
+    candidateName = curcontest.selectionList[candidatePosition].name
+    candidate.clear()
+    candidate.add(HTML('<b /> Candidate: %s' % candidateName))
 
-#import ballotTree
-#race = ballotTree.Race("",[],[])
+def makeSelection():
+    curcontest = race.selectionList[contestPosition]
+    curcandidate = curcontest.selectionList[candidatePosition]
+    curcontest.userSelection[:] = []
+    curcontest.userSelection.append(curcandidate)
+    selection.clear()
+    selection.add(HTML('<b /> Selection: %s' % curcontest.userSelection[-1].name))
+ 
 
-#import ParseModule
-#race = ParseModule.initTree()
-
-def goToNextState(obj, pos, okToAdvance=True, contestPos=None):
+def onKeyPress(sender, keycode, modifiers):
+    global contestPosition, candidatePosition, fsm
+    #print "inside onKeyPress, state is", fsm.current
+    
+    contestList = race.selectionList
+    candidateList = race.selectionList[contestPosition].selectionList
+    
+    # Contests, only keys allowed are Up/Down to cycle contests, and Enter to select
     if fsm.current == 'contests':
-        #print 'LOOK: current is contests, obj is ', obj, 'pos is ', pos, 'contestPos is ', contestPos
-        fsm.selectContest(race=obj, contestPos=pos)
+        if keycode == KeyboardListener.KEY_UP:
+            contestPosition = (contestPosition+1) if (contestPosition+1<len(contestList)) else 0
+        elif keycode == KeyboardListener.KEY_DOWN:
+            contestPosition = len(contestList)-1 if (contestPosition==0) else contestPosition-1
+        elif keycode == KeyboardListener.KEY_ENTER:
+            fsm.selectCandidate()
+            setCandidate()
+        setContest()
+        
+    # Candidates; only keys allowed are Left/Right to cycle candidates, and Enter to select
     elif fsm.current == 'candidates':
-        #print 'LOOK: current is candidates, obj is ', obj, 'pos is ', pos, 'contestPos is ', contestPos
-        fsm.reviewCandidates(choice=obj, pos=pos, contestPos=contestPos)
+        if keycode == KeyboardListener.KEY_RIGHT:
+            candidatePosition = (candidatePosition+1) if (candidatePosition+1<len(candidateList)) else 0
+        elif keycode == KeyboardListener.KEY_LEFT:
+            candidatePosition = len(candidateList)-1 if (candidatePosition==0) else candidatePosition-1
+        elif keycode == KeyboardListener.KEY_ENTER:
+            fsm.reviewCandidates()
+        setCandidate()
+        
+    # Review Candidate Selection: Yes or No, then proceed to end or back up to Candidates
     elif fsm.current == 'review_candidates':
-        if not okToAdvance:
-            #print 'LOOK: current is review_candidates, obj is ', obj, 'pos is ', pos, 'contestPos is', contestPos
-            fsm.reselectCandidates(race=obj, contestPos=contestPos)
-        else:
-            fsm.doneReview()
-    elif fsm.current == 'check_done':
-        if obj is not None:
-            fsm.nextContest(race=obj, pos=pos)
-        else:
-            fsm.reviewBallot(race=obj, pos=pos)
+        if keycode == KeyboardListener.KEY_RIGHT:
+            setConfirm(1)
+        elif keycode == KeyboardListener.KEY_LEFT:
+            setConfirm(-1)
+        elif keycode == KeyboardListener.KEY_ENTER:
+            if confirm % 2 == 0:
+                race.selectionList[contestPosition].userSelection.append(candidatePosition)
+                makeSelection()
+                fsm.doneReview()
+            else:
+                fsm.reselectCandidates()
+    
+    # Review Ballot: Yes or No, then proceed to end or back up to Contests
     elif fsm.current == 'review_ballot':
-        if okToAdvance:
-            fsm.doneBallot()
-        else:
-            fsm.reselectContest() #TODO
-        
-        
+        if keycode == KeyboardListener.KEY_RIGHT:
+            setConfirm(1)
+        elif keycode == KeyboardListener.KEY_LEFT:
+            setConfirm(-1)
+        elif keycode == KeyboardListener.KEY_ENTER:
+            if confirm % 2 == 0:
+                fsm.doneBallot()
+            else:
+                fsm.reselectContest()
+
 '''
 Traverse the list as provided by the 'obj', which can be either of type Race or Contest
-If the 'store' argument is true, we are not only traversing a Contest's Candidates, we want to store
-whatever selection the user made in the 'Contest.userSelection' list
 '''
-def traverselist(obj, contestPos=None):
+def traverselist(obj):
     alist = obj.selectionList
-    pos = 0
-    print('* ' + alist[pos].name + ' highlighted *')
-    while 1:
-        kb = raw_input('\'y\' up, \'n\' down, \'h\' selects: ')
-        #if fsm.current == 'contests':
-        #    if kb.strip() == 'g':
-        #else:
-        if kb.strip() == 'y':
-            pos = (pos+1) if (pos+1<len(alist)) else 0
-        elif kb.strip() == 'n':
-            pos = len(alist)-1 if (pos-1<0) else pos-1
-        elif kb.strip() == 'h':
-            break;    
-        print('* ' + alist[pos].name + ' highlighted *')
-
-    if fsm.current == 'candidates':
-        #print 'CANDIDATES LOOK: obj is', obj.name, 'pos is ', pos, 'contestPos is ', contestPos
-        goToNextState(obj, pos, contestPos=contestPos)
-    else:
-        #print 'DEFAULT GOTO, obj is', alist[pos], 'pos is ', pos, 'contestPos is ', contestPos
-        goToNextState(alist[pos], pos, contestPos=contestPos)
+    print('* ' + alist[contestPosition].name + ' highlighted *')
 
 '''
 Define State Behaviors
@@ -83,104 +143,61 @@ def onintro(e):
     print 'hello!'
     
 def oncontests(e): 
+    candidate.clear()
+    status.clear()
     print('\nThe contests are:')
     for i, contest in zip(range(len(race.selectionList)), race.selectionList):
-        print('\t' + str(i+1) + ') ' + contest.name) 
+        print('\t' + str(i + 1) + ') ' + contest.name) 
     traverselist(race)
 
 # e.pos: the current Contest, which is the position in the race.selectionList
-def oncandidates(e): 
-    print('\nCurrent race is: ' + e.race.name)
+def oncandidates(e):
+    currContest = race.selectionList[contestPosition]
+    print('\nCurrent race is: ' + currContest.name)
     print('Candidates are:')
-    currContest = race.selectionList[e.contestPos]
     for i, person in zip(range(len(currContest.selectionList)), currContest.selectionList):
-        print("\t" + str(i+1) + ') ' + person.name)
-    traverselist(currContest, contestPos=e.contestPos)
+        print("\t" + str(i + 1) + ') ' + person.name)
+    traverselist(currContest)
 
-# e.pos: the user's selection in the position of the list
 def onreviewcandidates(e):
-    print('\nReview Your Choice for ' + e.choice.name + ':')
-    candidate = e.choice.selectionList[e.pos]
+    print('\nReview Your Choice for ' + race.selectionList[contestPosition].name + ':')
+    candidate = race.selectionList[contestPosition].selectionList[candidatePosition]
     print('\t' + candidate.name)
+    setConfirm(0)
     
-    currChoice = 0
-    print('* <YES> highlighted *')
-    while 1:
-        kb = raw_input('\'y\' up, \'n\' down, \'h\' selects: ')
-        if kb.strip() == 'y':
-            currChoice += 1
-        elif kb.strip() == 'n':
-            currChoice -= 1
-        elif kb.strip() == 'h':
-            print("\t* CONFIRMED")
-            break;
-        if currChoice % 2 == 0:
-            print('\t* <YES> highlighted *')
-        else:
-            print('\t* <NO> highlighted *')
-        
-    if currChoice % 2 == 0:
-        e.choice.userSelection[:] = []
-        e.choice.userSelection.append(e.pos)
-        goToNextState(None, None, okToAdvance=True)
-    else:
-        goToNextState(e.choice, e.pos, contestPos=e.contestPos, okToAdvance=False)
-
 def oncheckdone(e):
     for i, contest in zip(range(len(race.selectionList)), race.selectionList):
         if len(contest.userSelection) == 0:
-            goToNextState(contest, i)
+            fsm.nextContest()
             return
-    goToNextState(None, None)
+    fsm.reviewBallot()
 
-# fsm.reviewBallot(race=obj, pos=pos)
 def onreviewballot(e):
     print('\nReview your selections:')
     for contest in race.selectionList:
-        print(contest.name + ':' + contest.selectionList[contest.userSelection[0]].name)
-        
-    currChoice = 0
-    print('* <YES> highlighted *')
-    while 1:
-        kb = raw_input('\'y\' up, \'n\' down, \'h\' selects: ')
-        if kb.strip() == 'y':
-            currChoice += 1
-        elif kb.strip() == 'n':
-            currChoice -= 1
-        elif kb.strip() == 'h':
-            print("\t* CONFIRMED")
-            break;
-        if currChoice % 2 == 0:
-            print('\t* <YES> highlighted *')
-        else:
-            print('\t* <NO> highlighted *')
-        
-    if currChoice % 2 == 0:
-        goToNextState(None, None)
-    else:
-        goToNextState(e.race, e.pos, okToAdvance=False) # TODO
-    
+        print(contest.name + ':' + contest.userSelection[0].name)
+    setConfirm(0)
     
 def ondoneballot(e):
     print('\nVoting complete! Thanks for using this system!')
 
+
 '''
 States and Events
 '''
-
 fsm = Fysom({
-#  'initial': 'intro',
+  'initial': 'intro',
   'events': [
-    {'name': 'startVoting',  'src': 'intro',  'dst': 'contests'},
-    {'name': 'selectContest', 'src': 'contests',   'dst': 'candidates'},
-    {'name': 'reviewCandidates',  'src': 'candidates',   'dst': 'review_candidates'},
+    {'name': 'startVoting', 'src': 'intro', 'dst': 'contests'},
+    {'name': 'selectCandidate', 'src': 'contests', 'dst': 'candidates'},
+    {'name': 'reviewCandidates', 'src': 'candidates', 'dst': 'review_candidates'},
     {'name': 'reselectCandidates', 'src': 'review_candidates', 'dst': 'candidates'},
-    {'name': 'doneReview',  'src': 'review_candidates',   'dst': 'check_done'},
-    {'name': 'nextContest', 'src': 'check_done',  'dst': 'contests'},
-    {'name': 'otherContest', 'src': 'contests',  'dst': 'contests'}, # TODO
+    {'name': 'doneReview', 'src': 'review_candidates', 'dst': 'check_done'},
+    {'name': 'nextContest', 'src': 'check_done', 'dst': 'contests'},
+    {'name': 'otherContest', 'src': 'contests', 'dst': 'contests'}, 
     {'name': 'reviewBallot', 'src': 'check_done', 'dst': 'review_ballot'},
-    {'name': 'reselectContest', 'src': 'review_ballot', 'dst': 'contests'}, # TODO
-    {'name': 'doneBallot', 'src': 'review_ballot', 'dst': 'done_ballot'},    
+    {'name': 'reselectContest', 'src': 'review_ballot', 'dst': 'contests'}, 
+    {'name': 'doneBallot', 'src': 'review_ballot', 'dst': 'done_ballot'},
   ],
     'callbacks': {
      'onintro': onintro,
@@ -197,6 +214,7 @@ fsm = Fysom({
 '''
 Assign State Behaviors
 '''
-#fsm.onchangestate = printstatechange
 
+#fsm.onchangestate = printstatechange
 #fsm.startVoting()
+    

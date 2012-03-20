@@ -54,9 +54,9 @@ function __pygwt_forEachModule(lambda) {
 
 
 // When nested IFRAMEs load, they reach up into the parent page to announce that
-// they are ready to run. Because IFRAMEs load asynchronously relative to the
+// they are ready to run. Because IFRAMEs load asynchronously relative to the 
 // host page, one of two things can happen when they reach up:
-// (1) The host page's onload handler has not yet been called, in which case we
+// (1) The host page's onload handler has not yet been called, in which case we 
 //     retry until it has been called.
 // (2) The host page's onload handler has already been called, in which case the
 //     nested IFRAME should be initialized immediately.
@@ -153,13 +153,14 @@ function __pygwt_initHandlers(resize, beforeunload, unload) {
 function __pygwt_injectWebModeFrame(name) {
    if (document.body) {
       var parts = __pygwt_splitModuleNameRef(name);
-
+   
       // Insert an IFRAME
       var iframe = document.createElement("iframe");
       var selectorURL = parts[0] + parts[1] + ".nocache.html";
       iframe.src = selectorURL;
-      iframe.id = selectorURL;
-      iframe.style.display = 'none';
+      iframe.style.border = '0px';
+      iframe.style.width = '0px';
+      iframe.style.height = '0px';
       if (document.body.firstChild) {
          document.body.insertBefore(iframe, document.body.firstChild);
       } else {
@@ -321,167 +322,7 @@ var __pygwt_modController = {
 // Early user custom routines
 //
 function __pygwt_earlyUser() {
-
-    // ms, count, count
-    var refreshRate = 50
-    var drawLimit = 200
-    var fadeStep = 20
-
-    var elem = function(e) { return document.createElement(e) }
-    var txt = function(t) { return document.createTextNode(t) }
-
-    var body = document.getElementsByTagName('body')[0]
-
-    var mod = {
-        started: 0,
-        loaded: 0
-    }
-    var progress = {
-        target: 0,
-        current: 0,
-        accel: 0
-    }
-    var splash = {
-        cont: elem('div'),
-        header: elem('div'),
-        logo: elem('img'),
-        infoCont: elem('div'),
-        progressBar: elem('div'),
-        status: elem('div')
-    }
-    splash.logo.setAttribute('src', 'pyjamas.png')
-
-    var draw = {
-        exec: function(outOfInterval) {
-            if(draw.count >= drawLimit)
-                draw.active.kill = true
-            if(draw.count && outOfInterval)
-                if(((new Date().getTime()) - draw.start)/draw.count < refreshRate)
-                    return
-            draw.count++
-            try {
-                for(var t in draw.active) if(draw.active[t]) draw.target[t]()
-            } catch(e) {
-                for(var t in draw.active) draw.active[t] = false
-                draw.active.kill = true
-            }
-            app = null; module = null
-        },
-        id: false,
-        start: new Date().getTime(),
-        count: 0,
-        active: {},
-        target: {}
-    }
-
-    draw.target.kill = function() {
-        clearInterval(draw.id)
-        body.removeChild(splash.cont)
-        body.style.overflow = 'auto'
-    }
-
-    draw.target.progress = function() {
-        if(!mod.started)
-            return
-        progress.target = mod.loaded/mod.started
-        progress.accel = (progress.target - progress.current)/3
-        progress.current = progress.current + progress.accel
-        splash.logo.style.opacity = progress.current
-        splash.logo.style.filter = 'alpha(opacity=' + progress.current*100 + ')'
-        splash.progressBar.style.width = String(progress.current*100) + '%'
-    }
-
-    draw.target.status = function() {
-        var status
-        if(this.status.stage == 0) {
-            status = 'Initializing...'
-        }
-        else if(this.status.stage == 1) {
-            if(!(mod.started > 0)) return
-            status = 'Loading...'
-        }
-        else if(this.status.stage == 2) {
-            if(!(progress.target == 1)) return
-            status = 'Complete'
-        }
-        else { return }
-        this.status.stage++
-        while(splash.status.hasChildNodes()) splash.status.removeChild(splash.status.firstChild)
-            splash.status.appendChild(txt(status))
-    }
-    draw.target.status.stage = 0
-
-    draw.target.fade = function() {
-        var c = this.fade.curr, s = this.fade.step
-        if(c<=0) {
-            draw.active.kill = true
-            return
-        }
-        splash.cont.style.opacity = c/s
-        splash.cont.style.filter = 'alpha(opacity=' + c/s*100 + ')'
-        this.fade.curr--
-    }
-    draw.target.fade.step = draw.target.fade.curr = fadeStep
-
-    splash.style = function() {
-        body.style.overflow = 'hidden'
-        splash.cont.style.backgroundColor = 'white'
-        splash.cont.style.color = '#333'
-        splash.cont.style.zIndex = '10000'
-        splash.cont.style.textAlign = 'center'
-        splash.cont.style.position = 'absolute'
-        splash.cont.style.top = '0px'
-        splash.cont.style.left = '0px'
-        splash.cont.style.width = '100%'
-        splash.cont.style.height = '100%'
-        splash.header.style.textAlign = 'center'
-        splash.infoCont.style.margin = '0px auto'
-        splash.infoCont.style.width = '40%'
-        splash.infoCont.style.borderLeft = '1px solid #333'
-        splash.infoCont.style.borderRight = '1px solid #333'
-        splash.logo.style.opacity = 0
-        splash.logo.style.filter = 'alpha(opacity=0)'
-        splash.logo.style.marginTop = '4px'
-        splash.logo.style.height = '55px'
-        splash.progressBar.style.margin = '0px auto'
-        splash.progressBar.style.height = '6px'
-        splash.progressBar.style.lineHeight = '6px'
-        splash.progressBar.style.fontSize = '0px'
-        splash.progressBar.style.maxHeight = '6px'
-        splash.progressBar.style.width = '0px'
-        splash.progressBar.style.backgroundColor = '#C1B'
-        splash.status.style.marginTop = '6px'
-        splash.status.style.fontFamily = 'sans'
-        splash.status.style.fontWeight = 'bold'
-    }
-
-    splash.attach = function() {
-        body.appendChild(splash.cont)
-        splash.cont.appendChild(splash.infoCont)
-        splash.infoCont.appendChild(splash.progressBar)
-        // uncomment to use logo
-        //splash.cont.appendChild(splash.header)
-        //splash.header.appendChild(splash.logo)
-        splash.cont.appendChild(splash.status)
-    }
-
-    // connect to controller
-    __pygwt_modController.addListener('moduleInit', function(a, m) { mod.started++ })
-    __pygwt_modController.addListener('moduleLoad', function(a, m) { mod.loaded++; draw.exec(true) })
-    __pygwt_modController.addListener('load', function() { draw.active.fade = true })
-    __pygwt_modController.addListener('hookException', draw.target.kill)
-
-    // default draw targets
-    draw.active.progress = true
-    draw.active.status = true
-
-    // setup
-    splash.style()
-    splash.attach()
-
-    // start the draw loop
-    draw.id = setInterval(draw.exec, refreshRate)
-
+    // bootsplash/custom stuff here
 }
 
 //////////////////////////////////////////////////////////////////
