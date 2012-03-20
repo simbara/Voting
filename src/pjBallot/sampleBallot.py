@@ -1,13 +1,14 @@
+from __pyjamas__ import JS
 from fysom import Fysom
 from ballotTree import Race
 from pyjamas.ui import KeyboardListener
 from pyjamas.ui.HorizontalPanel import HorizontalPanel
 from pyjamas.ui.HTML import HTML
 
-x = 0
 contestPosition = 0
 candidatePosition = 0
 confirm = 0
+currObj = ""
 
 contest = HorizontalPanel()
 contest.setStyleName('words')
@@ -19,9 +20,26 @@ status = HorizontalPanel()
 status.add(HTML('STATUS'))
 status.setStyleName('words')
 
-#       
+title = HorizontalPanel()
+instructions = HorizontalPanel()
 
-race = Race('', [], '')
+#
+
+JS("""
+var snd = new Audio();
+""")
+
+race = Race('', [], '', '')
+
+def playAudio():
+    global currObj
+    path = "http://10.0.22.220/" + currObj.audioPath
+    print "currObj is", currObj.name, ", path is", path
+    JS('''
+    snd.src = path;
+    snd.play();
+    ''')
+    
 
 def sendRace(srace):
     global race
@@ -32,7 +50,6 @@ def getInstruction():
 
 def setContest():
     global candidatePosition
-    myrace = race
     curcontest = race.selectionList[contestPosition]
     contest.clear()
     contest.add(HTML('<b /> Contest: %s' % curcontest.name))
@@ -45,6 +62,8 @@ def setContest():
         candidatePosition = candidateList.index(curcontest.userSelection[-1]) 
         selection.clear()
         selection.add(HTML('<b /> Selection: %s' % curcontest.userSelection[-1].name))
+    print "currObj is", currObj
+    playAudio()
     
 def setConfirm(num):
     confirm += num;
@@ -56,12 +75,15 @@ def setConfirm(num):
         status.add(HTML('NO'))
         return False
     
-    
 def setCandidate():
+    global currObj
     curcontest = race.selectionList[contestPosition]
     candidateName = curcontest.selectionList[candidatePosition].name
     candidate.clear()
-    candidate.add(HTML('<b /> Candidate: %s' % candidateName))
+    candidate.add(HTML('<b /> Candidate: %s' % candidateName))    
+    print "currObj is", currObj
+    playAudio()
+    
 
 def makeSelection():
     curcontest = race.selectionList[contestPosition]
@@ -73,8 +95,7 @@ def makeSelection():
  
 
 def onKeyPress(sender, keycode, modifiers):
-    global contestPosition, candidatePosition, fsm
-    #print "inside onKeyPress, state is", fsm.current
+    global contestPosition, candidatePosition, fsm, currObj
     
     contestList = race.selectionList
     candidateList = race.selectionList[contestPosition].selectionList
@@ -83,11 +104,16 @@ def onKeyPress(sender, keycode, modifiers):
     if fsm.current == 'contests':
         if keycode == KeyboardListener.KEY_UP:
             contestPosition = (contestPosition+1) if (contestPosition+1<len(contestList)) else 0
+            currObj = race.selectionList[contestPosition]
         elif keycode == KeyboardListener.KEY_DOWN:
             contestPosition = len(contestList)-1 if (contestPosition==0) else contestPosition-1
+            currObj = race.selectionList[contestPosition]
         elif keycode == KeyboardListener.KEY_ENTER:
             fsm.selectCandidate()
             setCandidate()
+            return
+        else:
+            return
         setContest()
         
     # Candidates; only keys allowed are Left/Right to cycle candidates, and Enter to select
@@ -149,6 +175,9 @@ def oncontests(e):
     for i, contest in zip(range(len(race.selectionList)), race.selectionList):
         print('\t' + str(i + 1) + ') ' + contest.name) 
     traverselist(race)
+    # initialize our current object, which is the first contest
+    currObj = race.selectionList[contestPosition]
+    print "current contest is " + currObj.name
 
 # e.pos: the current Contest, which is the position in the race.selectionList
 def oncandidates(e):
@@ -158,6 +187,9 @@ def oncandidates(e):
     for i, person in zip(range(len(currContest.selectionList)), currContest.selectionList):
         print("\t" + str(i + 1) + ') ' + person.name)
     traverselist(currContest)
+    # initialize our current object, which is the first contest
+    currObj = currContest.selectionList[contestPosition]
+    print "current candidate is " + currObj.name
 
 def onreviewcandidates(e):
     print('\nReview Your Choice for ' + race.selectionList[contestPosition].name + ':')
