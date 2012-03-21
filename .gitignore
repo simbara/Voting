@@ -1,3 +1,5 @@
 ./output/*
 src/pjBallot/output/*
-
+.gitignore.swp
+.project*
+.pydevproject*
