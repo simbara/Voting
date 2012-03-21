@@ -33,11 +33,13 @@ var snd1 = new Audio();
 
 race = Race('', [], '', '')
 
-def playAudio(confirm=None, extraTextPath=None):
+def playAudio(confirm=None):
     global currObj
     
     #path = "http://10.0.22.220/" + currObj.audioPath
     path = "/Users/kurifuc4/Projects/mysite/" + currObj.audioPath
+    
+    # If we are on the confirm state highlighting "Yes"
     if confirm == True:
         confirmPath = "/Users/kurifuc4/Projects/mysite/media/confirm.wav"
         JS('''
@@ -48,14 +50,15 @@ def playAudio(confirm=None, extraTextPath=None):
         }, false);
         snd1.play();
         ''')
+    # If we are on the confirm state highlighting "No"
     elif confirm == False:
         confirmPath = "/Users/kurifuc4/Projects/mysite/media/reselectCandidate.wav"
         JS('''
         mainSnd.src = confirmPath;
         mainSnd.play();
         ''')
+    # All other audio
     else:
-        print "currObj is", currObj.name, ", path is", path
         JS('''
         mainSnd.src = path;
         mainSnd.play();
@@ -89,11 +92,11 @@ def setConfirm(num):
     status.clear()
     if confirm % 2 == 0:
         status.add(HTML('YES'))
-        playAudio(confirm=True, extraTextPath="yes.wav")
+        playAudio(confirm=True)
         return True
     else:
         status.add(HTML('NO'))
-        playAudio(confirm=False, extraTextPath="no.wav")
+        playAudio(confirm=False)
         return False
     
 def setCandidate():

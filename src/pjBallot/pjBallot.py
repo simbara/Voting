@@ -81,9 +81,9 @@ class PjBallot:
         #sampleBallot.instructions.clear()
         sampleBallot.title.add(HTML('Name: %s' % self.srace.name))
         sampleBallot.instructions.add(HTML('Instruction: %s' %  self.srace.instructions))
-        #inst = sampleBallot.getInstruction()
-        #self.mainPanel.add(HTML()
         sampleBallot.fsm.startVoting()
+        sampleBallot.currObj = sampleBallot.race
+        sampleBallot.playAudio()
         sampleBallot.setContest()
 
     def onRemoteError(self, code, errobj, request_info):
