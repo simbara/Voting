@@ -33,15 +33,16 @@ var snd1 = new Audio();
 
 race = Race('', [], '', '')
 
-def playAudio(confirm=None):
+def playAudio(audioPath, confirm=None):
     global currObj
     
     #path = "http://10.0.22.220/" + currObj.audioPath
-    path = "/Users/kurifuc4/Projects/mysite/" + currObj.audioPath
+    path = "/Users/kurifuc4/Projects/mysite/" + audioPath#+ currObj.audioPath
     
-    # If we are on the confirm state highlighting "Yes"
+    # Say the word "Confirm" before the provided audio path
     if confirm == True:
         confirmPath = "/Users/kurifuc4/Projects/mysite/media/confirm.wav"
+        #confirmPath = "http://10.0.22.220/media/confirm.wav"
         JS('''
         snd1.src = confirmPath;
         snd1.addEventListener('ended', function() {
@@ -50,9 +51,10 @@ def playAudio(confirm=None):
         }, false);
         snd1.play();
         ''')
-    # If we are on the confirm state highlighting "No"
+    # Say the word "Reselect"
     elif confirm == False:
         confirmPath = "/Users/kurifuc4/Projects/mysite/media/reselectCandidate.wav"
+        #confirmPath = "http://10.0.22.220/" + "media/reselectCandidate.wav"
         JS('''
         mainSnd.src = confirmPath;
         mainSnd.play();
@@ -85,26 +87,32 @@ def setContest():
         candidatePosition = candidateList.index(curcontest.userSelection[-1]) 
         selection.clear()
         selection.add(HTML('<b /> Selection: %s' % curcontest.userSelection[-1].name))
-    playAudio()
+    print "LOOK: BEFORE SETCONTEST"
+    playAudio(currObj.audioPath)
     
 def setConfirm(num):
     confirm += num;
     status.clear()
+    #path = audioPath
     if confirm % 2 == 0:
         status.add(HTML('YES'))
-        playAudio(confirm=True)
+        if fsm.current == "review_ballot":
+            playAudio("/media/ballot.wav", confirm=True)
+        else:
+            playAudio(currObj.audioPath, confirm=True)
         return True
     else:
         status.add(HTML('NO'))
-        playAudio(confirm=False)
+        playAudio(currObj.audioPath, confirm=False)
         return False
     
 def setCandidate():
     curcontest = race.selectionList[contestPosition]
     candidateName = curcontest.selectionList[candidatePosition].name
     candidate.clear()
-    candidate.add(HTML('<b /> Candidate: %s' % candidateName))    
-    playAudio()
+    candidate.add(HTML('<b /> Candidate: %s' % candidateName))
+    print "LOOK: INSIDE SETCANDIDATE"
+    playAudio(currObj.audioPath)
     
 def makeSelection():
     curcontest = race.selectionList[contestPosition]
@@ -161,8 +169,8 @@ def onKeyPress(sender, keycode, modifiers):
             setConfirm(-1)
         elif keycode == KeyboardListener.KEY_ENTER:
             if confirm % 2 == 0:
-                race.selectionList[contestPosition].userSelection.append(candidatePosition)
-                makeSelection()
+                #race.selectionList[contestPosition].userSelection.append(candidatePosition)
+                makeSelection() # TODO
                 fsm.doneReview()
             else:
                 fsm.reselectCandidates()
@@ -231,13 +239,16 @@ def oncheckdone(e):
     fsm.reviewBallot()
 
 def onreviewballot(e):
-    print('\nReview your selections:')
+    text = "Review your selections:"
+    print('\n'+text)
+    playAudio("/media/reviewBallot.wav")
     for contest in race.selectionList:
         print(contest.name + ':' + contest.userSelection[0].name)
-    setConfirm(0)
+        #playAudio(contest.audioPath)
     
 def ondoneballot(e):
     print('\nVoting complete! Thanks for using this system!')
+    playAudio("/media/finish.wav")
 
 
 '''

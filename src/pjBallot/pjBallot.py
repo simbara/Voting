@@ -83,7 +83,7 @@ class PjBallot:
         sampleBallot.instructions.add(HTML('Instruction: %s' %  self.srace.instructions))
         sampleBallot.fsm.startVoting()
         sampleBallot.currObj = sampleBallot.race
-        sampleBallot.playAudio()
+        sampleBallot.playAudio(sampleBallot.race.audioPath)
         sampleBallot.setContest()
 
     def onRemoteError(self, code, errobj, request_info):

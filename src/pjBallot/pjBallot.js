@@ -65,7 +65,7 @@ $pyjs.loaded_modules['pjBallot'] = function (__mod_name__) {
 	$m.__track_lines__[83] = "pjBallot.py, line 83:\n    sampleBallot.instructions.add(HTML('Instruction: %s' %  self.srace.instructions))";
 	$m.__track_lines__[84] = 'pjBallot.py, line 84:\n    sampleBallot.fsm.startVoting()';
 	$m.__track_lines__[85] = 'pjBallot.py, line 85:\n    sampleBallot.currObj = sampleBallot.race';
-	$m.__track_lines__[86] = 'pjBallot.py, line 86:\n    sampleBallot.playAudio()';
+	$m.__track_lines__[86] = 'pjBallot.py, line 86:\n    sampleBallot.playAudio(sampleBallot.race.audioPath)';
 	$m.__track_lines__[87] = 'pjBallot.py, line 87:\n    sampleBallot.setContest()';
 	$m.__track_lines__[89] = 'pjBallot.py, line 89:\n    def onRemoteError(self, code, errobj, request_info):';
 	$m.__track_lines__[97] = "pjBallot.py, line 97:\n    message = errobj['message']";
@@ -451,7 +451,7 @@ $pyjs.loaded_modules['pjBallot'] = function (__mod_name__) {
 			$m['sampleBallot'].currObj = $p['getattr']($m['sampleBallot'], 'race');
 			$pyjs.track.lineno=86;
 			(function(){try{try{$pyjs.in_try_except += 1;
-			return $m['sampleBallot']['playAudio']();
+			return $m['sampleBallot']['playAudio']($p['getattr']($p['getattr']($m['sampleBallot'], 'race'), 'audioPath'));
 }finally{$pyjs.in_try_except-=1;}}catch($pyjs_dbg_34_err){if (!$p['isinstance']($pyjs_dbg_34_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_34_err);}throw $pyjs_dbg_34_err;
 }})();
 			$pyjs.track.lineno=87;
