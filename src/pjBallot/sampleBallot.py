@@ -33,6 +33,7 @@ var snd1 = new Audio();
 
 race = Race('', [], '', '')
 
+# TODO: make a version to play multiple audio files sequentially if provided a list
 def playAudio(audioPath, confirm=None):
     global currObj
     
@@ -87,13 +88,11 @@ def setContest():
         candidatePosition = candidateList.index(curcontest.userSelection[-1]) 
         selection.clear()
         selection.add(HTML('<b /> Selection: %s' % curcontest.userSelection[-1].name))
-    print "LOOK: BEFORE SETCONTEST"
     playAudio(currObj.audioPath)
     
 def setConfirm(num):
     confirm += num;
     status.clear()
-    #path = audioPath
     if confirm % 2 == 0:
         status.add(HTML('YES'))
         if fsm.current == "review_ballot":
@@ -111,7 +110,6 @@ def setCandidate():
     candidateName = curcontest.selectionList[candidatePosition].name
     candidate.clear()
     candidate.add(HTML('<b /> Candidate: %s' % candidateName))
-    print "LOOK: INSIDE SETCANDIDATE"
     playAudio(currObj.audioPath)
     
 def makeSelection():
@@ -212,7 +210,7 @@ def oncontests(e):
     traverselist(race)
     # initialize our current object, which is the first contest
     currObj = race.selectionList[contestPosition]
-    print "current contest is " + currObj.name
+    #print "current contest is " + currObj.name
 
 # e.pos: the current Contest, which is the position in the race.selectionList
 def oncandidates(e):
@@ -242,9 +240,14 @@ def onreviewballot(e):
     text = "Review your selections:"
     print('\n'+text)
     playAudio("/media/reviewBallot.wav")
+    paths = []
     for contest in race.selectionList:
         print(contest.name + ':' + contest.userSelection[0].name)
+        paths.append(contest.audioPath)
+        paths.append(contest.userSelection[0].audioPath)
         #playAudio(contest.audioPath)
+    print paths
+    # TODO: play each audio file in this paths var
     
 def ondoneballot(e):
     print('\nVoting complete! Thanks for using this system!')

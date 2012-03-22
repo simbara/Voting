@@ -1,4 +1,4 @@
-Race: 2012 Voting Thing : Please select which candidate you want with the up/down/left/right keys
+Race: 2012 Voting Thing :select  candidate with up/down/left/right keys
 Contest: President of the United States
 Candidate: Barack Obama
 candidate: Mitt Romney
