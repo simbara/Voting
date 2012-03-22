@@ -73,7 +73,7 @@ class PjBallot:
         panel.setFocus(True)
         self.remote_py.passBallot(self)
             
-    def onRemoteResponse(self, response, request_info): 
+    def onRemoteResponse(self, response, request_info):     
         print "inside onRemoteResponse"
         print response  
         self.srace = response  
@@ -84,6 +84,8 @@ class PjBallot:
         #inst = sampleBallot.getInstruction()
         #self.mainPanel.add(HTML()
         sampleBallot.fsm.startVoting()
+        sampleBallot.currObj = sampleBallot.race
+        sampleBallot.playAudio()
         sampleBallot.setContest()
 
     def onRemoteError(self, code, errobj, request_info):
