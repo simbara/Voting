@@ -105,11 +105,11 @@ class PjBallot:
             code = errobj['code']
             self.status.setText("JSONRPC Error %s: %s" %
                                 (code, message))
-            print "JSONRPC Error %s: %s" % (code, message)
+            print "JSONRPC Error %s: %s: %s" % (code, message, data)
      
 class JSONService(JSONProxy):
     def __init__(self):
-        JSONProxy.__init__(self, "http://10.0.22.220/test-service/", ["passBallot", "echo", "reverse", "uppercase", "lowercase", "nonexistant"])        
+        JSONProxy.__init__(self, "http://10.0.23.48/test-service/", ["passBallot", "echo", "reverse", "uppercase", "lowercase", "nonexistant"])        
 
 class RootPanelListener(RootPanelCls, KeyboardHandler):
     def __init__(self, Parent, *args, **kwargs):

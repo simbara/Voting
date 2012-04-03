@@ -34,12 +34,13 @@ race = Race('', [], '', '')
 
 def playAudio(confirm=None):
     global currObj
-    path = "http://10.0.22.220/" + currObj.audioPath
+    root_path = "http://10.0.23.48/" 
+    path = root_path + currObj.audioPath
     #path = "/Users/kurifuc4/Projects/mysite/" + currObj.audioPath
     
     # If we are on the confirm state highlighting "Yes"
     if confirm == True:
-        confirmPath = "http://10.0.22.220/media/confirm.wav"
+        confirmPath = root_path + "media/confirm.wav"
         JS('''
         mainSnd.pause();
         snd1.src = confirmPath;  
@@ -54,7 +55,7 @@ def playAudio(confirm=None):
     # If we are on the confirm state highlighting "No" 
     #
     elif confirm == False:
-        confirmPath = "http://10.0.22.220/media/reselectCandidate.wav"
+        confirmPath = root_path + "media/reselectCandidate.wav"
         JS('''
         mainSnd.src = confirmPath;
         mainSnd.play();
