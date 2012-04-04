@@ -4,7 +4,6 @@ from ballotTree import Race
 from pyjamas.ui import KeyboardListener
 from pyjamas.ui.HorizontalPanel import HorizontalPanel
 from pyjamas.ui.HTML import HTML
-import time
 
 contestPosition = 0
 candidatePosition = 0
@@ -33,31 +32,30 @@ var snd1 = new Audio();
 
 race = Race('', [], '', '')
 
-# TODO: make a version to play multiple audio files sequentially if provided a list
-def playAudio(audioPath, confirm=None):
+def playAudio(confirm=None):
     global currObj
     root_path = "http://10.0.23.48/" 
     path = root_path + currObj.audioPath
+    #path = "/Users/kurifuc4/Projects/mysite/" + currObj.audioPath
     
-    #path = "http://10.0.22.220/" + currObj.audioPath
-    #path = "/Users/kurifuc4/Projects/mysite/" + audioPath#+ currObj.audioPath
-    
-    # Say the word "Confirm" before the provided audio path
+    # If we are on the confirm state highlighting "Yes"
     if confirm == True:
         confirmPath = root_path + "media/confirm.wav"
-        #confirmPath = "http://10.0.22.220/media/confirm.wav"
         JS('''
-        snd1.src = confirmPath;
-        snd1.addEventListener('ended', function() {
+        mainSnd.pause();
+        snd1.src = confirmPath;  
+        snd1.addEventListener('ended', function(){
+            snd1.currentTime = 0;
+            snd1.pause();
             mainSnd.src = path;
-            mainSnd.play();
-        }, false);
+            mainSnd.play();        
+        }, false);     
         snd1.play();
         ''')
-    # Say the word "Reselect"
+    # If we are on the confirm state highlighting "No" 
+    #
     elif confirm == False:
         confirmPath = root_path + "media/reselectCandidate.wav"
-        #confirmPath = "http://10.0.22.220/" + "media/reselectCandidate.wav"
         JS('''
         mainSnd.src = confirmPath;
         mainSnd.play();
@@ -90,29 +88,26 @@ def setContest():
         candidatePosition = candidateList.index(curcontest.userSelection[-1]) 
         selection.clear()
         selection.add(HTML('<b /> Selection: %s' % curcontest.userSelection[-1].name))
-    playAudio(currObj.audioPath)
+    playAudio()
     
 def setConfirm(num):
     confirm += num;
     status.clear()
     if confirm % 2 == 0:
         status.add(HTML('YES'))
-        if fsm.current == "review_ballot":
-            playAudio("/media/ballot.wav", confirm=True)
-        else:
-            playAudio(currObj.audioPath, confirm=True)
+        playAudio(confirm=True)
         return True
     else:
         status.add(HTML('NO'))
-        playAudio(currObj.audioPath, confirm=False)
+        playAudio(confirm=False)
         return False
     
 def setCandidate():
     curcontest = race.selectionList[contestPosition]
     candidateName = curcontest.selectionList[candidatePosition].name
     candidate.clear()
-    candidate.add(HTML('<b /> Candidate: %s' % candidateName))
-    playAudio(currObj.audioPath)
+    candidate.add(HTML('<b /> Candidate: %s' % candidateName))    
+    playAudio()
     
 def makeSelection():
     curcontest = race.selectionList[contestPosition]
@@ -129,60 +124,63 @@ def onKeyPress(sender, keycode, modifiers):
     candidateList = race.selectionList[contestPosition].selectionList
     
     # Contests, only keys allowed are Up/Down to cycle contests, and Enter to select
-    if keycode == KeyboardListener.KEY_UP:
-        contestPosition = (contestPosition+1) if (contestPosition+1<len(contestList)) else 0
-        currObj = race.selectionList[contestPosition]
-        setContest()
-        candidate.clear()
-    
-    elif keycode == KeyboardListener.KEY_DOWN:
-        contestPosition = len(contestList)-1 if (contestPosition==0) else contestPosition-1
-        currObj = race.selectionList[contestPosition]
-        setContest()
-        candidate.clear()
-    
-    elif keycode == KeyboardListener.KEY_ENTER:
-        if fsm.current == 'contests':   
+    if fsm.current == 'contests':
+        if keycode == KeyboardListener.KEY_UP:
+            contestPosition = (contestPosition+1) if (contestPosition+1<len(contestList)) else 0
+            currObj = race.selectionList[contestPosition]
+        elif keycode == KeyboardListener.KEY_DOWN:
+            contestPosition = len(contestList)-1 if (contestPosition==0) else contestPosition-1
+            currObj = race.selectionList[contestPosition]
+        elif keycode == KeyboardListener.KEY_ENTER:
             currObj = race.selectionList[contestPosition].selectionList[candidatePosition]
             fsm.selectCandidate()
             setCandidate()
             return
-        elif fsm.current == 'candidates':
+        else:
+            return
+        setContest()
+        
+    # Candidates; only keys allowed are Left/Right to cycle candidates, and Enter to select
+    elif fsm.current == 'candidates':
+        if keycode == KeyboardListener.KEY_RIGHT:
+            candidatePosition = (candidatePosition+1) if (candidatePosition+1<len(candidateList)) else 0
+            currObj = race.selectionList[contestPosition].selectionList[candidatePosition]
+        elif keycode == KeyboardListener.KEY_LEFT:
+            candidatePosition = len(candidateList)-1 if (candidatePosition==0) else candidatePosition-1
+            currObj = race.selectionList[contestPosition].selectionList[candidatePosition]
+        elif keycode == KeyboardListener.KEY_ENTER:
             fsm.reviewCandidates()
             setConfirm(0)
             return
-        elif fsm.current == 'review_candidates':
+        else:
+            return
+        setCandidate()
+        
+    # Review Candidate Selection: Yes or No, then proceed to end or back up to Candidates
+    elif fsm.current == 'review_candidates':
+        if keycode == KeyboardListener.KEY_RIGHT:
+            setConfirm(1)
+        elif keycode == KeyboardListener.KEY_LEFT:
+            setConfirm(-1)
+        elif keycode == KeyboardListener.KEY_ENTER:
             if confirm % 2 == 0:
-                #race.selectionList[contestPosition].userSelection.append(candidatePosition)
-                makeSelection() # TODO
+                race.selectionList[contestPosition].userSelection.append(candidatePosition)
+                makeSelection()
                 fsm.doneReview()
             else:
                 fsm.reselectCandidates()
-        elif fsm.current == 'review_ballot':
+    
+    # Review Ballot: Yes or No, then proceed to end or back up to Contests
+    elif fsm.current == 'review_ballot':
+        if keycode == KeyboardListener.KEY_RIGHT:
+            setConfirm(1)
+        elif keycode == KeyboardListener.KEY_LEFT:
+            setConfirm(-1)
+        elif keycode == KeyboardListener.KEY_ENTER:
             if confirm % 2 == 0:
                 fsm.doneBallot()
             else:
                 fsm.reselectContest()
-    
-    elif keycode == KeyboardListener.KEY_RIGHT:
-        if fsm.current == 'candidates':
-            candidatePosition = (candidatePosition+1) if (candidatePosition+1<len(candidateList)) else 0
-            currObj = race.selectionList[contestPosition].selectionList[candidatePosition]
-            setCandidate()
-        elif fsm.current == 'review_candidates' or fsm.current == 'review_ballot':
-            setConfirm(1)
-    
-    elif keycode == KeyboardListener.KEY_LEFT:
-        if fsm.current == 'candidates':
-            candidatePosition = len(candidateList)-1 if (candidatePosition==0) else candidatePosition-1
-            currObj = race.selectionList[contestPosition].selectionList[candidatePosition]
-            setCandidate()
-        elif fsm.current == 'review_candidates' or fsm.current == 'review_ballot':
-            setConfirm(-1)
-    
-    else:
-        return
-
 
 '''
 Traverse the list as provided by the 'obj', which can be either of type Race or Contest
@@ -209,7 +207,7 @@ def oncontests(e):
     traverselist(race)
     # initialize our current object, which is the first contest
     currObj = race.selectionList[contestPosition]
-    #print "current contest is " + currObj.name
+    print "current contest is " + currObj.name
 
 # e.pos: the current Contest, which is the position in the race.selectionList
 def oncandidates(e):
@@ -236,21 +234,13 @@ def oncheckdone(e):
     fsm.reviewBallot()
 
 def onreviewballot(e):
-    text = "Review your selections: "
-    print('\n'+text)
-    playAudio("/media/reviewBallot.wav")
-    paths = []
+    print('\nReview your selections:')
     for contest in race.selectionList:
-        print(contest.name + ': ' + contest.userSelection[0].name)
-        paths.append(contest.audioPath)
-        paths.append(contest.userSelection[0].audioPath)
-        #playAudio(contest.audioPath)
-    print paths
-    # TODO: play each audio file in this paths var
+        print(contest.name + ':' + contest.userSelection[0].name)
+    setConfirm(0)
     
 def ondoneballot(e):
     print('\nVoting complete! Thanks for using this system!')
-    playAudio("/media/finish.wav")
 
 
 '''
