@@ -13,6 +13,7 @@ class Contest(object):
     def __init__(self, name, audioPath, selectionList=None, userSelection=None):
         self.name = name 
         self.audioPath = audioPath
+        self.confirm = False
         if selectionList is None: 
             self.selectionList = []
         else: self.selectionList = selectionList #candidates

@@ -185,7 +185,7 @@ $pyjs.loaded_modules['pjBallot'] = function (__mod_name__) {
 				var self = arguments[0];
 			}
 
-			$m['JSONProxy']['__init__'](self, 'http://10.0.23.48/test-service/', $p['list'](['passBallot', 'echo', 'reverse', 'uppercase', 'lowercase', 'nonexistant']));
+			$m['JSONProxy']['__init__'](self, 'http://209.129.244.15/test-service/', $p['list'](['passBallot', 'echo', 'reverse', 'uppercase', 'lowercase', 'nonexistant']));
 			return null;
 		}
 	, 1, [null,null,['self']]);

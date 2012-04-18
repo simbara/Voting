@@ -37,13 +37,16 @@ var snd1 = new Audio();
 	$m['playAudio'] = function(audioPath, confirm) {
 		if (typeof confirm == 'undefined') confirm=arguments.callee.__args__[3][1];
 		var confirmPath,root_path,$add2,$add3,$add1,$add6,$add4,$add5,path;
-		root_path = 'http://10.0.23.48/';
+		root_path = 'http://209.129.244.15/';
 		path = $p['__op_add']($add1=root_path,$add2=$p['getattr']($m['currObj'], 'audioPath'));
 		if ($p['bool']($p['op_eq'](confirm, true))) {
 			confirmPath = $p['__op_add']($add3=root_path,$add4='media/confirm.wav');
 
+        mainSnd.pause();
         snd1.src = confirmPath;
         snd1.addEventListener('ended', function() {
+            snd1.currentTime = 0;
+            snd1.pause();
             mainSnd.src = path;
             mainSnd.play();
         }, false);
@@ -53,6 +56,7 @@ var snd1 = new Audio();
 		else if ($p['bool']($p['op_eq'](confirm, false))) {
 			confirmPath = $p['__op_add']($add5=root_path,$add6='media/reselectCandidate.wav');
 
+        snd1.pause();
         mainSnd.src = confirmPath;
         mainSnd.play();
         
@@ -171,19 +175,24 @@ var snd1 = new Audio();
 	$m['makeSelection'].__args__ = [null,null];
 	$m['onKeyPress'] = function(sender, keycode, modifiers) {
 		var $mod5,$mod4,$mod6,$mod3,candidateList,contestList,$sub8,$sub3,$sub2,$sub1,$sub7,$sub6,$sub4,$or4,$or1,$or3,$or2,$add14,$add15,$add16,$add10,$add11,$add12,$add13,$sub5,$add9;
+		$p['printFunc']([$p['getattr']((typeof fsm == "undefined"?$m.fsm:fsm), 'current'), $m['confirm']], 1);
 		contestList = $p['getattr']($m['race'], 'selectionList');
 		candidateList = $p['getattr']($p['getattr']($m['race'], 'selectionList').__getitem__($m['contestPosition']), 'selectionList');
 		if ($p['bool']($p['op_eq'](keycode, $p['getattr']($m['KeyboardListener'], 'KEY_UP')))) {
-			$m['contestPosition'] = ($p['bool'](($p['cmp']($p['__op_add']($add9=$m['contestPosition'],$add10=1), $p['len'](contestList)) == -1))? ($p['__op_add']($add11=$m['contestPosition'],$add12=1)) : (0));
-			$m['currObj'] = $p['getattr']($m['race'], 'selectionList').__getitem__($m['contestPosition']);
-			$m['setContest']();
-			$m['candidate']['clear']();
+			if ($p['bool']($p['op_eq']($p['getattr']($m['fsm'], 'current'), 'contests'))) {
+				$m['contestPosition'] = ($p['bool'](($p['cmp']($p['__op_add']($add9=$m['contestPosition'],$add10=1), $p['len'](contestList)) == -1))? ($p['__op_add']($add11=$m['contestPosition'],$add12=1)) : (0));
+				$m['currObj'] = $p['getattr']($m['race'], 'selectionList').__getitem__($m['contestPosition']);
+				$m['setContest']();
+				$m['candidate']['clear']();
+			}
 		}
 		else if ($p['bool']($p['op_eq'](keycode, $p['getattr']($m['KeyboardListener'], 'KEY_DOWN')))) {
-			$m['contestPosition'] = ($p['bool']($p['op_eq']($m['contestPosition'], 0))? ($p['__op_sub']($sub1=$p['len'](contestList),$sub2=1)) : ($p['__op_sub']($sub3=$m['contestPosition'],$sub4=1)));
-			$m['currObj'] = $p['getattr']($m['race'], 'selectionList').__getitem__($m['contestPosition']);
-			$m['setContest']();
-			$m['candidate']['clear']();
+			if ($p['bool']($p['op_eq']($p['getattr']($m['fsm'], 'current'), 'contests'))) {
+				$m['contestPosition'] = ($p['bool']($p['op_eq']($m['contestPosition'], 0))? ($p['__op_sub']($sub1=$p['len'](contestList),$sub2=1)) : ($p['__op_sub']($sub3=$m['contestPosition'],$sub4=1)));
+				$m['currObj'] = $p['getattr']($m['race'], 'selectionList').__getitem__($m['contestPosition']);
+				$m['setContest']();
+				$m['candidate']['clear']();
+			}
 		}
 		else if ($p['bool']($p['op_eq'](keycode, $p['getattr']($m['KeyboardListener'], 'KEY_ENTER')))) {
 			if ($p['bool']($p['op_eq']($p['getattr']($m['fsm'], 'current'), 'contests'))) {
@@ -206,6 +215,7 @@ var snd1 = new Audio();
 				}
 				else {
 					$m['fsm']['reselectCandidates']();
+					$m['confirm'] = 0;
 				}
 			}
 			else if ($p['bool']($p['op_eq']($p['getattr']($m['fsm'], 'current'), 'review_ballot'))) {
@@ -301,6 +311,7 @@ var snd1 = new Audio();
 	$m['oncontests'].__args__ = [null,null,['e']];
 	$m['oncandidates'] = function(e) {
 		var currContest,$add29,$iter2_iter,$add40,currObj,$iter2_type,$add32,$iter2_idx,$add39,$add38,$iter2_nextval,i,$add33,$add30,$add31,$add36,$add37,$add34,$add35,person,$iter2_array;
+		$m['status']['clear']();
 		currContest = $p['getattr']($m['race'], 'selectionList').__getitem__($m['contestPosition']);
 		$p['printFunc']([$p['__op_add']($add29='\nCurrent race is: ',$add30=$p['getattr'](currContest, '$$name'))], 1);
 		$p['printFunc'](['Candidates are:'], 1);
@@ -354,7 +365,7 @@ var snd1 = new Audio();
 	$m['oncheckdone'].__args__ = [null,null,['e']];
 	$m['onreviewballot'] = function(e) {
 		var $add50,paths,$add52,$add49,$add48,$add47,text,contest,$iter4_idx,$iter4_type,$iter4_nextval,$iter4_array,$add51,$iter4_iter;
-		text = 'Review your selections:';
+		text = 'Review your selections: ';
 		$p['printFunc']([$p['__op_add']($add47='\n',$add48=text)], 1);
 		$m['playAudio']('/media/reviewBallot.wav');
 		paths = $p['list']([]);
@@ -362,7 +373,7 @@ var snd1 = new Audio();
 		$iter4_nextval=$p['__iter_prepare']($iter4_iter,false);
 		while (typeof($p['__wrapped_next']($iter4_nextval).$nextval) != 'undefined') {
 			contest = $iter4_nextval.$nextval;
-			$p['printFunc']([$p['__op_add']($add51=$p['__op_add']($add49=$p['getattr'](contest, '$$name'),$add50=':'),$add52=$p['getattr']($p['getattr'](contest, 'userSelection').__getitem__(0), '$$name'))], 1);
+			$p['printFunc']([$p['__op_add']($add51=$p['__op_add']($add49=$p['getattr'](contest, '$$name'),$add50=': '),$add52=$p['getattr']($p['getattr'](contest, 'userSelection').__getitem__(0), '$$name'))], 1);
 			paths['append']($p['getattr'](contest, 'audioPath'));
 			paths['append']($p['getattr']($p['getattr'](contest, 'userSelection').__getitem__(0), 'audioPath'));
 		}
