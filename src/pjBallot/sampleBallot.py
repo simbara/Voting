@@ -127,7 +127,6 @@ def makeSelection():
     selection.add(HTML('<b /> Selection: %s' % curcontest.userSelection[-1].name))
  
 def onKeyPress(sender, keycode, modifiers):
-    print fsm.current, confirm
     global contestPosition, candidatePosition, fsm, currObj, confirm
     
     contestList = race.selectionList
@@ -135,18 +134,36 @@ def onKeyPress(sender, keycode, modifiers):
     
     # Contests, only keys allowed are Up/Down to cycle contests, and Enter to select
     if keycode == KeyboardListener.KEY_UP:
-        if fsm.current == 'contests':
+        if fsm.current == 'contests' or fsm.current == 'candidates':
             contestPosition = (contestPosition+1) if (contestPosition+1<len(contestList)) else 0
             currObj = race.selectionList[contestPosition]
             setContest()
             candidate.clear()
+            if fsm.current == 'candidates': fsm.reselectContest()
     
     elif keycode == KeyboardListener.KEY_DOWN:
-        if fsm.current == 'contests':
+        if fsm.current == 'contests' or fsm.current == 'candidates':
             contestPosition = len(contestList)-1 if (contestPosition==0) else contestPosition-1
             currObj = race.selectionList[contestPosition]
             setContest()
             candidate.clear()
+            if fsm.current == 'candidates': fsm.reselectContest()
+            
+    elif keycode == KeyboardListener.KEY_RIGHT:
+        if fsm.current == 'candidates':
+            candidatePosition = (candidatePosition+1) if (candidatePosition+1<len(candidateList)) else 0
+            currObj = race.selectionList[contestPosition].selectionList[candidatePosition]
+            setCandidate()
+        elif fsm.current == 'review_candidates' or fsm.current == 'review_ballot':
+            setConfirm(1)
+    
+    elif keycode == KeyboardListener.KEY_LEFT:
+        if fsm.current == 'candidates':
+            candidatePosition = len(candidateList)-1 if (candidatePosition==0) else candidatePosition-1
+            currObj = race.selectionList[contestPosition].selectionList[candidatePosition]
+            setCandidate()
+        elif fsm.current == 'review_candidates' or fsm.current == 'review_ballot':
+            setConfirm(-1)
     
     elif keycode == KeyboardListener.KEY_ENTER:
         if fsm.current == 'contests':   
@@ -165,28 +182,12 @@ def onKeyPress(sender, keycode, modifiers):
                 fsm.doneReview()
             else:
                 fsm.reselectCandidates()
-                confirm = 0
+                confirm = 0     #hack to make the count work. not happy with the whole count thing :(
         elif fsm.current == 'review_ballot':
             if confirm % 2 == 0:
                 fsm.doneBallot()
             else:
                 fsm.reselectContest()
-    
-    elif keycode == KeyboardListener.KEY_RIGHT:
-        if fsm.current == 'candidates':
-            candidatePosition = (candidatePosition+1) if (candidatePosition+1<len(candidateList)) else 0
-            currObj = race.selectionList[contestPosition].selectionList[candidatePosition]
-            setCandidate()
-        elif fsm.current == 'review_candidates' or fsm.current == 'review_ballot':
-            setConfirm(1)
-    
-    elif keycode == KeyboardListener.KEY_LEFT:
-        if fsm.current == 'candidates':
-            candidatePosition = len(candidateList)-1 if (candidatePosition==0) else candidatePosition-1
-            currObj = race.selectionList[contestPosition].selectionList[candidatePosition]
-            setCandidate()
-        elif fsm.current == 'review_candidates' or fsm.current == 'review_ballot':
-            setConfirm(-1)
     
     else:
         return
@@ -271,6 +272,7 @@ fsm = Fysom({
   'events': [
     {'name': 'startVoting', 'src': 'intro', 'dst': 'contests'},
     {'name': 'selectCandidate', 'src': 'contests', 'dst': 'candidates'},
+    {'name': 'reselectContest', 'src': 'candidates', 'dst': 'contests'},
     {'name': 'reviewCandidates', 'src': 'candidates', 'dst': 'review_candidates'},
     {'name': 'reselectCandidates', 'src': 'review_candidates', 'dst': 'candidates'},
     {'name': 'doneReview', 'src': 'review_candidates', 'dst': 'check_done'},
