@@ -1,0 +1,10 @@
+# Create wave files
+# [filename]<tab>[speech]
+yes	Yes
+no	No
+confirm	Press Enter to Confirm
+confirm2 Or press the right arrow key to make a reselection
+reselectCandidate	Press Enter to Reselect Candidate
+finish	Thanks for using the system!
+
+# Instructions
