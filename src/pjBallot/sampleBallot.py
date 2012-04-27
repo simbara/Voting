@@ -4,7 +4,6 @@ from ballotTree import Race
 from pyjamas.ui import KeyboardListener
 from pyjamas.ui.HorizontalPanel import HorizontalPanel
 from pyjamas.ui.HTML import HTML
-import time
 
 contestPosition = 0
 candidatePosition = 0
@@ -45,18 +44,27 @@ def playAudio(audioPath, confirm=None):
     # Say the word "Confirm" before the provided audio path
     if confirm == True:
         confirmPath = root_path + "media/confirm.wav"
+        confirmPath2 = root_path + "media/confirm2.wav"
         #confirmPath = "http://10.0.22.220/media/confirm.wav"
         JS('''
         mainSnd.pause();
+        mainSnd.addEventListener('ended', function() {
+            mainSnd.currentTime = 0;
+            mainSnd.pause();
+            snd1.src = confirmPath2;
+            snd1.play();
+        }, false);
         snd1.src = confirmPath;
         snd1.addEventListener('ended', function() {
             snd1.currentTime = 0;
             snd1.pause();
             mainSnd.src = path;
             mainSnd.play();
+            snd1.removeEventListener('ended', arguments.callee, false);
         }, false);
         snd1.play();
         ''')
+
     # Say the word "Reselect"
     elif confirm == False:
         confirmPath = root_path + "media/reselectCandidate.wav"

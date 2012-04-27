@@ -3,7 +3,7 @@ import re
 from ballotTree import Contest, Race, Candidate
 from subprocess import call
 
-site_root = '/Users/Voter/.virtualenvs/django/tutorial/mysite/media/'
+mysite_root = '/Users/Voter/.virtualenvs/django/tutorial/mysite/'
 
 class Parser:
 	def __init__(self, fileLoc):
@@ -33,45 +33,48 @@ class Parser:
 	def export(self, race):
 		# Export Race audio
 		print "Exporting .wav files for Race '" + race.name + "'"
-		path = site_root + "race.wav"
+		path = mysite_root + "media/race.wav"
 		call(["say", "-o", path, "--data-format=LEF32@16000", race.instructions])
 		race.audioPath = "media/race.wav"
 
 		#Export Contests
 		for i, contest in zip(range(len(race.selectionList)), race.selectionList):
 			print "Exporting .wav files for Contest '" + contest.name + "'"
-			path = site_root + "contest" + str(i+1) + ".wav"
+			path = mysite_root + "media/contest" + str(i+1) + ".wav"
 			call(["say", "-o", path, "--data-format=LEF32@16000", contest.name])
 			contest.audioPath = "media/contest" + str(i+1) + ".wav" 
 
 			# Export Candidates
 			for j, candidate in zip(range(len(contest.selectionList)), contest.selectionList):
 				print "Exporting .wav files for Candidate '" + candidate.name + "'"
-				path = site_root + "contest" + str(i+1) + "_candidate" + str(j+1) + ".wav"
+				path = mysite_root + "media/contest" + str(i+1) + "_candidate" + str(j+1) + ".wav"
 				call(["say", "-o", path, "--data-format=LEF32@16000", candidate.name])
 				candidate.audioPath = "media/contest" + str(i+1) + "_candidate" + str(j+1) + ".wav" 
 		print "Export done!"
 	
 		# Export static speech
-		f = open('speeches')
+		speeches = mysite_root + "pjBallot/speeches"
+		f = open(speeches)
 		for line in f.readlines():
 			#import pdb; pdb.set_trace();
 			matchStr = re.search(r'(.*)\t(.*)', line, re.IGNORECASE)
 			if matchStr:
 				print matchStr.groups()
-				path = site_root + matchStr.group(1) + ".wav"
+				path = mysite_root + "media/" + matchStr.group(1) + ".wav"
 				call(["say", "-o", path, "--data-format=LEF32@16000", matchStr.group(2)])
 		print "SpeechToText Done!"
 			
 
 def initTree():
-	p = Parser("/Users/Voter/.virtualenvs/django/tutorial/mysite/pjBallot/ballot.txt")
+	ballot = mysite_root + "pjBallot/ballot.txt"
+	p = Parser(ballot)
 	race = p.parse()
 	p.export(race)
 	return race
 
-def testTree():   
-	p = Parser("/Users/Voter/.virtualenvs/django/tutorial/mysite/pjBallot/ballot.txt")
+def testTree():
+	ballot = mysite_root + "pjBallot/ballot.txt"   
+	p = Parser(ballot)
 	race = p.parse()
 	print "Race:", race.name, ", Instructions:", race.instructions
 	for contest in race.selectionList:
