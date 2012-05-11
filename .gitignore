@@ -1,3 +1,6 @@
 ./output/*
 src/pjBallot/output/*
 .pydevproject*
+eclipse_build*
+.project
+*.wav

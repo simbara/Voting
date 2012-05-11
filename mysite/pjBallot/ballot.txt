@@ -1,0 +1,15 @@
+Race: 2012 Voting Thing : Use up and down keys for contests; Left and right keys for candidates; Enter to select.
+Contest: President of the United States
+Candidate: Barack Obama
+candidate: Mitt Romney
+candidate: Newt Gingrich
+
+Contest: Vice President of the United States
+candidate: Joe Biden 
+candidate: Person 1
+candidate: Person 2
+
+Contest: Governor
+candidate: Arnold Schwarzenegger
+candidate: Aveek Purohit
+candidate: Ted Selker

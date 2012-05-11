@@ -165,6 +165,7 @@ def onKeyPress(sender, keycode, modifiers):
             setCandidate()
 #        elif fsm.current == 'review_candidates' or fsm.current == 'review_ballot':
 #            setConfirm(-1) TODO
+
     
     elif keycode == KeyboardListener.KEY_ENTER:
         if fsm.current == 'contests':   
@@ -172,6 +173,7 @@ def onKeyPress(sender, keycode, modifiers):
             fsm.selectCandidate()
             setCandidate()
             return
+
         elif fsm.current == 'candidates' or fsm.current == 'change_candidates':
             pauseAudio();
             makeSelection()             
@@ -203,6 +205,7 @@ def onKeyPress(sender, keycode, modifiers):
 #                fsm.doneBallot()
 #            else:
 #                fsm.reselectContest()
+
     
     else:
         return
@@ -284,7 +287,6 @@ def oncheckdone(e):
     }
     })();
     ''')
-
         
     
 def onreviewballot(e):
