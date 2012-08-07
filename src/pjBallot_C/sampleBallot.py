@@ -11,8 +11,8 @@ from audioControls_buzz import playAudio, pauseAudio, isPlayingAudio, playAudioL
 import buzz.js
 
 JS('''
-var mySound1 = new buzz.sound("http://10.0.22.220/media/finish.wav");
-var mySound2 = new buzz.sound("http://10.0.22.220/media/race.wav");
+var mySound1 = new buzz.sound("http://10.0.10.95/media/finish.wav");
+var mySound2 = new buzz.sound("http://10.0.10.95/media/race.wav");
 ''')
 
 contestPosition = 0

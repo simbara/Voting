@@ -3,11 +3,11 @@ from __pyjamas__ import JS
 
 even = True
 
-root_path = "http://10.0.22.220/" 
+root_path = "http://10.0.22.106/" 
 
 
 JS("""
-var mainSnd = new buzz.sound("http://10.0.22.220/media/yes.wav");
+var mainSnd = new buzz.sound("http://192.168.1.149/media/yes.wav");
 
 var snd1 = new Audio();
 var snd2 = new Audio();

@@ -245,8 +245,8 @@ $pyjs.loaded_modules['sampleBallot'] = function (__mod_name__) {
 	$pyjs.track.lineno=11;
 	$pyjs.track.lineno=13;
 
-var mySound1 = new buzz.sound("http://10.0.22.220/media/finish.wav");
-var mySound2 = new buzz.sound("http://10.0.22.220/media/race.wav");
+var mySound1 = new buzz.sound("http://10.0.10.95/media/finish.wav");
+var mySound2 = new buzz.sound("http://10.0.10.95/media/race.wav");
 
 	$pyjs.track.lineno=18;
 	$m['contestPosition'] = 0;

@@ -216,7 +216,10 @@ Traverse the list as provided by the 'obj', which can be either of type Race or 
 '''
 def traverselist(obj):
     alist = obj.selectionList
-    print('* ' + alist[contestPosition].name + ' highlighted *')
+    if fsm.current == 'contests':
+        print('* ' + alist[contestPosition].name + ' highlighted *')
+    if fsm.current == 'candidates':
+        print('* ' + alist[candidatePosition].name + ' highlighted *')
 
 '''
 Define State Behaviors
@@ -248,7 +251,7 @@ def oncandidates(e):
         print("\t" + str(i + 1) + ') ' + person.name)
     traverselist(currContest)
     # initialize our current object, which is the first contest
-    currObj = currContest.selectionList[contestPosition]
+    currObj = currContest.selectionList[candidatePosition]
     print "current candidate is " + currObj.name
 
 def onchangecandidates(e):

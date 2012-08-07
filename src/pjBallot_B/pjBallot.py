@@ -79,12 +79,12 @@ class PjBallot:
         self.srace = response  
         sampleBallot.sendRace(self.srace)
         #sampleBallot.instructions.clear()
-        sampleBallot.title.add(HTML('Name: %s' % self.srace.name))
-        sampleBallot.instructions.add(HTML('Instruction: %s' %  self.srace.instructions))
+        #sampleBallot.title.add(HTML('Name: %s' % self.srace.name))
+        #sampleBallot.instructions.add(HTML('Instruction: %s' %  self.srace.instructions))
         #inst = sampleBallot.getInstruction()
         #self.mainPanel.add(HTML()
         sampleBallot.fsm.startVoting()
-        sampleBallot.currObj = sampleBallot.race
+        sampleBallot.currObj = sampleBallot.race.selectionList[0]
         #sampleBallot.playAudio()
         sampleBallot.setContest()
 
@@ -107,7 +107,7 @@ class PjBallot:
      
 class JSONService(JSONProxy):
     def __init__(self):
-        JSONProxy.__init__(self, "http://10.0.22.220/test-service/", ["passBallot", "echo", "reverse", "uppercase", "lowercase", "nonexistant"])        
+        JSONProxy.__init__(self, "http://10.0.22.106/test-service/", ["passBallot", "echo", "reverse", "uppercase", "lowercase", "nonexistant"])        
 
 class RootPanelListener(RootPanelCls, KeyboardHandler):
     def __init__(self, Parent, *args, **kwargs):

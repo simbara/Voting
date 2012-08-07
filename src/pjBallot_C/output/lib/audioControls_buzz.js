@@ -10,7 +10,7 @@ $pyjs.loaded_modules['audioControls_buzz'] = function (__mod_name__) {
 	$m.__track_lines__[1] = 'audioControls_buzz.py, line 1:\n    import buzz.js';
 	$m.__track_lines__[2] = 'audioControls_buzz.py, line 2:\n    from __pyjamas__ import JS';
 	$m.__track_lines__[4] = 'audioControls_buzz.py, line 4:\n    even = True';
-	$m.__track_lines__[6] = 'audioControls_buzz.py, line 6:\n    root_path = "http://10.0.22.220/"';
+	$m.__track_lines__[6] = 'audioControls_buzz.py, line 6:\n    root_path = "http://10.0.22.106/"';
 	$m.__track_lines__[9] = 'audioControls_buzz.py, line 9:\n    JS("""';
 	$m.__track_lines__[21] = 'audioControls_buzz.py, line 21:\n    def isPlayingAudio():';
 	$m.__track_lines__[22] = "audioControls_buzz.py, line 22:\n    JS('''";
@@ -44,10 +44,10 @@ $pyjs.loaded_modules['audioControls_buzz'] = function (__mod_name__) {
 	$pyjs.track.lineno=4;
 	$m['even'] = true;
 	$pyjs.track.lineno=6;
-	$m['root_path'] = 'http://10.0.22.220/';
+	$m['root_path'] = 'http://10.0.22.106/';
 	$pyjs.track.lineno=9;
 
-var mainSnd = new buzz.sound("http://10.0.22.220/media/yes.wav");
+var mainSnd = new buzz.sound("http://192.168.1.149/media/yes.wav");
 
 var snd1 = new Audio();
 var snd2 = new Audio();

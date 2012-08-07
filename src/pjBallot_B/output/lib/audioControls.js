@@ -10,7 +10,7 @@ $pyjs.loaded_modules['audioControls'] = function (__mod_name__) {
 	$m.__track_lines__[1] = 'audioControls.py, line 1:\n    import buzz.js';
 	$m.__track_lines__[2] = 'audioControls.py, line 2:\n    from __pyjamas__ import JS';
 	$m.__track_lines__[4] = 'audioControls.py, line 4:\n    even = True';
-	$m.__track_lines__[6] = 'audioControls.py, line 6:\n    root_path = "http://10.0.22.220/"';
+	$m.__track_lines__[6] = 'audioControls.py, line 6:\n    root_path = "http://10.0.22.106/"';
 	$m.__track_lines__[8] = 'audioControls.py, line 8:\n    JS("""';
 	$m.__track_lines__[138] = 'audioControls.py, line 138:\n    if even:';
 	$m.__track_lines__[139] = 'audioControls.py, line 139:\n    fade(mainSnd2);';
@@ -45,7 +45,7 @@ $pyjs.loaded_modules['audioControls'] = function (__mod_name__) {
 	$pyjs.track.lineno=4;
 	$m['even'] = true;
 	$pyjs.track.lineno=6;
-	$m['root_path'] = 'http://10.0.22.220/';
+	$m['root_path'] = 'http://10.0.22.106/';
 	$pyjs.track.lineno=8;
 
 var mainSnd1 = new Audio();

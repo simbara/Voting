@@ -3,7 +3,7 @@ from __pyjamas__ import JS
 
 even = True
 
-root_path = "http://10.0.22.220/" 
+root_path = "http://10.0.22.106/" 
 
 JS("""
 var mainSnd1 = new Audio();
